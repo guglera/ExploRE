@@ -7,6 +7,8 @@ import Landingpage from "./screens/landingpage.js";
 import  WelcomeScreen from "./screens/welcomeScreen.js";
 import RegionScreen from "./screens/regionScreen.js"
 import ResidenceScreen from "./screens/residenceScreen.js"
+import MorgenpostScreen from "./screens/morgenpostScreen.js"
+import MenuScreen from "./screens/menuScreen.js"
 
 const Stack = createStackNavigator();
 
@@ -19,6 +21,8 @@ function Navigator() {
           <Stack.Screen name="Welcome" component={WelcomeScreen} />
           <Stack.Screen name="Region" component={RegionScreen} />
           <Stack.Screen name="Residence" component={ResidenceScreen} />
+          <Stack.Screen name="Morning Brief" component={MorgenpostScreen} />
+          <Stack.Screen name="Menu" component={MenuScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     );
