@@ -5,11 +5,11 @@ function ResidenceScreen({ navigation }) {
     return (
       <View style={styles.container}>
 
-      <ImageBackground source={require("./innsbruck1.jpg")} style={styles.image} resizeMode="contain">
+      <ImageBackground source={require("./bluewhitegradient.png")} style={styles.image} resizeMode="stretch">
 
         <View style={{ flex: 2}}>
           <Text style={styles.loremIpsum}>
-            My Residence - Ihre Unterkunft      
+            Welcome to Hotel PLATZHALTER
         </Text>
         </View>
 

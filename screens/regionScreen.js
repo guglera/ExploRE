@@ -6,7 +6,7 @@ function RegionScreen({ navigation }) {
     return (
 <View style={styles.container}>
 
-<ImageBackground source={require("./innsbruck1.jpg")} style={styles.image} resizeMode="contain">
+<ImageBackground source={require("./innsbruck1.jpg")} style={styles.image} resizeMode="stretch">
 
   <View style={{ flex: 2}}>
     <Text style={styles.loremIpsum}>

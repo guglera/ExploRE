@@ -7,7 +7,7 @@ function WelcomeScreen({ navigation }) {
     return (
       <View style={styles.container}>
 
-      <ImageBackground source={require("./innsbruck1.jpg")} style={styles.image} resizeMode="contain">
+      <ImageBackground source={require("./innsbruck1.jpg")} style={styles.image} resizeMode="stretch">
 
         <View style={{ flex: 1}}>
           <Text style={styles.loremIpsum}>
@@ -19,15 +19,15 @@ function WelcomeScreen({ navigation }) {
           <View style={styles.buttons}>
           <Button
             color="black"
-            title="My Region"
-            onPress={() => navigation.navigate('Region')}
+            title="My Residence"
+            onPress={() => navigation.navigate('Residence')}
           />
           </View>
 
           <View style={styles.buttons}>
           <Button
             color="black"
-            title="My Residence" onPress={() => navigation.navigate('Residence')}
+            title="My Region" onPress={() => navigation.navigate('Region')}
           />
           </View>
 
