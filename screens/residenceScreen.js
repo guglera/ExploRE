@@ -1,32 +1,34 @@
 import * as React from 'react';
 import { StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity, Button, Alert } from 'react-native';
 
+
 function ResidenceScreen({ navigation }) {
     return (
       <View style={styles.container}>
 
-      <ImageBackground source={require("./bluewhitegradient.png")} style={styles.image} resizeMode="stretch">
+      <ImageBackground source={require("../assets/bluewhitegradient.png")} style={styles.image} resizeMode="stretch">
 
-        <View style={{ flex: 2}}>
+        <View style={{ flex: 1}}>
           <Text style={styles.loremIpsum}>
-            Welcome to Hotel PLATZHALTER
+            Welcome to your residence {"\n"} Hotel PLATZHALTER
         </Text>
         </View>
 
-        <View style={{ flex: 1.5}}>
+        <View style={{ flex: 1}}>
+
           <View style={styles.buttons}>
           <Button
             color="black"
-            title="Zurück"
-            onPress={() => navigation.goBack()} 
+            title="Morning Brief"
+            onPress={() => navigation.navigate('Morning Brief')}
           />
           </View>
 
           <View style={styles.buttons}>
           <Button
             color="black"
-            title="Logout"
-            onPress={() => navigation.navigate('ExploRE')} 
+            title="Menu"
+            onPress={() => navigation.navigate('Menu')}
           />
           </View>
 
@@ -55,7 +57,7 @@ function ResidenceScreen({ navigation }) {
       flex: 1,
       resizeMode: "cover",
       justifyContent: "center",
-      opacity: 0.70
+      opacity: 0.75
     },
   
     buttons: {
