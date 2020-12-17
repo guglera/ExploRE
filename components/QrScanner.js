@@ -3,11 +3,29 @@ import { StyleSheet, Text, View } from 'react-native';
 import { useState, useEffect } from 'react';
 import { Button } from 'react-native';
 import { BarCodeScanner, BarCodeScannerResult } from 'expo-barcode-scanner';
-
+import * as asyncStorage from '@react-native-async-storage/async-storage';
 
 export function QrScanner () {
   const [hasPermission, setHasPermission] = useState(null);
   const [scanned, setScanned] = useState(false);
+
+  const [value, setValue] = useState('value');
+  const { getItem, setItem } = asyncStorage.useAsyncStorage('hotelId');
+
+  const readItemFromStorage = async () => {
+    const item = await getItem();
+    setValue(item);
+  };
+
+  const writeItemToStorage = async newValue => {
+    await setItem(newValue);
+    setValue(newValue);
+  };
+
+  useEffect(() => {
+    readItemFromStorage();
+  }, []);
+
 
   useEffect(() => {
     (async () => {
@@ -19,6 +37,7 @@ export function QrScanner () {
   const handleBarCodeScanned = ({ type, data }) => {
     setScanned(true);
     alert(`Bar code with type ${type} and data ${data} has been scanned!`);
+    writeItemToStorage(`${data}`);
   };
 
   if (hasPermission === null) {

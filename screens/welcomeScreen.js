@@ -2,8 +2,29 @@ import * as React from 'react';
 import { StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity, Button, Alert } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { useState, useEffect } from 'react';
+import { useAsyncStorage } from '@react-native-async-storage/async-storage';
 
 function WelcomeScreen({ navigation }) {
+  const [value, setValue] = useState('value');
+  const { getItem, setItem } = useAsyncStorage('hotelId');
+
+  const readItemFromStorage = async () => {
+    const item = await getItem();
+    setValue(item);
+  };
+
+  const writeItemToStorage = async newValue => {
+    await setItem(newValue);
+    setValue(newValue);
+  };
+
+  useEffect(() => {
+    readItemFromStorage();
+  }, []);  
+
+  
+
     return (
       <View style={styles.container}>
 
@@ -11,7 +32,7 @@ function WelcomeScreen({ navigation }) {
 
         <View style={{ flex: 1}}>
           <Text style={styles.loremIpsum}>
-            Willkommen, im Hotel PLATZHALTER
+            Willkommen, im Hotel {value}
         </Text>
         </View>
 
@@ -34,7 +55,9 @@ function WelcomeScreen({ navigation }) {
           <View style={styles.buttons}>
           <Button
             color="black"
-            title="Logout" onPress={() => navigation.navigate('ExploRE')}
+            title="Logout" onPress={() => {navigation.navigate('ExploRE');
+              writeItemToStorage("empty")}
+            }
           />
           </View>
 
