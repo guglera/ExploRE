@@ -1,6 +1,11 @@
 import * as React from 'react';
 import  Navigator from "./navigator.js";
 import DataService from './services/DataService';
+import PersonlaData from './models/PersonalData';
+import Interest from './models/Interest';
+import HotelData from './models/HotelData';
+import Menu from './models/Menu';
+import MorningMail from './models/MorningMail';
 
 import { View } from 'react-native';
 
@@ -9,7 +14,7 @@ function App() {
   const userId = "123";
   console.log(DataService.getPersonData(userId));
   console.log(DataService.getInterest(userId));
-  console.log(DataService.getHotelData(userId).getLat());
+  console.log(DataService.getHotelData(userId));
   console.log(DataService.getMenu(userId));
   console.log(DataService.getMorningMail(userId));
   return (

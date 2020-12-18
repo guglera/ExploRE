@@ -11,11 +11,12 @@ export default class DataService{}
 DataService.getPersonData = function(userId) {
        return new PersonlaData("TestFirstname", "TestLastname");
   }
+
 DataService.getInterest = function(userId) {
     return new Interest("first interest", true);
 }
 DataService.getHotelData = function(userId) {
-    return new HotelData("HotelName", '47.259659', '11.400375');
+    return new HotelData("HotelName", "47.259659", "11.400375");
 }
 DataService.getMenu = function(userId) {
     return new Menu("lunch",'2020-12-16',  "./xy");
