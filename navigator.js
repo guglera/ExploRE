@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { useAsyncStorage } from '@react-native-async-storage/async-storage';
+import { readItemFromStorage } from '@react-native-async-storage/async-storage';
 
 import  HomeScreen from "./screens/startScreen.js";
 import Landingpage from "./screens/landingpage.js";
@@ -17,7 +17,6 @@ const Stack = createStackNavigator();
 function Navigator() {
   const [value, setValue] = useState('value');
   const { getItem, setItem } = useAsyncStorage('hotelId');
-
   const readItemFromStorage = async () => {
     const item = await getItem();
     setValue(item);
