@@ -29,7 +29,7 @@ function WelcomeScreen({ navigation }) {
     return (
       <View style={styles.container}>
 
-      <ImageBackground source={require("../assets/jacuzzi_630x945.jpg")} style={styles.image} resizeMode="stretch">
+      <ImageBackground source={require("../assets/jacuzzi.jpg")} style={styles.image} resizeMode="stretch">
 
         <View style={{ flex: 1}}>
           <Text style={styles.loremIpsum}>
