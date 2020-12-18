@@ -62,7 +62,7 @@ function WelcomeScreen({ navigation }) {
           />
           </View>
 
-          <View>
+          <View style={styles.weatherCards}>
             <Weather />
           </View>
         </View>
@@ -101,6 +101,10 @@ function WelcomeScreen({ navigation }) {
       height: 50,
       backgroundColor: '#2196F3',
       margin: 20
+    },
+
+    weatherCards: {
+      alignItems: 'center',
     }
   
   });

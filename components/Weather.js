@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { View, Text, Image, StyleSheet } from 'react-native'
+import { View, Text, Image, StyleSheet, SafeAreaView } from 'react-native'
 import { localeData } from 'moment'
 
     /*
@@ -24,7 +24,7 @@ export function Weather () {
             const weather_url = `${base_weather_url}lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&units=metric&appid=${weather_api_key}`
             const response = await fetch(weather_url)
             const result = await response.json()       
-            //console.log(result)
+            console.log(result)
             setCurrentWeather({temp : result.current.temp, icon: result.current.weather[0].icon, weather_info: result.current.weather[0].description})
             setWeatherForecast({temp: result.daily[0].temp.day, icon: result.daily[0].weather[0].icon, weather_info: result.daily[0].weather[0].main})
         })();
@@ -34,49 +34,56 @@ export function Weather () {
     const iconUrl = `https://openweathermap.org/img/wn/${current_weather.icon}@4x.png`
     const tomorrow_iconUrl = `https://openweathermap.org/img/wn/${weather_forecast.icon}@4x.png`
 
-    console.log(tomorrow_iconUrl)
-
     return (
-        <View style style={styles.weatherInfo}>
+        <View style = {styles.cards}>
+        <View style={styles.cardcontainer}>
             <View style style={styles.weatherdaily}>
                 <Text style = {styles.textPrimary}>Aktuelles Wetter</Text>
                 <Image style={styles.weatherIcon} source={{ uri: iconUrl }} />
                 <Text style = {styles.textPrimary}>{current_weather.weather_info}</Text>
                 <Text style={styles.textPrimary}>{current_weather.temp}°C</Text>
             </View>
-
-            <View style style={styles.weatherdaily}>
+         </View>   
+        
+         <View style={styles.cardcontainer}>
+            <View style={styles.weatherdaily}>
                 <Text style = {styles.textPrimary}>Wetter Morgen</Text>
                 <Image style={styles.weatherIcon} source={{ uri: tomorrow_iconUrl }} />
                 <Text style = {styles.textPrimary}>{weather_forecast.weather_info}</Text>
                 <Text style={styles.textPrimary}>{weather_forecast.temp}°C</Text>
             </View>
-        </View>           
+        </View>
+        </View>
     );
     
 }
 
 const styles = StyleSheet.create({
-    weatherInfo: {
-        flexDirection: 'row',
+    cardcontainer: {
+        height:150,
+        width: '30%',
+        borderWidth: 1,
+        borderColor: '#000000',
+        justifyContent: 'space-around',
         alignItems: 'center',
+        backgroundColor: '#2196F3',
+        elevation: 4,
     },
     weatherdaily: {
         flexDirection: 'column',
         alignItems: 'center',
     },
+    cards: {
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
     weatherIcon: {
-        width: 100,
-        height: 100,
+        width: 80,
+        height: 80,
     },
     textPrimary: {
-        fontSize: 20,
-        color: '#4b6082',
+        fontSize: 14,
+        color: 'white',
     },
-    texSecondary: {
-        fontSize: 20,
-        color: '#4b6082',
-        fontWeight: '500',
-        marginTop: 10,
-    },
+
 })
