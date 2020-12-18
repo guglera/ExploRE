@@ -37,7 +37,7 @@ function WelcomeScreen({ navigation }) {
         </Text>
         </View>
 
-        <View style={{ flex: 1.5}}>
+        <View style={{ flex: 3}}>
           <View style={styles.buttons}>
           <Button
             color="black"
