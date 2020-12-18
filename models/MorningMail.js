@@ -4,3 +4,11 @@ export default class MornigMails{
         this.filePath = filePath;
     }
 }
+
+MornigMails.getTitle = function() {
+    return this.title;
+}
+
+MornigMails.getFilePath = function() {
+    return this.filePath;
+}

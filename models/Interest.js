@@ -4,3 +4,11 @@ export default class Interest{
         this.value = value;
     }
 }
+
+Interest.getName = function() {
+    return this.name;
+}
+
+Interest.getValue= function() {
+    return this.value;
+}

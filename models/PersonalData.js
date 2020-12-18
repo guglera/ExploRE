@@ -11,3 +11,11 @@ export default class PersonlaData{
 PersonlaData.getFullName = function() {
     return this.fullName;
 }
+
+PersonlaData.getFirstname = function() {
+    return this.firstname + " " + this.lastname;
+}
+
+PersonlaData.getLastname = function() {
+    return this.lastname;
+}

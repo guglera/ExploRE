@@ -4,3 +4,11 @@ export default class HotelDate {
         this.location = location;
     }
 }
+
+HotelDate.getName = function() {
+    return this.name;
+}
+
+HotelDate.getLocation = function() {
+    return this.location;
+}
