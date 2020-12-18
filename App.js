@@ -4,6 +4,7 @@ import DataService from './services/DataService';
 
 import { View } from 'react-native';
 
+console.log(probs.readItemFromStorage.getItem());
 
 function App() {
   const userId = "123";
@@ -17,4 +18,4 @@ function App() {
   );
 }
 
-export default App;
+export default App; 

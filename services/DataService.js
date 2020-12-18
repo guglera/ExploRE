@@ -9,7 +9,7 @@ import MorningMail from '../models/MorningMail';
 export default class DataService{}
 
 DataService.getPersonData = function(userId) {
-       return new PersonlaData("TestFirstname", "TestLastname");
+       return new PersonlaData("TestFirstname", "TestLastname", '47.259659', '11.400375');
   }
 DataService.getInterest = function(userId) {
     return new Interest("first interest", true);
