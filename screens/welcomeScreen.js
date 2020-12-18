@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { useState, useEffect } from 'react';
 import { useAsyncStorage } from '@react-native-async-storage/async-storage';
+import { Weather } from '../components/Weather.js'
 
 function WelcomeScreen({ navigation }) {
   const [value, setValue] = useState('value');
@@ -61,6 +62,9 @@ function WelcomeScreen({ navigation }) {
           />
           </View>
 
+          <View>
+            <Weather />
+          </View>
         </View>
 
       </ImageBackground>
