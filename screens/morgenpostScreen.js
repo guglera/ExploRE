@@ -7,7 +7,7 @@ function MorgenpostScreen({ navigation }) {
       <View style={styles.container}>
         <Image
                 // source={DataService.validateId("16865045")?DataService.getHotelData("16865045").getMorningMail().getFilePath():null}
-                source={require("../assets/menu.png")}
+                source={require("../assets/morgenpost1.png")}
                 style={styles.image}
             />
     </View >
