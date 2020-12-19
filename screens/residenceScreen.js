@@ -85,7 +85,7 @@ function ResidenceScreen({ navigation }) {
     },
 
     hotelBackground: {
-      flex: 0.5,  
+      flex: 0.7,  
       opacity: 0.9,
       paddingBottom: 20, paddingLeft: 20, flexDirection: "column", justifyContent: 'center',
     },
@@ -119,7 +119,7 @@ function ResidenceScreen({ navigation }) {
       marginHorizontal: 16,
       marginVertical: 10,
       borderRadius: 20,
-      paddingVertical: 47,
+      paddingVertical: 30,
       paddingHorizontal: 20,
     },
   });
