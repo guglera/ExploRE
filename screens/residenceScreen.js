@@ -2,10 +2,23 @@ import { useGestureHandlerRef } from '@react-navigation/stack';
 import * as React from 'react';
 import { StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity, Button, Alert, Linking } from 'react-native';
 import DataService from '../services/DataService';
-
-
+import { useState, useEffect } from 'react';
+import { useAsyncStorage } from '@react-native-async-storage/async-storage';
 
 function ResidenceScreen({ navigation }) {
+  //dieser Part ist noch besser zu machen, globale Variable nur einmal definieren, nicht bei jedem Screen
+  const [value, setValue] = useState('value');
+  const { getItem, setItem } = useAsyncStorage('hotelId');
+
+  const readItemFromStorage = async () => {
+    const item = await getItem();
+    setValue(item);
+  };
+
+  useEffect(() => {
+    readItemFromStorage();
+  }, []);
+
     return (
       <View style={styles.container}>
 
@@ -13,7 +26,7 @@ function ResidenceScreen({ navigation }) {
 
         <View style={{ flex: 1}}>
           <Text style={styles.loremIpsum}>
-            Welcome to your residence {"\n"} Hotel {DataService.validateId("508103379")?DataService.getHotelData("508103379").getName():null}
+            Welcome to your residence {"\n"} {DataService.validateId(value)?DataService.getHotelData(value).getName():null}
         </Text>
         </View>
 
@@ -23,7 +36,7 @@ function ResidenceScreen({ navigation }) {
           <Button
             color="black"
             title="Hotel Website"
-            onPress={() => Linking.openURL(DataService.validateId("508103379")?DataService.getHotelData("508103379").getUrl():null)}
+            onPress={() => Linking.openURL(DataService.validateId(value)?DataService.getHotelData(value).getUrl():null)}
           />
           </View>
 

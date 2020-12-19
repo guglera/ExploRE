@@ -35,7 +35,7 @@ function WelcomeScreen({ navigation }) {
 
         <View style={{ flex: 1}}>
           <Text style={styles.loremIpsum}>
-            Willkommen, im Hotel {DataService.validateId("508103379")?DataService.getHotelData("508103379").getName():null/*value}*/}
+            Willkommen, im {DataService.validateId(value)?DataService.getHotelData(value).getName():null/*value}*/}
         </Text>
         </View>
 
