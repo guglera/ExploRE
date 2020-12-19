@@ -5,6 +5,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { useState, useEffect } from 'react';
 import { useAsyncStorage } from '@react-native-async-storage/async-storage';
 import { Weather } from '../components/Weather.js'
+import DataService from '../services/DataService';
+
 
 function WelcomeScreen({ navigation }) {
   const [value, setValue] = useState('value');
@@ -33,7 +35,7 @@ function WelcomeScreen({ navigation }) {
 
         <View style={{ flex: 1}}>
           <Text style={styles.loremIpsum}>
-            Willkommen, im Hotel {value}
+            Willkommen, im Hotel {DataService.validateId("508103379")?DataService.getHotelData("508103379").getName():null/*value}*/}
         </Text>
         </View>
 

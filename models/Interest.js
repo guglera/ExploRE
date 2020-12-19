@@ -3,12 +3,12 @@ export default class Interest{
         this.name = name;
         this.value = value;
     }
-}
 
-Interest.getName = function() {
+getName = function() {
     return this.name;
 }
 
-Interest.getValue= function() {
+getValue= function() {
     return this.value;
+}
 }

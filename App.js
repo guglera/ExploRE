@@ -5,11 +5,6 @@ import { useAsyncStorage } from '@react-native-async-storage/async-storage';
 import { useState, useEffect } from 'react';
 
 import DataService from './services/DataService';
-import PersonlaData from './models/PersonalData';
-import Interest from './models/Interest';
-import HotelData from './models/HotelData';
-import Menu from './models/Menu';
-import MorningMail from './models/MorningMail';
 
 import { View } from 'react-native';
 
@@ -28,11 +23,12 @@ function App() {
 
   const userId = value;
   console.log("userId: " + userId);
-  // console.log(DataService.getPersonData(userId));
-  // console.log(DataService.getInterest(userId));
-  // console.log(DataService.getHotelData(userId));
-  // console.log(DataService.getMenu(userId));
-  // console.log(DataService.getMorningMail(userId));
+  DataService.validateId(userId)?console.log(DataService.getPersonData(userId).getFullName()):null;
+  DataService.validateId("16865045")?console.log(DataService.getPersonData("16865045").getFullName()):null;
+  DataService.validateId("16865045")?console.log(DataService.getHotelData("16865045").getName()):null;
+  DataService.validateId("508103379")?console.log(DataService.getPersonData("508103379").getFullName()):null;
+  DataService.validateId("508103379")?console.log(DataService.getHotelData("508103379").getName()):null;
+
   return (
     <Navigator passedUid={userId}/>
   );

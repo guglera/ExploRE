@@ -1,0 +1,72 @@
+{
+    "16865045": {
+      "PersonData": {
+        "gender": "Frau",
+        "firstName": "Erika",
+        "lastName": "Mustermann",
+        "guestFrom": "2020-12-10",
+        "guestTo": "2020-12-20",
+        "Interest": [
+          {
+            "name": "Interesse1",
+            "value": true
+          },
+          {
+            "name": "Interesse2",
+            "value": false
+          }
+        ]
+      },
+      "HotelData": {
+        "name": "Hotel Bergfrieden",
+        "url": "https://www.bergfrieden.com/de/beerenhotel/",
+        "location": {
+          "lat": 46.56283887636126,
+          "lon": 10.782008727720367
+        },
+        "Menu": [{
+          "title": "Abendessen",
+          "filePath": "./xy"
+        }],
+        "MorningMail": [{
+          "title": "Morgenpost für Samstag, 19. Dezember",
+          "filePath": "./xy"
+        }]
+      }
+    },
+    "508103379": {
+      "PersonData": {
+        "gender": "Herr",
+        "firstName": "Max",
+        "lastName": "Mustermann",
+        "guestFrom": "2020-12-16",
+        "guestTo": "2020-12-20",
+        "Interest": [
+          {
+            "name": "Interesse1",
+            "value": "true"
+          },
+          {
+            "name": "Interesse2",
+            "value": "false"
+          }
+        ]
+      },
+      "HotelData": {
+        "name": "Quellenhof Luxury Resort Passeier",
+        "url": "https://www.quellenhof.it",
+        "location": {
+          "lat": 46.746922151970885,
+          "lon": 11.206284555557312
+        },
+        "Menu": [{
+          "title": "Abendessen",
+          "filePath": "./xy"
+        }],
+        "MorningMail": [{
+          "title": "Morgenpost für Samstag, 19. Dezember",
+          "filePath": "./xy"
+        }]
+      }
+    }
+  }

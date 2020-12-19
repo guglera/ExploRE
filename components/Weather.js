@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { View, Text, Image, StyleSheet, SafeAreaView } from 'react-native'
 import { localeData } from 'moment'
+import DataService from '../services/DataService';
 
     /*
         For more Info see: https://openweathermap.org/current
@@ -8,8 +9,8 @@ import { localeData } from 'moment'
 
 const weather_api_key = '1eefaf10ed0813c788223cdcf71986be'
 const base_weather_url = 'https://api.openweathermap.org/data/2.5/onecall?'
-const lat = '47.259659'
-const lon = '11.400375'
+const lat = DataService.validateId("508103379")?DataService.getHotelData("508103379").getLat():null;//'47.259659'
+const lon = DataService.validateId("508103379")?DataService.getHotelData("508103379").getLon():null;//'11.400375'
 
 export function Weather () {
     console.log("=============")

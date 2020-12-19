@@ -1,14 +1,13 @@
-export default class MornigMails{
+export default class MorningMails{
     constructor(title, filePath){
-        this.title = title;
         this.filePath = filePath;
     }
-}
 
-MornigMails.getTitle = function() {
+getTitle = function() {
     return this.title;
 }
 
-MornigMails.getFilePath = function() {
+getFilePath = function() {
     return this.filePath;
+}
 }
