@@ -8,22 +8,18 @@ import { useAsyncStorage } from '@react-native-async-storage/async-storage';
 
 
 const colors = {
-  scrollViewBackgrColor: '#f4f6fc',
-  buttonBackgrColor: 
-  //'orange'
-  //'#ffae45'
-  //fav:
-  //'#ffb759'
+  scrollViewBackgrColor: 
+  '#f4f6fc',
+  buttonBackgrColor:
   //'#fbc176'
-  //'#eacc98'
   //'white'
   //'#1f3e51'
   //'#4a6676'
-  //'#5d8195'
   '#73a0ba'
   ,
   buttonTxtColor: '#fff',
-  headlineTxtColor: '#fff',
+  headlineTxtColor: 'white',
+  headlineTxtBackgrColor: 'rgba(115,160,186,0.65)',
   containerColor: '#4263ec',
 };
 
@@ -43,35 +39,37 @@ function ResidenceScreen({ navigation }) {
   // Ergänzung  für's ID auslesen geht bis hier. dann kann man DataService.validateId(value) anstatt DataService.validateId("123456") verwenden
     return (
       <View style={styles.container}>
-        <ImageBackground source={require("../assets/hotelplaceholder.jpg")} style={styles.hotelBackground}>
+        <ImageBackground source={require("../assets/hotelplaceholder.jpg")} style={styles.hotelPicBackground}>
+          <View style={styles.headlineTxtBackground}>
           <Text style={styles.headlineTxt}>
             Welcome to your residence {"\n"}Hotel {DataService.validateId(value)?DataService.getHotelData(value).getName():null}
           </Text>
+          </View>
         </ImageBackground>
 
         <ScrollView style={styles.scrollViewStyle}>
           <TouchableOpacity
             onPress={() => navigation.navigate('Morning Brief')}
             View style={styles.buttons}>
-              <Text style={styles.buttonText}>Morning Brief</Text>
+              <Text style={styles.buttonTxt}>Show me the Morning Brief</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
             onPress={() => navigation.navigate('Menu')}
             View style={styles.buttons}>
-              <Text style={styles.buttonText}>Menu</Text>
+              <Text style={styles.buttonTxt}>Show me the Menu</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
             onPress={() => Linking.openURL(DataService.validateId(value)?DataService.getHotelData(value).getUrl():null)}
             View style={styles.buttons}>
-              <Text style={styles.buttonText}>Hotel Website</Text>
+              <Text style={styles.buttonTxt}>Forward me to the Hotel Website</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
             onPress={() => navigation.navigate('Menu')}
             View style={styles.buttons}>
-              <Text style={styles.buttonText}>Test</Text>
+              <Text style={styles.buttonTxt}>Test my patiente and show me the Menu again</Text>
           </TouchableOpacity>
         </ScrollView>
     </View >
@@ -84,11 +82,24 @@ function ResidenceScreen({ navigation }) {
       backgroundColor: colors.containerColor,
     },
 
-    hotelBackground: {
-      flex: 0.7,  
+    hotelPicBackground: {
+      flex: 0.8,  
       opacity: 0.9,
-      paddingBottom: 20, paddingLeft: 20, flexDirection: "column", justifyContent: 'center',
+      flexDirection: "column", justifyContent: 'center', 
     },
+
+    headlineTxtBackground: {
+      backgroundColor: colors.headlineTxtBackgrColor,
+    },
+
+    headlineTxt: {
+      color: colors.headlineTxtColor,
+      fontSize: 26,
+      lineHeight: 40,
+      paddingTop: 20, paddingBottom: 20, paddingLeft: 25, paddingRight: 25,
+      textAlign: 'center',
+      textShadowRadius: 20,
+    }, 
 
     scrollViewStyle: {
       flex: 1,
@@ -99,18 +110,15 @@ function ResidenceScreen({ navigation }) {
       borderTopLeftRadius: 20,
     },
   
-    buttonText: {
-      fontSize: 24,
+    buttonTxt: {
+      fontSize: 18,
       color: colors.buttonTxtColor,
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center', 
+      textShadowRadius: 10,
     },
   
-    headlineTxt: {
-      color: colors.headlineTxtColor,
-      fontSize: 30,
-    }, 
   
     buttons: {
       flexDirection: 'row', 
@@ -121,6 +129,7 @@ function ResidenceScreen({ navigation }) {
       borderRadius: 20,
       paddingVertical: 30,
       paddingHorizontal: 20,
+      elevation: 5,
     },
   });
 
