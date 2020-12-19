@@ -14,13 +14,13 @@ const colors = {
   //'#ffae45'
   //fav:
   //'#ffb759'
-  '#fbc176'
+  //'#fbc176'
   //'#eacc98'
   //'white'
   //'#1f3e51'
   //'#4a6676'
   //'#5d8195'
-  //'#73a0ba'
+  '#73a0ba'
   ,
   buttonTxtColor: '#fff',
   headlineTxtColor: '#fff',
