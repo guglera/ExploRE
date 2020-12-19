@@ -1,5 +1,8 @@
+import { useGestureHandlerRef } from '@react-navigation/stack';
 import * as React from 'react';
-import { StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity, Button, Alert } from 'react-native';
+import { StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity, Button, Alert, Linking } from 'react-native';
+import DataService from '../services/DataService';
+
 
 
 function ResidenceScreen({ navigation }) {
@@ -10,11 +13,19 @@ function ResidenceScreen({ navigation }) {
 
         <View style={{ flex: 1}}>
           <Text style={styles.loremIpsum}>
-            Welcome to your residence {"\n"} Hotel PLATZHALTER
+            Welcome to your residence {"\n"} Hotel {DataService.validateId("508103379")?DataService.getHotelData("508103379").getName():null}
         </Text>
         </View>
 
         <View style={{ flex: 1}}>
+
+        <View style={styles.buttons}>
+          <Button
+            color="black"
+            title="Hotel Website"
+            onPress={() => Linking.openURL(DataService.validateId("508103379")?DataService.getHotelData("508103379").getUrl():null)}
+          />
+          </View>
 
           <View style={styles.buttons}>
           <Button

@@ -29,6 +29,9 @@ getMenu = function () {
 }
 
 getMorningMail = function () {
-    return this.morningMail
+    return this.morningMail;
+}
+getUrl = function () {
+    return this.url;
 }
 }

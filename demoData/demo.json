@@ -30,7 +30,7 @@
         }],
         "MorningMail": [{
           "title": "Morgenpost für Samstag, 19. Dezember",
-          "filePath": "./xy"
+          "filePath": "../assets/morgenpost1.png"
         }]
       }
     },

@@ -1,12 +1,13 @@
 import * as React from 'react';
 import { StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity, Button, Alert } from 'react-native';
-
+// import DataService from '../services/DataService';
 
 function MorgenpostScreen({ navigation }) {
     return (
       <View style={styles.container}>
         <Image
-                source={require("../assets/morgenpost1.png")}
+                // source={DataService.validateId("16865045")?DataService.getHotelData("16865045").getMorningMail().getFilePath():null}
+                source={require("../assets/menu.png")}
                 style={styles.image}
             />
     </View >
