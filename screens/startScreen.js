@@ -10,7 +10,7 @@ function HomeScreen({ navigation }) {
 
         <View style={{ flex: 2 }}>
           <Text style={styles.loremIpsum}>
-            Willkommen, scannen Sie jetzt Ihren Buchung!
+            Willkommen, scannen Sie jetzt Ihre Buchung!
         </Text>
         </View>
 
