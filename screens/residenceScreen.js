@@ -47,7 +47,8 @@ function ResidenceScreen({ navigation }) {
           </View>
         </ImageBackground>
 
-        <ScrollView style={styles.scrollViewStyle}>
+        <View style={styles.scrollViewStyle}>
+        <ScrollView contentContainerStyle={styles.scrollContainer}> 
           <TouchableOpacity
             onPress={() => navigation.navigate('Morning Brief')}
             View style={styles.buttons}>
@@ -69,9 +70,17 @@ function ResidenceScreen({ navigation }) {
           <TouchableOpacity
             onPress={() => navigation.navigate('Menu')}
             View style={styles.buttons}>
-              <Text style={styles.buttonTxt}>Test my patiente and show me the Menu again</Text>
+              <Text style={styles.buttonTxt}>Test my patience and Show me the Menu again</Text>
           </TouchableOpacity>
+
+          <TouchableOpacity
+            onPress={() => navigation.navigate('Menu')}
+            View style={styles.buttons}>
+              <Text style={styles.buttonTxt}>Test my patience and Show me the Menu again</Text>
+          </TouchableOpacity>
+
         </ScrollView>
+        </View>
     </View >
     );
   }
@@ -104,18 +113,19 @@ function ResidenceScreen({ navigation }) {
     scrollViewStyle: {
       flex: 1,
       marginTop: -16,
-      paddingTop: 10,
       backgroundColor: colors.scrollViewBackgrColor,
       borderTopRightRadius: 20,
       borderTopLeftRadius: 20,
+    },
+
+    scrollContainer: {
+      paddingTop: 10,
+      paddingBottom: 10,
     },
   
     buttonTxt: {
       fontSize: 18,
       color: colors.buttonTxtColor,
-      flexDirection: 'row',
-      justifyContent: 'center',
-      alignItems: 'center', 
       textShadowRadius: 10,
     },
   
@@ -124,11 +134,9 @@ function ResidenceScreen({ navigation }) {
       flexDirection: 'row', 
       justifyContent: 'center',
       backgroundColor: colors.buttonBackgrColor,
-      marginHorizontal: 16,
-      marginVertical: 10,
+      marginVertical: 10, marginHorizontal: 16,
+      paddingVertical: 30, paddingHorizontal: 20,
       borderRadius: 20,
-      paddingVertical: 30,
-      paddingHorizontal: 20,
       elevation: 5,
     },
   });
