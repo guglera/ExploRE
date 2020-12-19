@@ -2,8 +2,11 @@ import { useGestureHandlerRef } from '@react-navigation/stack';
 import * as React from 'react';
 import { StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity, Button, Alert, Linking } from 'react-native';
 import DataService from '../services/DataService';
+
+//Ergänzung für's ID auslesen (readItemFromStorage)
 import { useState, useEffect } from 'react';
 import { useAsyncStorage } from '@react-native-async-storage/async-storage';
+//
 
 function ResidenceScreen({ navigation }) {
   //dieser Part ist noch besser zu machen, globale Variable nur einmal definieren, nicht bei jedem Screen
@@ -18,7 +21,7 @@ function ResidenceScreen({ navigation }) {
   useEffect(() => {
     readItemFromStorage();
   }, []);
-
+  // Ergänzung  für's ID auslesen geht bis hier. dann kann man DataService.validateId(value) anstatt DataService.validateId("123456") verwenden
     return (
       <View style={styles.container}>
 
