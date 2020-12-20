@@ -11,6 +11,7 @@ const weather_api_key = '1eefaf10ed0813c788223cdcf71986be'
 const base_weather_url = 'https://api.openweathermap.org/data/2.5/onecall?'
 const lat = DataService.validateId("508103379")?DataService.getHotelData("508103379").getLat():null;//'47.259659'
 const lon = DataService.validateId("508103379")?DataService.getHotelData("508103379").getLon():null;//'11.400375'
+const language = 'en' //set to 'de' for german
 
 export function Weather () {
     const [current_weather, setCurrentWeather] = useState({temp: 0, icon: '', weather_info: ''})
@@ -21,7 +22,7 @@ export function Weather () {
 
             //get current & daily weather forecast weather
             //make API request by Latitude and longitude
-            const weather_url = `${base_weather_url}lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&units=metric&appid=${weather_api_key}`
+            const weather_url = `${base_weather_url}lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&units=metric&appid=${weather_api_key}&lang=${language}`
             const response = await fetch(weather_url)
             const result = await response.json()       
             //console.log(result)
@@ -38,13 +39,13 @@ export function Weather () {
         <View>
             <View style = {styles.cardContainer}>
                 <View style={styles.weatherCard}>
-                    <Text style = {styles.header}>Aktuelles Wetter</Text>
+                    <Text style = {styles.header}>Current Weather</Text>
                     <Image style={styles.weatherIcon} source={{ uri: iconUrl }} />
                     <Text style = {styles.textPrimary}>{current_weather.weather_info}</Text>
                     <Text style={styles.textPrimary}>{current_weather.temp}°C</Text>
                 </View>     
                 <View style={styles.weatherCard}>
-                    <Text style = {styles.header}>Wetter Morgen</Text>
+                    <Text style = {styles.header}>Weather for Tomorrow</Text>
                     <Image style={styles.weatherIcon} source={{ uri: tomorrow_iconUrl }} />
                     <Text style = {styles.textPrimary}>{weather_forecast.weather_info}</Text>
                     <Text style={styles.textPrimary}>{weather_forecast.temp}°C</Text>
