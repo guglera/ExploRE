@@ -46,7 +46,7 @@ function WelcomeScreen({route, navigation }) {
         </Text>
         </View>
 
-        <View style={{ flex: 3}}>
+        <View style={{ flex: 3,paddingTop: 10, paddingBottom: 10,}}>
         <ScrollView> 
          <TouchableOpacity
             onPress={() => navigation.navigate('Residence')}
