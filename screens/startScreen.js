@@ -19,11 +19,11 @@ function HomeScreen({ navigation }) {
       </View>
 
         <View style={{ flex: 1 }}>
-          {/* <TouchableOpacity
+          <TouchableOpacity
             onPress={() => navigation.navigate('Welcome')}
             View style={styles.buttons}>
               <Text style={styles.buttonTxt}>Login</Text>
-          </TouchableOpacity> */}
+          </TouchableOpacity>
         </View>
 
       </ImageBackground>
