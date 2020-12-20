@@ -69,4 +69,40 @@
         }]
       }
     }
+    ,
+    "": {
+      "PersonData": {
+        "gender": "Frau",
+        "firstName": "Sri",
+        "lastName": "Lankawanka",
+        "guestFrom": "2020-12-16",
+        "guestTo": "2020-12-20",
+        "Interest": [
+          {
+            "name": "Interesse1",
+            "value": "true"
+          },
+          {
+            "name": "Interesse2",
+            "value": "false"
+          }
+        ]
+      },
+      "HotelData": {
+        "name": "The Fortress Resort & Spa Official Site",
+        "url": "https://www.fortressresortandspa.com/",
+        "location": {
+          "lat": 5.986453479720485,
+          "lon": 80.32645637168814
+        },
+        "Menu": [{
+          "title": "Abendessen",
+          "filePath": "../assets/fortressMenu.PNG"
+        }],
+        "MorningMail": [{
+          "title": "Morgenpost für Samstag, 19. Dezember",
+          "filePath": "../assets/fortressMorgenpost.PNG"
+        }]
+      }
+    }
   }
