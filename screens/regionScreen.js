@@ -38,7 +38,7 @@ function RegionScreen({ navigation }) {
    // Ergänzung  für's ID auslesen geht bis hier. dann kann man DataService.validateId(value) anstatt DataService.validateId("123456") verwenden
     return (
       <View style={styles.container}>
-      <ImageBackground source={require("../assets/hotelplaceholder.jpg")} style={styles.hotelPicBackground}>
+      <ImageBackground source={require("../assets/picInnsbruck.jpg")} style={styles.hotelPicBackground}>
         <View style={styles.headlineTxtBackground}>
         <Text style={styles.headlineTxt}>
           ExploRe your region{"\n"}there's a lot to see{DataService.validateId(value)?DataService.getHotelData(value).getName():null}
@@ -47,7 +47,29 @@ function RegionScreen({ navigation }) {
       </ImageBackground>
 
       <View style={styles.scrollViewStyle}>
-      <ScrollView contentContainerStyle={styles.scrollContainer}> 
+      <ScrollView contentContainerStyle={styles.scrollContainer}>
+
+        <TouchableOpacity View style={styles.buttons}>
+            <Text style={styles.buttonTxt}>Blank Dummybutton</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity View style={styles.buttons}>
+            <Text style={styles.buttonTxt}>Blank Dummybutton</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity View style={styles.buttons}>
+            <Text style={styles.buttonTxt}>Blank Dummybutton</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity View style={styles.buttons}>
+            <Text style={styles.buttonTxt}>Blank Dummybutton</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity View style={styles.buttons}>
+            <Text style={styles.buttonTxt}>Blank Dummybutton</Text>
+        </TouchableOpacity>
+
+      
         {/* <TouchableOpacity
           onPress={() => navigation.navigate('Morning Brief')}
           View style={styles.buttons}>
@@ -76,8 +98,8 @@ function RegionScreen({ navigation }) {
           onPress={() => navigation.navigate('Menu')}
           View style={styles.buttons}>
             <Text style={styles.buttonTxt}>Test my patience and Show me the Menu again</Text>
-        </TouchableOpacity> */}
-
+        </TouchableOpacity>
+ */}
       </ScrollView>
       </View>
   </View >
