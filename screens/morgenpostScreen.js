@@ -1,15 +1,20 @@
 import * as React from 'react';
-import { StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity, Button, Alert } from 'react-native';
+import { StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity, Button, Alert, Dimensions } from 'react-native';
+
+import ImageZoom from 'react-native-image-pan-zoom';
 // import DataService from '../services/DataService';
 
 function MorgenpostScreen({ navigation }) {
     return (
       <View style={styles.container}>
-        <Image
-                // source={DataService.validateId("16865045")?DataService.getHotelData("16865045").getMorningMail().getFilePath():null}
-                source={require("../assets/morgenpost1.png")}
-                style={styles.image}
-            />
+
+            <ImageZoom cropWidth={Dimensions.get('window').width}
+                       cropHeight={Dimensions.get('window').height}
+                       imageWidth={200}
+                       imageHeight={200}>
+                <Image style={{width:200, height:200}}
+                       source={require("../assets/morgenpost1.png")}/>
+            </ImageZoom>
     </View >
     );
   }
