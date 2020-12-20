@@ -75,6 +75,7 @@ const styles = StyleSheet.create({
     },
     textPrimary: {
         textAlign: 'center',
+        textTransform: 'capitalize', 
         flex: 1,
         fontSize: 14,
         color: 'white',
