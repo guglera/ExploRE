@@ -45,29 +45,24 @@ function WelcomeScreen({route, navigation }) {
         </View>
 
         <View style={{ flex: 3}}>
-          <View style={styles.buttons}>
-          <Button
-            color="black"
-            title="My Residence"
+
+         <TouchableOpacity
             onPress={() => navigation.navigate('Residence')}
-          />
-          </View>
+            View style={styles.buttons}>
+              <Text style={styles.buttonTxt}>My Residence</Text>
+          </TouchableOpacity>
 
-          <View style={styles.buttons}>
-          <Button
-            color="black"
-            title="My Region" onPress={() => navigation.navigate('Region')}
-          />
-          </View>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('Region')}
+            View style={styles.buttons}>
+              <Text style={styles.buttonTxt}>My Region</Text>
+          </TouchableOpacity>
 
-          <View style={styles.buttons}>
-          <Button
-            color="black"
-            title="Logout" onPress={() => {navigation.navigate('ExploRE');
-              writeItemToStorage("empty")}
-            }
-          />
-          </View>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('ExploRE')}
+            View style={styles.buttons}>
+              <Text style={styles.buttonTxt}>Logout</Text>
+          </TouchableOpacity>
 
           <View style={styles.weatherCards}>
             <Weather />
@@ -81,6 +76,22 @@ function WelcomeScreen({route, navigation }) {
 
   export default WelcomeScreen;
 
+  const colors = {
+    scrollViewBackgrColor: 
+    '#f4f6fc',
+    buttonBackgrColor:
+    //'#fbc176'
+    //'white'
+    //'#1f3e51'
+    //'#4a6676'
+    '#73a0ba'
+    ,
+    buttonTxtColor: '#fff',
+    headlineTxtColor: 'white',
+    headlineTxtBackgrColor: 'rgba(115,160,186,0.65)',
+    containerColor: '#4263ec',
+  };
+
   const styles = StyleSheet.create({
     container: {
       flex: 1,
@@ -92,24 +103,34 @@ function WelcomeScreen({route, navigation }) {
     loremIpsum: {
       textAlign: "center",
       fontSize: 40,
-      marginTop: 0,
-      paddingBottom: 0
+    marginTop: 30,
+    paddingBottom: 0,
+    color: 'white'
     },
   
     image: {
       flex: 1,
       resizeMode: "cover",
       justifyContent: "center",
-      opacity: 0.70
+      opacity: 1
+    },
+  
+    buttonTxt: {
+      fontSize: 18,
+      color: colors.buttonTxtColor,
+      textShadowRadius: 10,
     },
   
     buttons: {
-      width: '90%',
-      height: 50,
-      backgroundColor: '#2196F3',
-      margin: 20
+      flexDirection: 'row', 
+      justifyContent: 'center',
+      backgroundColor: colors.buttonBackgrColor,
+      marginVertical: 10, marginHorizontal: 16,
+      paddingVertical: 30, paddingHorizontal: 20,
+      borderRadius: 20,
+      elevation: 5,
     },
-
+    
     weatherCards: {
       alignItems: 'center',
     }
