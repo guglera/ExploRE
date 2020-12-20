@@ -10,9 +10,9 @@ function MorgenpostScreen({ navigation }) {
 
             <ImageZoom cropWidth={Dimensions.get('window').width}
                        cropHeight={Dimensions.get('window').height}
-                       imageWidth={200}
-                       imageHeight={200}>
-                <Image style={{width:200, height:200}}
+                       imageWidth={400}
+                       imageHeight={400}>
+                <Image style={{width:400, height:400}}
                        source={require("../assets/morgenpost1.png")}/>
             </ImageZoom>
     </View >
