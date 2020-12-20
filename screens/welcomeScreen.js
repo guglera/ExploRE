@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import { useAsyncStorage } from '@react-native-async-storage/async-storage';
 import { Weather } from '../components/Weather.js'
 import DataService from '../services/DataService';
+import {ScrollView} from 'react-native-gesture-handler';
 
 
 function WelcomeScreen({route, navigation }) {
@@ -39,13 +40,14 @@ function WelcomeScreen({route, navigation }) {
       <ImageBackground source={require("../assets/jacuzzi_ori.jpg")} style={styles.image} resizeMode="stretch">
 
         <View style={{ flex: 1}}>
-          <Text style={styles.loremIpsum}>
+
+        <Text style={styles.loremIpsum}>
             Willkommen, im {DataService.validateId(value)?DataService.getHotelData(value).getName():null/*value}*/}
         </Text>
         </View>
 
         <View style={{ flex: 3}}>
-
+        <ScrollView> 
          <TouchableOpacity
             onPress={() => navigation.navigate('Residence')}
             View style={styles.buttons}>
@@ -67,6 +69,8 @@ function WelcomeScreen({route, navigation }) {
           <View style={styles.weatherCards}>
             <Weather />
           </View>
+
+          </ScrollView> 
         </View>
 
       </ImageBackground>
