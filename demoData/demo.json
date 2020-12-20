@@ -70,7 +70,7 @@
       }
     }
     ,
-    "": {
+    "508103380": {
       "PersonData": {
         "gender": "Frau",
         "firstName": "Sri",
@@ -102,6 +102,78 @@
         "MorningMail": [{
           "title": "Morning Mail",
           "filePath": "../assets/fortressMorgenpost.PNG"
+        }]
+      }
+    }
+    ,
+    "508103381": {
+      "PersonData": {
+        "gender": "Frau",
+        "firstName": "Gast",
+        "lastName": "Tux",
+        "guestFrom": "2020-12-16",
+        "guestTo": "2020-12-20",
+        "Interest": [
+          {
+            "name": "Interesse1",
+            "value": "true"
+          },
+          {
+            "name": "Interesse2",
+            "value": "false"
+          }
+        ]
+      },
+      "HotelData": {
+        "name": "Alpin Spa Hotel Tuxerhof",
+        "url": "https://www.tuxerhof.at/de/",
+        "location": {
+          "lat": 47.16323457649541,
+          "lon": 11.744855649478506
+        },
+        "Menu": [{
+          "title": "Menu",
+          "filePath": "../assets/tuxerhof-menu.jpg"
+        }],
+        "MorningMail": [{
+          "title": "Morning Mail",
+          "filePath": "../assets/tuxerhof-morgenpost.jpg"
+        }]
+      }
+    }
+    ,
+    "508103382": {
+      "PersonData": {
+        "gender": "Frau",
+        "firstName": "vname",
+        "lastName": "nname",
+        "guestFrom": "2020-12-16",
+        "guestTo": "2020-12-20",
+        "Interest": [
+          {
+            "name": "Interesse1",
+            "value": "true"
+          },
+          {
+            "name": "Interesse2",
+            "value": "false"
+          }
+        ]
+      },
+      "HotelData": {
+        "name": "5-Sterne Hotel DAS CENTRAL ALPINE.LUXURY.LIFE",
+        "url": "https://www.central-soelden.com/",
+        "location": {
+          "lat": 46.96713862602553,
+          "lon": 11.008764998500148
+        },
+        "Menu": [{
+          "title": "Menu",
+          "filePath": "../assets/central-menu.PNG"
+        }],
+        "MorningMail": [{
+          "title": "Morning Mail",
+          "filePath": "../assets/central-morgepost.PNG"
         }]
       }
     }
