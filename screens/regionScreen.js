@@ -10,7 +10,7 @@ function RegionScreen({ navigation }) {
 
   <View style={{ flex: 2}}>
     <Text style={styles.loremIpsum}>
-      Lernen Sie Ihre Region kennen         
+      Lernen und Erleben Sie Ihre Region        
   </Text>
   </View>
 
