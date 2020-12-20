@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
         height: 200,
         width: '45%',
         alignItems: 'center',
-        backgroundColor: '#2196F3',
+        backgroundColor: '#73a0ba',
         elevation: 15,
     },
     cardContainer: {
