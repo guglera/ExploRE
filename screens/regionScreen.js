@@ -16,11 +16,11 @@ function RegionScreen({ navigation }) {
 
   <View style={{ flex: 1.5}}>
 
-  <TouchableOpacity
-            onPress={() => navigation.navigate('ExploRE')}
-            View style={styles.buttons}>
-              <Text style={styles.buttonTxt}>Logout</Text>
-          </TouchableOpacity>
+    {/* <TouchableOpacity
+        onPress={() => navigation.navigate('ExploRE')}
+        View style={styles.buttons}>
+        <Text style={styles.buttonTxt}>Logout</Text>
+    </TouchableOpacity> */}
 
   </View>
 
