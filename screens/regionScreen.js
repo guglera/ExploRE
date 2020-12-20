@@ -41,7 +41,9 @@ function RegionScreen({ navigation }) {
       <ImageBackground source={require("../assets/picInnsbruck.jpg")} style={styles.hotelPicBackground}>
         <View style={styles.headlineTxtBackground}>
         <Text style={styles.headlineTxt}>
-          ExploRe your region{"\n"}there's a lot to see{DataService.validateId(value)?DataService.getHotelData(value).getName():null}
+          ExploRe your region {/* {DataService.validateId(value)?DataService.getPersonData(value).getFirstName():null} */}
+          {"\n"}there's a lot to see
+          
         </Text>
         </View>
       </ImageBackground>
