@@ -9,10 +9,11 @@ function MenuScreen({ navigation }) {
 
             <ImageZoom cropWidth={Dimensions.get('window').width}
                        cropHeight={Dimensions.get('window').height}
-                       imageWidth={400}
-                       imageHeight={400}>
-                <Image style={{width:400, height:400}}
-                       source={require("../assets/menu.png")}/>
+                       imageWidth={Dimensions.get('screen').width}
+                       imageHeight={Dimensions.get('screen').height}>
+                <Image style={styles.image}
+                       source={require("../assets/menu.png")}
+                       resizeMode='contain'/>
             </ImageZoom>
     </View >
     );
@@ -21,16 +22,15 @@ function MenuScreen({ navigation }) {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#fff',
+      flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
+      backgroundColor: '#fff',
     },
   
     image: {
-      alignItems: 'center',
-      justifyContent: 'center',
-      width: '100%',
-      height: 520
+      width: Dimensions.get('screen').width,
+      height: Dimensions.get('screen').height,
     },  
   });
 

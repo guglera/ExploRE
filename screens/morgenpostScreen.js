@@ -10,10 +10,12 @@ function MorgenpostScreen({ navigation }) {
 
             <ImageZoom cropWidth={Dimensions.get('window').width}
                        cropHeight={Dimensions.get('window').height}
-                       imageWidth={400}
-                       imageHeight={400}>
-                <Image style={{width:400, height:400}}
-                       source={require("../assets/morgenpost1.png")}/>
+                       imageWidth={Dimensions.get('screen').width}
+                       imageHeight={Dimensions.get('screen').height}>
+                <Image style = {styles.image}
+                       source={require("../assets/morgenpost1.png")}
+                       resizeMode='contain'
+                       />
             </ImageZoom>
     </View >
     );
@@ -22,16 +24,15 @@ function MorgenpostScreen({ navigation }) {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#fff',
+      flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
+      backgroundColor: '#fff',
     },
   
     image: {
-      alignItems: 'center',
-      justifyContent: 'center',
-      height: 400,
-      width: '100%'
+      width: Dimensions.get('screen').width,
+      height: Dimensions.get('screen').height,
     },  
   });
 
