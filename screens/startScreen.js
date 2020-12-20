@@ -19,19 +19,33 @@ function HomeScreen({ navigation }) {
       </View>
 
         <View style={{ flex: 1 }}>
-          <View style={styles.buttons}>
-            <Button
-              color="black"
-              title="LOGIN"
-              onPress={() => navigation.navigate('Welcome')}
-            />
-          </View>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('Welcome')}
+            View style={styles.buttons}>
+              <Text style={styles.buttonTxt}>Login</Text>
+          </TouchableOpacity>
         </View>
 
       </ImageBackground>
     </View >
   );
 }
+
+const colors = {
+  scrollViewBackgrColor: 
+  '#f4f6fc',
+  buttonBackgrColor:
+  //'#fbc176'
+  //'white'
+  //'#1f3e51'
+  //'#4a6676'
+  '#73a0ba'
+  ,
+  buttonTxtColor: '#fff',
+  headlineTxtColor: 'white',
+  headlineTxtBackgrColor: 'rgba(115,160,186,0.65)',
+  containerColor: '#4263ec',
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -44,8 +58,9 @@ const styles = StyleSheet.create({
   loremIpsum: {
     textAlign: "center",
     fontSize: 40,
-    marginTop: 0,
-    paddingBottom: 0
+    marginTop: 30,
+    paddingBottom: 0,
+    color: 'white'
   },
 
   image: {
@@ -53,14 +68,7 @@ const styles = StyleSheet.create({
     resizeMode: "cover",
     justifyContent: "center",
     alignItems: "center",
-    opacity: 0.70
-  },
-
-  buttons: {
-    width: '90%',
-    height: 50,
-    backgroundColor: '#2196F3',
-    margin: 20
+    opacity: 1
   },
 
   qrScanner: {
@@ -68,6 +76,22 @@ const styles = StyleSheet.create({
     height: 300,
     backgroundColor: 'lightgray',
     alignItems: 'center'
+  },
+
+  buttonTxt: {
+    fontSize: 18,
+    color: colors.buttonTxtColor,
+    textShadowRadius: 10,
+  },
+
+  buttons: {
+    flexDirection: 'row', 
+    justifyContent: 'center',
+    backgroundColor: colors.buttonBackgrColor,
+    marginVertical: 10, marginHorizontal: 16,
+    paddingVertical: 30, paddingHorizontal: 20,
+    borderRadius: 20,
+    elevation: 5,
   },
 
 });
