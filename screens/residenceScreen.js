@@ -42,7 +42,7 @@ function ResidenceScreen({ navigation }) {
         <ImageBackground source={require("../assets/hotelplaceholder.jpg")} style={styles.hotelPicBackground}>
           <View style={styles.headlineTxtBackground}>
           <Text style={styles.headlineTxt}>
-            Welcome to your residence {"\n"}Hotel {DataService.validateId(value)?DataService.getHotelData(value).getName():null}
+            ExploRe your residence {"\n"}{DataService.validateId(value)?DataService.getHotelData(value).getName():null}
           </Text>
           </View>
         </ImageBackground>
