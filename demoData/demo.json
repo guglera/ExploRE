@@ -89,18 +89,18 @@
         ]
       },
       "HotelData": {
-        "name": "The Fortress Resort & Spa Official Site",
+        "name": "The Fortress Resort & Spa",
         "url": "https://www.fortressresortandspa.com/",
         "location": {
           "lat": 5.986453479720485,
           "lon": 80.32645637168814
         },
         "Menu": [{
-          "title": "Abendessen",
+          "title": "Menu",
           "filePath": "../assets/fortressMenu.PNG"
         }],
         "MorningMail": [{
-          "title": "Morgenpost für Samstag, 19. Dezember",
+          "title": "Morning Mail",
           "filePath": "../assets/fortressMorgenpost.PNG"
         }]
       }
