@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity, Button, Alert } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, useLinkProps } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { useState, useEffect } from 'react';
 import { useAsyncStorage } from '@react-native-async-storage/async-storage';
@@ -8,7 +8,8 @@ import { Weather } from '../components/Weather.js'
 import DataService from '../services/DataService';
 
 
-function WelcomeScreen({ navigation }) {
+function WelcomeScreen({route, navigation }) {
+  
   const [value, setValue] = useState('value');
   const { getItem, setItem } = useAsyncStorage('hotelId');
 
@@ -24,9 +25,13 @@ function WelcomeScreen({ navigation }) {
 
   useEffect(() => {
     readItemFromStorage();
-  }, []);  
-
+  }, []);
   
+
+  /*
+  const welcomeUID = route.params.welcomeUID
+  console.log("WelcomeUID: " + welcomeUID);
+  */
 
     return (
       <View style={styles.container}>

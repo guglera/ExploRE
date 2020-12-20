@@ -1,5 +1,6 @@
 import * as React from 'react';
 import  Navigator from "./navigator.js";
+import LoadingScreen from "./screens/loading.js";
 
 import { useAsyncStorage } from '@react-native-async-storage/async-storage';
 import { useState, useEffect } from 'react';
@@ -10,11 +11,13 @@ import { View } from 'react-native';
 
 function App() {
   const [value, setValue] = useState('value');
+  const [loading, setLoading] = useState(true);
   const { getItem, setItem } = useAsyncStorage('hotelId');
 
   const readItemFromStorage = async () => {
     const item = await getItem();
     setValue(item);
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -30,7 +33,7 @@ function App() {
   DataService.validateId("508103379")?console.log(DataService.getHotelData("508103379").getName()):null;
 
   return (
-    <Navigator passedUid={userId}/>
+    (loading === true) ? <LoadingScreen /> : <Navigator appUID={userId}/>
   );
 }
 

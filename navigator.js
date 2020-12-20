@@ -1,27 +1,24 @@
-import * as React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import * as React from 'react'
+import { NavigationContainer } from '@react-navigation/native'
+import { createStackNavigator } from '@react-navigation/stack'
 
-import { useAsyncStorage } from '@react-native-async-storage/async-storage';
-
-import HomeScreen from "./screens/startScreen.js";
-import Landingpage from "./screens/landingpage.js";
-import WelcomeScreen from "./screens/welcomeScreen.js";
+import HomeScreen from "./screens/startScreen.js"
+import WelcomeScreen from "./screens/welcomeScreen.js"
 import RegionScreen from "./screens/regionScreen.js"
 import ResidenceScreen from "./screens/residenceScreen.js"
 import MorgenpostScreen from "./screens/morgenpostScreen.js"
 import MenuScreen from "./screens/menuScreen.js"
+import QrScanner from "./components/QrScanner.js"
 
 const Stack = createStackNavigator();
 
-function Navigator({passedUID}) {
-  
+const Navigator = (props) => {
+  const navigatorUID = props.appUID
 
-  const { getItem, setItem } = useAsyncStorage('hotelId');
+  console.log("navigatorUID: " + navigatorUID);
 
-  const readItemFromStorage = async () => {
-    const item = await getItem();
-    if (item === "empty") {
+  const selectStartScreen = () => {
+    if (navigatorUID === "empty") {
       return "Explore";
     } else {
     return "Welcome";
@@ -30,10 +27,10 @@ function Navigator({passedUID}) {
 
   return(
       <NavigationContainer>
-      <Stack.Navigator initialRouteName={readItemFromStorage()}>
+      <Stack.Navigator initialRouteName={selectStartScreen()}>
         <Stack.Screen name="ExploRE" component={HomeScreen} />
-        <Stack.Screen name ="Scan" component={Landingpage} />
-        <Stack.Screen name="Welcome" component={WelcomeScreen} initialParams={{passedUID}}/>
+        <Stack.Screen name ="Scan" component={QrScanner} />
+        <Stack.Screen name="Welcome" component={WelcomeScreen} />
         <Stack.Screen name="Region" component={RegionScreen} />
         <Stack.Screen name="Residence" component={ResidenceScreen} />
         <Stack.Screen name="Morning Brief" component={MorgenpostScreen} />

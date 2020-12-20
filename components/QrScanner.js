@@ -1,16 +1,19 @@
-import React from 'react';
+import * as React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { useState, useEffect } from 'react';
 import { Button } from 'react-native';
 import { BarCodeScanner, BarCodeScannerResult } from 'expo-barcode-scanner';
 import * as asyncStorage from '@react-native-async-storage/async-storage';
+import { useNavigation } from '@react-navigation/native';
 
-export function QrScanner () {
+export function QrScanner ({navigation}) {
   const [hasPermission, setHasPermission] = useState(null);
   const [scanned, setScanned] = useState(false);
 
   const [value, setValue] = useState('value');
   const { getItem, setItem } = asyncStorage.useAsyncStorage('hotelId');
+
+  const naviqr = useNavigation();
 
   const readItemFromStorage = async () => {
     const item = await getItem();
@@ -36,8 +39,9 @@ export function QrScanner () {
 
   const handleBarCodeScanned = ({ type, data }) => {
     setScanned(true);
-    alert(`Bar code with type ${type} and data ${data} has been scanned!`);
+    // alert(`Bar code with type ${type} and data ${data} has been scanned!`);
     writeItemToStorage(`${data}`);
+    naviqr.navigate("Welcome", {welcomeUID: `${data}`});
   };
 
   if (hasPermission === null) {
@@ -66,3 +70,5 @@ export const styles = StyleSheet.create({
       justifyContent: 'center',
     },
   });
+
+  export default QrScanner;
