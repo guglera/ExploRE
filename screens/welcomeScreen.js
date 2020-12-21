@@ -61,7 +61,16 @@ function WelcomeScreen({route, navigation }) {
           </TouchableOpacity>
 
           <TouchableOpacity
-            onPress={() => navigation.navigate('ExploRE')}
+            onPress={() =>
+              navigation.reset({
+                index: 0,
+                routes: [
+                  {
+                    name: 'ExploRE'
+                  },
+                ],
+              })
+            }
             View style={styles.buttons}>
               <Text style={styles.buttonTxt}>Logout</Text>
           </TouchableOpacity>
