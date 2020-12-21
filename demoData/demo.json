@@ -26,7 +26,7 @@
         },
         "Menu": [{
           "title": "Abendessen",
-          "filePath": "../assets/bergfriedenMenu.PNG"
+          "filePath": "../assets/bergfriedenMenu.png"
         }],
         "MorningMail": [{
           "title": "Morgenpost für Samstag, 19. Dezember",
@@ -97,11 +97,11 @@
         },
         "Menu": [{
           "title": "Menu",
-          "filePath": "../assets/fortressMenu.PNG"
+          "filePath": "../assets/fortressMenu.png"
         }],
         "MorningMail": [{
           "title": "Morning Mail",
-          "filePath": "../assets/fortressMorgenpost.PNG"
+          "filePath": "../assets/fortressMorgenpost.png"
         }]
       }
     }
@@ -169,11 +169,11 @@
         },
         "Menu": [{
           "title": "Menu",
-          "filePath": "../assets/central-menu.PNG"
+          "filePath": "../assets/central-menu.png"
         }],
         "MorningMail": [{
           "title": "Morning Mail",
-          "filePath": "../assets/central-morgepost.PNG"
+          "filePath": "../assets/central-morgepost.png"
         }]
       }
     }
