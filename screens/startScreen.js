@@ -4,10 +4,10 @@ import {QrScanner} from '../components/QrScanner';
 
 function HomeScreen({ navigation }) {
   return (
+
     <View style={styles.container}>
 
       <ImageBackground source={require("../assets/jacuzzi_ori.jpg")} style={styles.image} resizeMode="stretch">
-
         <View style={{ flex: 2 }}>
           <Text style={styles.loremIpsum}>
             Willkommen, scannen Sie jetzt Ihre Buchung!
@@ -20,7 +20,16 @@ function HomeScreen({ navigation }) {
 
         <View style={{ flex: 1 }}>
           <TouchableOpacity
-            onPress={() => navigation.navigate('Welcome')}
+            onPress={() =>
+              navigation.reset({
+                index: 0,
+                routes: [
+                  {
+                    name: 'Welcome'
+                  },
+                ],
+              })
+            }
             View style={styles.buttons}>
               <Text style={styles.buttonTxt}>Login</Text>
           </TouchableOpacity>
