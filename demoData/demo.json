@@ -26,11 +26,11 @@
         },
         "Menu": [{
           "title": "Abendessen",
-          "filePath": "./xy"
+          "filePath": "../assets/bergfriedenMenu.PNG"
         }],
         "MorningMail": [{
           "title": "Morgenpost für Samstag, 19. Dezember",
-          "filePath": "../assets/morgenpost1.png"
+          "filePath": "../assets/bergfriedenMorgenpost.png"
         }]
       }
     },
@@ -61,7 +61,7 @@
         },
         "Menu": [{
           "title": "Abendessen",
-          "filePath": "./xy"
+          "filePath": "../assets/quellenhofMenu.png"
         }],
         "MorningMail": [{
           "title": "Morgenpost für Samstag, 19. Dezember",
@@ -109,7 +109,7 @@
     "508103381": {
       "PersonData": {
         "gender": "Frau",
-        "firstName": "Gast",
+        "firstName": "Elisabeth",
         "lastName": "Tux",
         "guestFrom": "2020-12-16",
         "guestTo": "2020-12-20",
