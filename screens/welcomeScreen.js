@@ -7,6 +7,7 @@ import { useAsyncStorage } from '@react-native-async-storage/async-storage';
 import { Weather } from '../components/Weather.js'
 import DataService from '../services/DataService';
 import {ScrollView} from 'react-native-gesture-handler';
+import colors from '../constants/colors.js'
 
 
 function WelcomeScreen({route, navigation }) {
@@ -91,22 +92,6 @@ function WelcomeScreen({route, navigation }) {
   }
 
   export default WelcomeScreen;
-
-  const colors = {
-    scrollViewBackgrColor: 
-    '#f4f6fc',
-    buttonBackgrColor:
-    //'#fbc176'
-    //'white'
-    //'#1f3e51'
-    //'#4a6676'
-    '#73a0ba'
-    ,
-    buttonTxtColor: '#fff',
-    headlineTxtColor: 'white',
-    headlineTxtBackgrColor: 'rgba(115,160,186,0.65)',
-    containerColor: '#4263ec',
-  };
 
   const styles = StyleSheet.create({
     container: {

@@ -31,6 +31,7 @@ export function Weather () {
         })();
     }, []);
 
+    console.log(current_weather)
    
     const iconUrl = `https://openweathermap.org/img/wn/${current_weather.icon}@4x.png`
     const tomorrow_iconUrl = `https://openweathermap.org/img/wn/${weather_forecast.icon}@4x.png`
