@@ -42,7 +42,10 @@ function WelcomeScreen({route, navigation }) {
         <View style={{ flex: 1}}>
 
         <Text style={styles.loremIpsum}>
-            Willkommen, im {DataService.validateId(value)?DataService.getHotelData(value).getName():null/*value}*/}
+            Welcome {DataService.validateId(value)?DataService.getPersonData(value).getFirstName():null/*value}*/} 
+            {"\n"}
+            {"\n"}are you ready to ExploRe
+            {"\n"}your residence and your region?
         </Text>
         </View>
 
@@ -115,7 +118,7 @@ function WelcomeScreen({route, navigation }) {
   
     loremIpsum: {
       textAlign: "center",
-      fontSize: 40,
+      fontSize: 30,
     marginTop: 30,
     paddingBottom: 0,
     color: 'white'
