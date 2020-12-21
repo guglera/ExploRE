@@ -42,9 +42,9 @@ function WelcomeScreen({route, navigation }) {
         <View style={{ flex: 1}}>
 
         <Text style={styles.loremIpsum}>
-            Welcome {DataService.validateId(value)?DataService.getPersonData(value).getFirstName():null/*value}*/} 
+            Welcome {DataService.validateId(value)?DataService.getPersonData(value).getFirstName():null/*value}*/}!
             {"\n"}
-            {"\n"}are you ready to ExploRe
+            {"\n"}Are you ready to ExploRe
             {"\n"}your residence and your region?
         </Text>
         </View>
