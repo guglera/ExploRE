@@ -3,38 +3,22 @@ import * as React from 'react';
 import { StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity, Button, Alert, Linking } from 'react-native';
 import DataService from '../services/DataService';
 import {ScrollView} from 'react-native-gesture-handler';
-import { useState, useEffect, useContext } from 'react'; //für Context Funktion: usecontext
-import { useAsyncStorage } from '@react-native-async-storage/async-storage'; // alte Varinte
+import { useState, useEffect, useContext } from 'react'; 
+import { useAsyncStorage } from '@react-native-async-storage/async-storage'; 
 import colors from '../constants/colors.js'
-import { AuthContext } from '../contexts/authContext';//für Context Funktion
+import { AuthContext } from '../contexts/authContext';
 import images from '../services/Images.js'
 
 
 function ResidenceScreen({ navigation }) {
-//dieser Part ist noch besser zu machen, globale Variable nur einmal definieren, nicht bei jedem Screen
- /*
-  const [value, setValue] = useState('value');
-  const { getItem, setItem } = useAsyncStorage('hotelId');
+  const globalUID = useContext(AuthContext); 
 
-  const readItemFromStorage = async () => {
-    const item = await getItem();
-    setValue(item);
-  };
-
-  useEffect(() => {
-    readItemFromStorage();
-  }, []);
-  */
-  // Ergänzung  für's ID auslesen geht bis hier. dann kann man DataService.validateId(value) anstatt DataService.validateId("123456") verwenden
-
-  const globalUID = useContext(AuthContext); //für Context Funktion
-  let resBackgPic = DataService.validateId(globalUID.user.username)?DataService.getHotelData(globalUID.user.username).getBackgPic():null;
-  let morgenpost = DataService.validateId(globalUID.user.username)?DataService.getHotelData(globalUID.user.username).getMorningMail():null;
+  const resBackgPic = DataService.validateId(globalUID.user.username)?DataService.getHotelData(globalUID.user.username).getBackgPic():null;
+  
 
 
   console.log("Globale ID: " + globalUID.user.username);
   console.log("Background Picture: " + resBackgPic);
-  console.log("Morgenpost: " + morgenpost);
 
     return (
       <View style={styles.container}>
