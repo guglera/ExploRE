@@ -9,33 +9,39 @@ import DataService from '../services/DataService';
 
 const weather_api_key = '1eefaf10ed0813c788223cdcf71986be'
 const base_weather_url = 'https://api.openweathermap.org/data/2.5/onecall?'
-const lat = DataService.validateId("508103379")?DataService.getHotelData("508103379").getLat():null;//'47.259659'
-const lon = DataService.validateId("508103379")?DataService.getHotelData("508103379").getLon():null;//'11.400375'
+
 const language = 'en' //set to 'de' for german
 
-export function Weather () {
+
+
+export function Weather (props) {
     const [current_weather, setCurrentWeather] = useState({temp: 0, icon: '', weather_info: ''})
     const [weather_forecast, setWeatherForecast] = useState({temp: 0, icon: '', weather_info: ''})
 
+    const weather_url = `${base_weather_url}lat=${props.lat}&lon=${props.lon}&exclude=minutely,hourly,alerts&units=metric&appid=${weather_api_key}&lang=${language}`
+
+    //get current & daily weather forecast weather
+    //make API request by Latitude and longitude
     useEffect(() => {    
-        (async () => { 
-
-            //get current & daily weather forecast weather
-            //make API request by Latitude and longitude
-            const weather_url = `${base_weather_url}lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&units=metric&appid=${weather_api_key}&lang=${language}`
-            const response = await fetch(weather_url)
-            const result = await response.json()       
-            //console.log(result)
-            setCurrentWeather({temp : result.current.temp, icon: result.current.weather[0].icon, weather_info: result.current.weather[0].description})
-            setWeatherForecast({temp: result.daily[0].temp.day, icon: result.daily[0].weather[0].icon, weather_info: result.daily[0].weather[0].main})
+        (async () => {       
+            try {
+                console.log('lon: ' + props.lon)
+                console.log('lat: ' + props.lat)
+                const response = await fetch(weather_url)
+                const result = await response.json()    
+                setCurrentWeather({temp : result.current.temp, icon: result.current.weather[0].icon, weather_info: result.current.weather[0].description})
+                setWeatherForecast({temp: result.daily[0].temp.day, icon: result.daily[0].weather[0].icon, weather_info: result.daily[0].weather[0].main})           
+            } catch (error) {
+                console.error(error)
+            }       
         })();
-    }, []);
+    }, [props.lon, props.lat]);
 
-    console.log(current_weather)
+    
    
     const iconUrl = `https://openweathermap.org/img/wn/${current_weather.icon}@4x.png`
     const tomorrow_iconUrl = `https://openweathermap.org/img/wn/${weather_forecast.icon}@4x.png`
-
+    
     return (
         <View>
             <View style = {styles.cardContainer}>

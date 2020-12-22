@@ -50,6 +50,9 @@ function WelcomeScreen({route, navigation }) {
   
   console.log("WelcomeScreen ID: " + value);
 
+  //get the Location of the Hotel and give to the Weather Component
+  const lat = DataService.validateId(value)?DataService.getHotelData(value).getLat():null;//'47.259659'
+  const lon = DataService.validateId(value)?DataService.getHotelData(value).getLon():null;//'11.400375'
 
     return (
       <View style={styles.container}>
@@ -98,7 +101,7 @@ function WelcomeScreen({route, navigation }) {
           </TouchableOpacity>
 
           <View style={styles.weatherCards}>
-            <Weather />
+            <Weather lat = {lat} lon = {lon}/>
           </View>
 
           </ScrollView> 
