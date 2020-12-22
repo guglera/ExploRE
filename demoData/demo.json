@@ -20,6 +20,7 @@
       "HotelData": {
         "name": "Hotel Bergfrieden",
         "url": "https://www.bergfrieden.com/de/beerenhotel/",
+        "backgpic": "../assets/bergfrieden-backgpic.jpg",
         "location": {
           "lat": 46.56283887636126,
           "lon": 10.782008727720367
@@ -55,6 +56,7 @@
       "HotelData": {
         "name": "Quellenhof Luxury Resort Passeier",
         "url": "https://www.quellenhof.it",
+        "backgpic": "../assets/quellenhof-backgpic.jpg",
         "location": {
           "lat": 46.746922151970885,
           "lon": 11.206284555557312
@@ -91,6 +93,7 @@
       "HotelData": {
         "name": "The Fortress Resort & Spa",
         "url": "https://www.fortressresortandspa.com/",
+        "backgpic": "../assets/quellenhof-backgpic.jpg",        
         "location": {
           "lat": 5.986453479720485,
           "lon": 80.32645637168814
@@ -127,6 +130,7 @@
       "HotelData": {
         "name": "Alpin Spa Hotel Tuxerhof",
         "url": "https://www.tuxerhof.at/de/",
+        "backgpic": "../assets/tuxerhof-backgpic.jpg",        
         "location": {
           "lat": 47.16323457649541,
           "lon": 11.744855649478506
@@ -163,6 +167,7 @@
       "HotelData": {
         "name": "5-Sterne Hotel DAS CENTRAL ALPINE.LUXURY.LIFE",
         "url": "https://www.central-soelden.com/",
+        "backgpic": "../assets/central-backgpic1.png",         
         "location": {
           "lat": 46.96713862602553,
           "lon": 11.008764998500148
