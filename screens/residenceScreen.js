@@ -27,19 +27,13 @@ function ResidenceScreen({ navigation }) {
   // Ergänzung  für's ID auslesen geht bis hier. dann kann man DataService.validateId(value) anstatt DataService.validateId("123456") verwenden
 
   const globalUID = useContext(AuthContext); //für Context Funktion
-  let resBackgPic = DataService.validateId(globalUID.user.username)?DataService.getHotelData(globalUID.user.username).getBackgPic():null;
-  let morgenpost = DataService.validateId(globalUID.user.username)?DataService.getHotelData(globalUID.user.username).getMorningMail():null;
+  const resBackgPic = DataService.validateId(globalUID.user.username)?DataService.getHotelData(globalUID.user.username).getBackgPic():null;
+  const morgenpost = DataService.validateId(globalUID.user.username)?DataService.getHotelData(globalUID.user.username).getMorningMail():null;
 
   console.log("Globale ID: " + globalUID.user.username);
   console.log("Background Picture: " + resBackgPic);
   console.log("Morgenpost: " + morgenpost);
 
-//        <ImageBackground source={require("../assets/hotelplaceholder.jpg")} style={styles.hotelPicBackground}>
-//        <ImageBackground source={require(resBackgPic)} style={styles.hotelPicBackground}>
-//        <ImageBackground source={require("../assets/bergfrieden-backgpic.jpg")} style={styles.hotelPicBackground}>
-//        <ImageBackground source={require({DataService.validateId(globalUID.user.username)?DataService.getHotelData(globalUID.user.username).getBackgPic():null})} style={styles.hotelPicBackground}>
-//andik   <ImageBackground source={require(DataService.validateId(globalUID.user.username)?DataService.getHotelData(globalUID.user.username).getBackgPic():null)} style={styles.hotelPicBackground}>
-//sandra  <ImageBackground source={DataService.validateId(globalUID.user.username)?DataService.getHotelData(globalUID.user.username).getBackgPic():null} style={styles.hotelPicBackground}>
 
 
     return (

@@ -24,18 +24,19 @@ export function Weather (props) {
     //make API request by Latitude and longitude
     useEffect(() => {    
         (async () => {       
-            try {
+            try {         
                 console.log('lon: ' + props.lon)
                 console.log('lat: ' + props.lat)
                 const response = await fetch(weather_url)
                 const result = await response.json()    
                 setCurrentWeather({temp : result.current.temp, icon: result.current.weather[0].icon, weather_info: result.current.weather[0].description})
-                setWeatherForecast({temp: result.daily[0].temp.day, icon: result.daily[0].weather[0].icon, weather_info: result.daily[0].weather[0].main})           
+                setWeatherForecast({temp: result.daily[0].temp.day, icon: result.daily[0].weather[0].icon, weather_info: result.daily[0].weather[0].main})  
+                console.log('temp: ' + result.current.temp)        
             } catch (error) {
                 console.error(error)
             }       
         })();
-    }, [props.lon, props.lat]);
+    }, [props]);
 
     
    
