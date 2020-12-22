@@ -3,14 +3,14 @@ import * as React from 'react';
 import { StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity, Button, Alert, Linking } from 'react-native';
 import DataService from '../services/DataService';
 import {ScrollView} from 'react-native-gesture-handler';
-import { useState, useEffect, useContext } from 'react';
-import { useAsyncStorage } from '@react-native-async-storage/async-storage';
+import { useState, useEffect, useContext } from 'react'; //für Context Funktion: usecontext
+import { useAsyncStorage } from '@react-native-async-storage/async-storage'; // alte Varinte
 import colors from '../constants/colors.js'
-import { AuthContext } from '../contexts/authContext';
+import { AuthContext } from '../contexts/authContext';//für Context Funktion
 
 
 function ResidenceScreen({ navigation }) {
-  //dieser Part ist noch besser zu machen, globale Variable nur einmal definieren, nicht bei jedem Screen
+//dieser Part ist noch besser zu machen, globale Variable nur einmal definieren, nicht bei jedem Screen
  /*
   const [value, setValue] = useState('value');
   const { getItem, setItem } = useAsyncStorage('hotelId');
@@ -26,13 +26,25 @@ function ResidenceScreen({ navigation }) {
   */
   // Ergänzung  für's ID auslesen geht bis hier. dann kann man DataService.validateId(value) anstatt DataService.validateId("123456") verwenden
 
-  const globalUID = useContext(AuthContext);
+  const globalUID = useContext(AuthContext); //für Context Funktion
+  let resBackgPic = DataService.validateId(globalUID.user.username)?DataService.getHotelData(globalUID.user.username).getBackgPic():null;
+  let morgenpost = DataService.validateId(globalUID.user.username)?DataService.getHotelData(globalUID.user.username).getMorningMail():null;
 
   console.log("Globale ID: " + globalUID.user.username);
+  console.log("Background Picture: " + resBackgPic);
+  console.log("Morgenpost: " + morgenpost);
+
+//        <ImageBackground source={require("../assets/hotelplaceholder.jpg")} style={styles.hotelPicBackground}>
+//        <ImageBackground source={require(resBackgPic)} style={styles.hotelPicBackground}>
+//        <ImageBackground source={require("../assets/bergfrieden-backgpic.jpg")} style={styles.hotelPicBackground}>
+//        <ImageBackground source={require({DataService.validateId(globalUID.user.username)?DataService.getHotelData(globalUID.user.username).getBackgPic():null})} style={styles.hotelPicBackground}>
+//andik   <ImageBackground source={require(DataService.validateId(globalUID.user.username)?DataService.getHotelData(globalUID.user.username).getBackgPic():null)} style={styles.hotelPicBackground}>
+//sandra  <ImageBackground source={DataService.validateId(globalUID.user.username)?DataService.getHotelData(globalUID.user.username).getBackgPic():null} style={styles.hotelPicBackground}>
+
 
     return (
       <View style={styles.container}>
-        <ImageBackground source={require("../assets/hotelplaceholder.jpg")} style={styles.hotelPicBackground}>
+         <ImageBackground source={require("../assets/bergfrieden-backgpic.jpg")} style={styles.hotelPicBackground}>
           <View style={styles.headlineTxtBackground}>
           <Text style={styles.headlineTxt}>
             ExploRe your residence {"\n"}{DataService.validateId(globalUID.user.username)?DataService.getHotelData(globalUID.user.username).getName():null}
