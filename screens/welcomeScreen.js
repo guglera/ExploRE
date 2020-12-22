@@ -2,12 +2,15 @@ import * as React from 'react';
 import { StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity, Button, Alert } from 'react-native';
 import { NavigationContainer, useLinkProps } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useAsyncStorage } from '@react-native-async-storage/async-storage';
 import { Weather } from '../components/Weather.js'
 import DataService from '../services/DataService';
 import {ScrollView} from 'react-native-gesture-handler';
 import colors from '../constants/colors.js'
+
+import { AuthContext } from '../contexts/authContext';
 
 
 function WelcomeScreen({route, navigation }) {
@@ -20,20 +23,33 @@ function WelcomeScreen({route, navigation }) {
     setValue(item);
   };
 
-  const writeItemToStorage = async newValue => {
-    await setItem(newValue);
-    setValue(newValue);
+  const removeItemFromStorage = async (item) => {
+    try {
+      await AsyncStorage.removeItem(item);
+      console.log("Successfully logged out");
+    } catch(e) {
+      console.log(e);
+    } finally {
+      setValue(null);
+    }
   };
 
-  useEffect(() => {
-    readItemFromStorage();
-  }, []);
-  
+  const authContext = useContext(AuthContext);
 
-  /*
-  const welcomeUID = route.params.welcomeUID
-  console.log("WelcomeUID: " + welcomeUID);
-  */
+  const loginHandler = () => {
+    readItemFromStorage()
+      .then(data => {
+        authContext.login({username: value});
+      })
+      .catch(e => console.warn(e))
+  }
+
+  useEffect(() => {
+    loginHandler();
+  }, [value]);
+  
+  console.log("WelcomeScreen ID: " + value);
+
 
     return (
       <View style={styles.container}>
@@ -65,7 +81,8 @@ function WelcomeScreen({route, navigation }) {
           </TouchableOpacity>
 
           <TouchableOpacity
-            onPress={() =>
+            onPress={() => {
+              removeItemFromStorage('hotelId');
               navigation.reset({
                 index: 0,
                 routes: [
@@ -73,8 +90,9 @@ function WelcomeScreen({route, navigation }) {
                     name: 'ExploRE'
                   },
                 ],
-              })
+              });
             }
+          }
             View style={styles.buttons}>
               <Text style={styles.buttonTxt}>Logout</Text>
           </TouchableOpacity>

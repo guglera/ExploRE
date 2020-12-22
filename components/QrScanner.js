@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { useState, useEffect } from 'react';
+import { useState, useEffect} from 'react';
 import { Button } from 'react-native';
 import { BarCodeScanner, BarCodeScannerResult } from 'expo-barcode-scanner';
 import * as asyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
+
 
 export function QrScanner ({navigation}) {
   const [hasPermission, setHasPermission] = useState(null);

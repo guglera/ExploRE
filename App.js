@@ -3,11 +3,14 @@ import  Navigator from "./navigator.js";
 import LoadingScreen from "./screens/loading.js";
 
 import { useAsyncStorage } from '@react-native-async-storage/async-storage';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 
 import DataService from './services/DataService';
 
 import { View } from 'react-native';
+
+import AuthContextProvider from "./contexts/authContext";
+// import { AuthContext } from "./contexts/authContext";
 
 function App() {
   const [value, setValue] = useState('value');
@@ -33,7 +36,9 @@ function App() {
   DataService.validateId("508103379")?console.log(DataService.getHotelData("508103379").getName()):null;
 
   return (
-    (loading === true) ? <LoadingScreen /> : <Navigator appUID={userId}/>
+    
+      (loading === true) ? <LoadingScreen /> : <AuthContextProvider><Navigator appUID={userId}/></AuthContextProvider>
+    
   );
 }
 
