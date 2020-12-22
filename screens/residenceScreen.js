@@ -7,6 +7,7 @@ import { useState, useEffect, useContext } from 'react'; //für Context Funktion
 import { useAsyncStorage } from '@react-native-async-storage/async-storage'; // alte Varinte
 import colors from '../constants/colors.js'
 import { AuthContext } from '../contexts/authContext';//für Context Funktion
+import images from '../services/Images.js'
 
 
 function ResidenceScreen({ navigation }) {
@@ -27,18 +28,17 @@ function ResidenceScreen({ navigation }) {
   // Ergänzung  für's ID auslesen geht bis hier. dann kann man DataService.validateId(value) anstatt DataService.validateId("123456") verwenden
 
   const globalUID = useContext(AuthContext); //für Context Funktion
-  const resBackgPic = DataService.validateId(globalUID.user.username)?DataService.getHotelData(globalUID.user.username).getBackgPic():null;
-  const morgenpost = DataService.validateId(globalUID.user.username)?DataService.getHotelData(globalUID.user.username).getMorningMail():null;
+  let resBackgPic = DataService.validateId(globalUID.user.username)?DataService.getHotelData(globalUID.user.username).getBackgPic():null;
+  let morgenpost = DataService.validateId(globalUID.user.username)?DataService.getHotelData(globalUID.user.username).getMorningMail():null;
+
 
   console.log("Globale ID: " + globalUID.user.username);
   console.log("Background Picture: " + resBackgPic);
   console.log("Morgenpost: " + morgenpost);
 
-
-
     return (
       <View style={styles.container}>
-         <ImageBackground source={require("../assets/bergfrieden-backgpic.jpg")} style={styles.hotelPicBackground}> 
+         <ImageBackground source={images.backgrounds[resBackgPic]} style={styles.hotelPicBackground}> 
           <View style={styles.headlineTxtBackground}>
           <Text style={styles.headlineTxt}>
             ExploRe your residence {"\n"}{DataService.validateId(globalUID.user.username)?DataService.getHotelData(globalUID.user.username).getName():null}
