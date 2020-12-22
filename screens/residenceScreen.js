@@ -38,7 +38,7 @@ function ResidenceScreen({ navigation }) {
 
     return (
       <View style={styles.container}>
-         <ImageBackground source={require("../assets/bergfrieden-backgpic.jpg")} style={styles.hotelPicBackground}>
+         <ImageBackground source={require("../assets/bergfrieden-backgpic.jpg")} style={styles.hotelPicBackground}> 
           <View style={styles.headlineTxtBackground}>
           <Text style={styles.headlineTxt}>
             ExploRe your residence {"\n"}{DataService.validateId(globalUID.user.username)?DataService.getHotelData(globalUID.user.username).getName():null}
@@ -66,7 +66,7 @@ function ResidenceScreen({ navigation }) {
               <Text style={styles.buttonTxt}>Forward me to the Hotel Website</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity
+{/*           <TouchableOpacity
             onPress={() => navigation.navigate('Menu')}
             View style={styles.buttons}>
               <Text style={styles.buttonTxt}>Test my patience and Show me the Menu again</Text>
@@ -76,7 +76,7 @@ function ResidenceScreen({ navigation }) {
             onPress={() => navigation.navigate('Menu')}
             View style={styles.buttons}>
               <Text style={styles.buttonTxt}>Test my patience and Show me the Menu again</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
 
         </ScrollView>
         </View>
