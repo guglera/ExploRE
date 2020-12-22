@@ -12,7 +12,7 @@ function MenuScreen({ navigation }) {
                        imageWidth={Dimensions.get('screen').width}
                        imageHeight={Dimensions.get('screen').height}>
                 <Image style={styles.image}
-                       source={require('../assets/bergfriedenMenu.png')}
+                       source={require('../assets/bergfriedenMenu.png')} //#todo
                        resizeMode='contain'/>
             </ImageZoom>
     </View >

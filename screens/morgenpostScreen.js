@@ -31,7 +31,7 @@ function MorgenpostScreen({ navigation }) {
                        imageWidth={Dimensions.get('screen').width}
                        imageHeight={Dimensions.get('screen').height}>
                 <Image style = {styles.image}
-                       source={require("../assets/bergfriedenMorgenpost.png")}   //{DataService.validateId(value)?DataService.getHotelData(value).getMorningMail():null}
+                       source={require("../assets/bergfriedenMorgenpost.png")}   //#todo {DataService.validateId(value)?DataService.getHotelData(value).getMorningMail():null}
                        resizeMode='contain'
                        />
             </ImageZoom>
