@@ -1,9 +1,9 @@
 {
     "16865045": {
       "PersonData": {
-        "gender": "Frau",
-        "firstName": "Erika",
-        "lastName": "Mustermann",
+        "gender": "Herr",
+        "firstName": "Roland",
+        "lastName": "Gluderer",
         "guestFrom": "2020-12-10",
         "guestTo": "2020-12-20",
         "Interest": [
@@ -67,7 +67,7 @@
         }],
         "MorningMail": [{
           "title": "Morgenpost für Samstag, 19. Dezember",
-          "filePath": "./xy"
+          "filePath": "../assets/quellenhof-mp1.jpg"
         }]
       }
     }
@@ -93,7 +93,7 @@
       "HotelData": {
         "name": "The Fortress Resort & Spa",
         "url": "https://www.fortressresortandspa.com/",  
-        "backgpic": "quellenhof",
+        "backgpic": "fortress",
         "location": {
           "lat": 5.986453479720485,
           "lon": 80.32645637168814
