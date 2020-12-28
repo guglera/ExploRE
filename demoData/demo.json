@@ -24,15 +24,7 @@
         "location": {
           "lat": 46.56283887636126,
           "lon": 10.782008727720367
-        },
-        "Menu": [{
-          "title": "Abendessen",
-          "filePath": "../assets/bergfriedenMenu.png"
-        }],
-        "MorningMail": [{
-          "title": "Morgenpost für Samstag, 19. Dezember",
-          "filePath": "../assets/bergfriedenMorgenpost.png"
-        }]
+        }
       }
     },
     "508103379": {
@@ -60,15 +52,7 @@
         "location": {
           "lat": 46.746922151970885,
           "lon": 11.206284555557312
-        },
-        "Menu": [{
-          "title": "Abendessen",
-          "filePath": "../assets/quellenhofMenu.png"
-        }],
-        "MorningMail": [{
-          "title": "Morgenpost für Samstag, 19. Dezember",
-          "filePath": "../assets/quellenhof-mp1.jpg"
-        }]
+        }
       }
     }
     ,
@@ -97,15 +81,7 @@
         "location": {
           "lat": 5.986453479720485,
           "lon": 80.32645637168814
-        },
-        "Menu": [{
-          "title": "Menu",
-          "filePath": "../assets/fortressMenu.png"
-        }],
-        "MorningMail": [{
-          "title": "Morning Mail",
-          "filePath": "../assets/fortressMorgenpost.png"
-        }]
+        }
       }
     }
     ,
@@ -134,15 +110,7 @@
         "location": {
           "lat": 47.16323457649541,
           "lon": 11.744855649478506
-        },
-        "Menu": [{
-          "title": "Menu",
-          "filePath": "../assets/tuxerhof-menu.jpg"
-        }],
-        "MorningMail": [{
-          "title": "Morning Mail",
-          "filePath": "../assets/tuxerhof-morgenpost.jpg"
-        }]
+        }
       }
     }
     ,
@@ -171,15 +139,7 @@
         "location": {
           "lat": 46.96713862602553,
           "lon": 11.008764998500148
-        },
-        "Menu": [{
-          "title": "Menu",
-          "filePath": "../assets/central-menu.png"
-        }],
-        "MorningMail": [{
-          "title": "Morning Mail",
-          "filePath": "../assets/central-morgepost.png"
-        }]
+        }
       }
     }
   }

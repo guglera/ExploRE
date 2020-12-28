@@ -21,7 +21,7 @@ function MenuScreen({ navigation }) {
                        imageWidth={Dimensions.get('screen').width}
                        imageHeight={Dimensions.get('screen').height}>
                 <Image style={styles.image}
-                       source={images.menu[menu]} //#todo
+                       source={images.menu[menu]} 
                        resizeMode='contain'/>
             </ImageZoom>
     </View >

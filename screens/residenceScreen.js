@@ -12,7 +12,6 @@ import images from '../services/Images.js'
 
 function ResidenceScreen({ navigation }) {
   const globalUID = useContext(AuthContext); 
-
   const resBackgPic = DataService.validateId(globalUID.user.username)?DataService.getHotelData(globalUID.user.username).getBackgPic():null;
   
 
