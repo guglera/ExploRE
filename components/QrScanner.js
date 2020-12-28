@@ -5,6 +5,7 @@ import { Button } from 'react-native';
 import { BarCodeScanner, BarCodeScannerResult } from 'expo-barcode-scanner';
 import * as asyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
+import DataService from '../services/DataService';
 
 
 export function QrScanner ({navigation}) {
@@ -42,7 +43,15 @@ export function QrScanner ({navigation}) {
     setScanned(true);
     // alert(`Bar code with type ${type} and data ${data} has been scanned!`);
     writeItemToStorage(`${data}`);
-    naviqr.navigate("Welcome", {welcomeUID: `${data}`});
+    if (`${type}` != '256') {
+      alert("Invalid QR Code format, please scan again.");
+      console.log("Invalid QR Code format");
+    } else if (!DataService.validateId(`${data}`)) {
+      alert("No valid ID recognized, please scan again.");
+      console.log("Invalid value scanned");
+    } else {
+      naviqr.navigate("Welcome", {welcomeUID: `${data}`});
+    }
   };
 
   if (hasPermission === null) {
