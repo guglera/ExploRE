@@ -50,9 +50,9 @@ function WelcomeScreen({route, navigation }) {
   
   console.log("WelcomeScreen ID: " + value);
 
-  //get the Location of the Hotel and give to the Weather Component
-  const lat = DataService.validateId(value)?DataService.getHotelData(value).getLat():'47.259659'//'47.259659'
-  const lon = DataService.validateId(value)?DataService.getHotelData(value).getLon():'11.400375';//'11.400375'
+  //get the Location of the Hotel and give it to the Weather Component via props; default Location = Innsbruck
+  const lat = DataService.validateId(value)?DataService.getHotelData(value).getLat():'47.259659'
+  const lon = DataService.validateId(value)?DataService.getHotelData(value).getLon():'11.400375';
 
     return (
       <View style={styles.container}>

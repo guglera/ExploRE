@@ -13,29 +13,29 @@ export default class HotelData {
         this.morningMail = morningMail.map((morningMail) => new MorningMail(morningMail.title, morningMail.filePath));
     }
 
-getName = function() {
-    return this.name;
-}
+    getName = function() {
+        return this.name;
+    }
 
-getLat = function() {
-    return this.location.lat;
-}
+    getLat = function() {
+        return this.location.lat;
+    }
 
-getLon = function() {
-    return this.location.lon;
-}
+    getLon = function() {
+        return this.location.lon;
+    }
 
-getMenu = function () {
-    return this.menu;
-}
+    getMenu = function () {
+        return this.menu;
+    }
 
-getMorningMail = function () {
-    return this.morningMail;
-}
-getUrl = function () {
-    return this.url;
-}
-getBackgPic = function () {
-    return this.backgpic;
-}
+    getMorningMail = function () {
+        return this.morningMail;
+    }
+    getUrl = function () {
+        return this.url;
+    }
+    getBackgPic = function () {
+        return this.backgpic;
+    }
 }
