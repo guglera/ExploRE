@@ -57,9 +57,9 @@ function WelcomeScreen({route, navigation }) {
     return (
       <View style={styles.container}>
 
-      <ImageBackground source={require("../assets/back3.png")} style={styles.image} resizeMode="stretch">
+      <ImageBackground source={require("../assets/back3.png")} style={styles.image}>
 
-        <View style={{ flex: 1}}>
+        <View style={{ flex: 0.8, flexDirection: "column", justifyContent: 'center', }}>
 
         <Text style={styles.loremIpsum}>
             Welcome {DataService.validateId(value)?DataService.getPersonData(value).getFirstName():null/*value}*/}!
@@ -69,7 +69,7 @@ function WelcomeScreen({route, navigation }) {
         </Text>
         </View>
 
-        <View style={{ flex: 3,paddingTop: 10, paddingBottom: 10,}}>
+        <View style={{  flex: 1.5, paddingTop: 10, paddingBottom: 5, margin: 20, justifyContent: 'flex-end'}}>
         <ScrollView> 
          <TouchableOpacity
             onPress={() => navigation.navigate('Residence')}
@@ -100,7 +100,7 @@ function WelcomeScreen({route, navigation }) {
               <Text style={styles.buttonTxt}>Logout</Text>
           </TouchableOpacity>
 
-          <View style={styles.weatherCards}>
+          <View>
             <Weather lat = {lat} lon = {lon}/>
           </View>
 
@@ -117,8 +117,9 @@ function WelcomeScreen({route, navigation }) {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
+      flexDirection: 'column',
+      //backgroundColor: '#fff',
+      //alignItems: 'center',
       justifyContent: 'center',
     },
   
@@ -132,8 +133,8 @@ function WelcomeScreen({route, navigation }) {
   
     image: {
       flex: 1,
-      resizeMode: "cover",
-      justifyContent: "center",
+      //resizeMode: "cover",
+      //justifyContent: "center",
       opacity: 1
     },
   
@@ -151,11 +152,9 @@ function WelcomeScreen({route, navigation }) {
       paddingVertical: 30, paddingHorizontal: 20,
       borderRadius: 20,
       elevation: 5,
+      opacity: 0.9,
     },
     
-    weatherCards: {
-      alignItems: 'center',
-    }
   
   });
 

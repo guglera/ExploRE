@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#73a0ba',
         borderRadius: 20,
         elevation: 5,
-        opacity: 0.99,
+        opacity: 0.9,
     },
     cardContainer: {
         flexDirection: 'row',
