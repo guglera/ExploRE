@@ -8,7 +8,7 @@ function MorgenpostScreen({ navigation }) {
 
   return (
     DataService.getMorningMail(globalUID.user.username)
-    //DataService.getMorningMail('16865045')
+    //#debug DataService.getMorningMail('16865045')
   );
 }
 export default MorgenpostScreen;

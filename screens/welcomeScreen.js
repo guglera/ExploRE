@@ -14,7 +14,7 @@ import { AuthContext } from '../contexts/authContext';
 
 
 function WelcomeScreen({route, navigation }) {
-  
+  //dieser Part ist noch besser zu machen, globale Variable siehe residenceScreen
   const [value, setValue] = useState('value');
   const { getItem, setItem } = useAsyncStorage('hotelId');
 

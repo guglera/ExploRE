@@ -7,7 +7,7 @@
   
     return (
       DataService.getMenu(globalUID.user.username)
-/*       DataService.getMenu('16865045') */
+      //#debug DataService.getMenu('16865045')
     );
   }
   export default MenuScreen;

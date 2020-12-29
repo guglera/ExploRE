@@ -20,8 +20,8 @@ function ResidenceScreen({ navigation }) {
           </View>
         </ImageBackground>
         {DataService.validateBonkingDate(globalUID.user.username, { navigation })}
-        {/*DataService.validateBonkingDate("508103379", { navigation })  Quellenhof invalid date*/}
-        {/*{DataService.validateBonkingDate("16865045", { navigation })} Bergfrieden valid date*/}
+        {/* #debug Central invalid date:  DataService.validateBonkingDate("508103382", { navigation })*/}
+        {/* #debug Bergfrieden valid date: DataService.validateBonkingDate("16865045", { navigation })*/}
     </View >
     );
   }

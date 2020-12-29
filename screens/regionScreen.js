@@ -9,7 +9,7 @@ import colors from '../constants/colors.js';
 
 
 function RegionScreen({ navigation }) {
-   //dieser Part ist noch besser zu machen, globale Variable nur einmal definieren, nicht bei jedem Screen
+   //dieser Part ist noch besser zu machen, globale Variable siehe residenceScreen
    const [value, setValue] = useState('value');
    const { getItem, setItem } = useAsyncStorage('hotelId');
  
@@ -21,7 +21,7 @@ function RegionScreen({ navigation }) {
    useEffect(() => {
      readItemFromStorage();
    }, []);
-   // Ergänzung  für's ID auslesen geht bis hier. dann kann man DataService.validateId(value) anstatt DataService.validateId("123456") verwenden
+   
     return (
       <View style={styles.container}>
       <ImageBackground source={require("../assets/picInnsbruck.jpg")} style={styles.hotelPicBackground}>
@@ -56,38 +56,7 @@ function RegionScreen({ navigation }) {
         <TouchableOpacity View style={styles.buttons}>
             <Text style={styles.buttonTxt}>Blank Dummybutton</Text>
         </TouchableOpacity>
-
-      
-        {/* <TouchableOpacity
-          onPress={() => navigation.navigate('Morning Brief')}
-          View style={styles.buttons}>
-            <Text style={styles.buttonTxt}>Show me the Morning Brief</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          onPress={() => navigation.navigate('Menu')}
-          View style={styles.buttons}>
-            <Text style={styles.buttonTxt}>Show me the Menu</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          onPress={() => Linking.openURL(DataService.validateId(value)?DataService.getHotelData(value).getUrl():null)}
-          View style={styles.buttons}>
-            <Text style={styles.buttonTxt}>Forward me to the Hotel Website</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          onPress={() => navigation.navigate('Menu')}
-          View style={styles.buttons}>
-            <Text style={styles.buttonTxt}>Test my patience and Show me the Menu again</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          onPress={() => navigation.navigate('Menu')}
-          View style={styles.buttons}>
-            <Text style={styles.buttonTxt}>Test my patience and Show me the Menu again</Text>
-        </TouchableOpacity>
- */}
+        
       </ScrollView>
       </View>
   </View >
