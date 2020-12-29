@@ -8,7 +8,7 @@ function HomeScreen({ navigation }) {
 
     <View style={styles.container}>
 
-      <ImageBackground source={require("../assets/back3.png")} style={styles.image} resizeMode="stretch">
+      <ImageBackground source={require("../assets/back4.png")} style={styles.image} resizeMode="stretch">
         <View style={{ flex: 2 }}>
           <Text style={styles.loremIpsum}>
             Welcome, please scan your QR-Code!

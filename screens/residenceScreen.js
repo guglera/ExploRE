@@ -70,7 +70,7 @@ function ResidenceScreen({ navigation }) {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: colors.containerColor,
+      backgroundColor: colors.buttonBackgrColor,
     },
 
     hotelPicBackground: {

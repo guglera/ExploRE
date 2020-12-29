@@ -69,7 +69,7 @@ function WelcomeScreen({route, navigation }) {
         </Text>
         </View>
 
-        <View style={{  flex: 1.5, paddingTop: 10, paddingBottom: 5, margin: 20, justifyContent: 'flex-end'}}>
+        <View style={{  flex: 1.5, paddingTop: 10, paddingBottom: 5, margin: 20, justifyContent: 'center'}}>
          <TouchableOpacity
             onPress={() => navigation.navigate('Residence')}
             View style={styles.buttons}>
@@ -82,7 +82,7 @@ function WelcomeScreen({route, navigation }) {
               <Text style={styles.buttonTxt}>My Region</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity
+{/*           <TouchableOpacity
             onPress={() => {
               removeItemFromStorage('hotelId');
               navigation.reset({
@@ -97,13 +97,31 @@ function WelcomeScreen({route, navigation }) {
           }
             View style={styles.buttons}>
               <Text style={styles.buttonTxt}>Logout</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
 
           <View>
             <Weather lat = {lat} lon = {lon}/>
           </View>
-
-        </View>
+          </View>
+          
+          <TouchableOpacity
+            onPress={() => {
+              removeItemFromStorage('hotelId');
+              navigation.reset({
+                index: 0,
+                routes: [{
+                    name: 'ExploRE'
+                  },],
+              });
+            }
+          }
+            View style={styles.hotelPicBackground}>
+          <View style={styles.headlineTxtBackground}>
+          <Text style={styles.headlineTxt}>
+            Logout
+          </Text>
+          </View>
+          </TouchableOpacity>
 
       </ImageBackground>
     </View >
@@ -152,6 +170,26 @@ function WelcomeScreen({route, navigation }) {
       elevation: 5,
       opacity: 0.9,
     },
+
+    hotelPicBackground: {
+      flex: 0.2,  
+      opacity: 0.8,
+      flexDirection: "column", justifyContent: 'flex-end', 
+    },
+
+    headlineTxtBackground: {
+      backgroundColor: colors.headlineTxtBackgrColor,
+      //backgroundColor: 'lightgrey',
+    },
+
+    headlineTxt: {
+      color: colors.headlineTxtColor,
+      fontSize: 18,
+      lineHeight: 15,
+      paddingTop: 20, paddingBottom: 20, paddingLeft: 25, paddingRight: 25,
+      textAlign: 'center',
+      textShadowRadius: 20,
+    }, 
     
   
   });
