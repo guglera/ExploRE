@@ -120,7 +120,7 @@ DataService.getHotelName = function (userId) {
     }
 }
 
-DataService.getHotelId = function getHotelData(userId) {
+DataService.getHotelId = function (userId) {
     try {
         let hotelId = getHotelData(userId).getHotelId();
         return hotelId;
