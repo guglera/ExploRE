@@ -70,7 +70,6 @@ function WelcomeScreen({route, navigation }) {
         </View>
 
         <View style={{  flex: 1.5, paddingTop: 10, paddingBottom: 5, margin: 20, justifyContent: 'flex-end'}}>
-        <ScrollView> 
          <TouchableOpacity
             onPress={() => navigation.navigate('Residence')}
             View style={styles.buttons}>
@@ -104,7 +103,6 @@ function WelcomeScreen({route, navigation }) {
             <Weather lat = {lat} lon = {lon}/>
           </View>
 
-          </ScrollView> 
         </View>
 
       </ImageBackground>
