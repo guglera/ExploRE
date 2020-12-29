@@ -3,23 +3,32 @@ import { StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity, Butto
 
 import ImageZoom from 'react-native-image-pan-zoom';
 import DataService from '../services/DataService';
-import { useAsyncStorage } from '@react-native-async-storage/async-storage';
-import { useState, useEffect, useContext } from 'react';
+import { useContext } from 'react';
 import { AuthContext } from '../contexts/authContext';
 import images from '../services/Images.js'
-
-
 
 function MorgenpostScreen({ navigation }) {
   const globalUID = useContext(AuthContext); 
   const morningMail = DataService.validateId(globalUID.user.username)?DataService.getHotelData(globalUID.user.username).getBackgPic():null;
 
   console.log("Morgenpost Picture: " + morningMail);
-
+/*<View>
+  {DataService.getMorningMail(images.morningMail[morningMail])}
+</View> */
     return (
-      <View>
-        {DataService.getMorningMail(images.morningMail[morningMail])}
-      </View>
+
+            <View style={styles.container}>
+
+            <ImageZoom cropWidth={Dimensions.get('window').width}
+                       cropHeight={Dimensions.get('window').height}
+                       imageWidth={Dimensions.get('screen').width}
+                       imageHeight={Dimensions.get('screen').height}>
+                <Image style = {styles.image}
+                       source={images.morningMail[morningMail]}  
+                       resizeMode='contain'
+                       />
+            </ImageZoom>
+    </View >
     );
   }
 

@@ -8,6 +8,13 @@ const images = {
 
     },
     morningMail: {
+        central: require('../assets/central-morgenpost.png'),
+        bergfrieden: require('../assets/bergfriedenMorgenpost.png'),
+        fortress: require('../assets/fortressMorgenpost.png'),
+        quellenhof: require('../assets/quellenhof-morgenp1.jpg'),
+        tuxer: require('../assets/tuxerhof-morgenpost.jpg'),       
+    },
+    /* morningMail: {
         central: [require('../assets/central-morgenpost.png'),],
         bergfrieden: [require('../assets/bergfriedenMorgenpost.png'),],
         fortress: [require('../assets/fortressMorgenpost.png'),],
@@ -18,7 +25,7 @@ const images = {
             require('../assets/quellenhof-morgenp4.jpg'),
         ],
         tuxer: [require('../assets/tuxerhof-morgenpost.jpg')],       
-    },
+    }, */    
     menu: {
         central: require('../assets/central-menu.png'),
         bergfrieden: require('../assets/bergfriedenMenu.png'),
