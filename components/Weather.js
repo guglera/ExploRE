@@ -66,36 +66,40 @@ export function Weather (props) {
 
 const styles = StyleSheet.create({
     weatherCard: {
-        height: 200,
+        height: 150,
         width: '45%',
         alignItems: 'center',
+        justifyContent: 'center',
         backgroundColor: '#73a0ba',
-        elevation: 15,
+        borderRadius: 20,
+        elevation: 5,
+        opacity: 0.99,
     },
     cardContainer: {
         flexDirection: 'row',
         flexWrap: 'wrap',
-        justifyContent: 'space-around',
-        marginTop: 20,
+        justifyContent: 'space-between',
+        //marginTop: 20,
+        marginVertical: 10, marginHorizontal: 16,
     },
     weatherIcon: {
-        width: 80,
-        height: 80,
+        width: 60,
+        height: 60,
     },
     textPrimary: {
         textAlign: 'center',
         textTransform: 'capitalize', 
-        flex: 1,
+        //flex: 1,
         fontSize: 14,
         color: 'white',
     },
     header: {
         textAlign: 'center',
-        flex: 1,
+        //flex: 1,
         fontSize: 14,
         fontWeight: 'bold',
         color: 'white',
-        marginTop: 10,
+        //marginTop: 10,
     },
 
 })
