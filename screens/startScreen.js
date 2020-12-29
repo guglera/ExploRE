@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
   qrScanner: {
     width: 300,
     height: 300,
-    backgroundColor: 'lightgray',
+    backgroundColor: 'lightgrey',
     alignItems: 'center'
   },
 

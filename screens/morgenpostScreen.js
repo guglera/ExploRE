@@ -8,6 +8,8 @@ import { useState, useEffect, useContext } from 'react';
 import { AuthContext } from '../contexts/authContext';
 import images from '../services/Images.js'
 
+
+
 function MorgenpostScreen({ navigation }) {
   const globalUID = useContext(AuthContext); 
   const morningMail = DataService.validateId(globalUID.user.username)?DataService.getHotelData(globalUID.user.username).getBackgPic():null;
@@ -15,18 +17,9 @@ function MorgenpostScreen({ navigation }) {
   console.log("Morgenpost Picture: " + morningMail);
 
     return (
-      <View style={styles.container}>
-
-            <ImageZoom cropWidth={Dimensions.get('window').width}
-                       cropHeight={Dimensions.get('window').height}
-                       imageWidth={Dimensions.get('screen').width}
-                       imageHeight={Dimensions.get('screen').height}>
-                <Image style = {styles.image}
-                       source={images.morningMail[morningMail]}  
-                       resizeMode='contain'
-                       />
-            </ImageZoom>
-    </View >
+      <View>
+        {DataService.getMorningMail(images.morningMail[morningMail])}
+      </View>
     );
   }
 
@@ -41,8 +34,8 @@ function MorgenpostScreen({ navigation }) {
   
     image: {
       width: Dimensions.get('screen').width,
-      height: Dimensions.get('screen').height,
-    },  
+      height: Dimensions.get('screen').height, },  
   });
 
-  export default MorgenpostScreen;
+
+export default MorgenpostScreen;;

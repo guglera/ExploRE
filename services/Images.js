@@ -8,10 +8,15 @@ const images = {
 
     },
     morningMail: {
-        central: require('../assets/central-morgenpost.png'),
-        bergfrieden: require('../assets/bergfriedenMorgenpost.png'),
-        fortress: require('../assets/fortressMorgenpost.png'),
-        quellenhof: require('../assets/quellenhof-morgenp1.jpg'),
+        central: [require('../assets/central-morgenpost.png'),],
+        bergfrieden: [require('../assets/bergfriedenMorgenpost.png'),],
+        fortress: [require('../assets/fortressMorgenpost.png'),],
+        quellenhof: [
+            require('../assets/quellenhof-morgenp1.jpg'),
+            require('../assets/quellenhof-morgenp2.jpg'),
+            require('../assets/quellenhof-morgenp3.jpg'),
+            require('../assets/quellenhof-morgenp4.jpg'),
+        ],
         tuxer: require('../assets/tuxerhof-morgenpost.jpg'),       
     },
     menu: {
