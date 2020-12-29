@@ -17,7 +17,7 @@ const images = {
             require('../assets/quellenhof-morgenp3.jpg'),
             require('../assets/quellenhof-morgenp4.jpg'),
         ],
-        tuxer: require('../assets/tuxerhof-morgenpost.jpg'),       
+        tuxer: [require('../assets/tuxerhof-morgenpost.jpg')],       
     },
     menu: {
         central: require('../assets/central-menu.png'),
