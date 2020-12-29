@@ -5,7 +5,7 @@ export default class HotelData {
     constructor(hotelData){
         this.name = hotelData.name;
         this.url = hotelData.url;
-        this.backgpic = hotelData.backgpic;
+        this.hotelId = hotelData.hotelId;
         this.location = hotelData.location;
         const menu = hotelData.Menu;
         this.menu = menu.map((menu) =>  new Menu(menu.title, menu.filePath));
@@ -35,7 +35,7 @@ export default class HotelData {
     getUrl = function () {
         return this.url;
     }
-    getBackgPic = function () {
-        return this.backgpic;
+    getHotelId = function () {
+        return this.hotelId;
     }
 }

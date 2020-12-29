@@ -1,10 +1,7 @@
-import { useGestureHandlerRef } from '@react-navigation/stack';
 import * as React from 'react';
-import { StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity, Button, Alert, Linking } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground} from 'react-native';
 import DataService from '../services/DataService';
-import {ScrollView} from 'react-native-gesture-handler';
-import { useState, useEffect, useContext } from 'react'; 
-import { useAsyncStorage } from '@react-native-async-storage/async-storage'; 
+import {useContext } from 'react'; 
 import colors from '../constants/colors.js'
 import { AuthContext } from '../contexts/authContext';
 import images from '../services/Images.js'
@@ -12,57 +9,19 @@ import images from '../services/Images.js'
 
 function ResidenceScreen({ navigation }) {
   const globalUID = useContext(AuthContext); 
-  const resBackgPic = DataService.validateId(globalUID.user.username)?DataService.getHotelData(globalUID.user.username).getBackgPic():null;
-  
-
-
-  console.log("Globale ID: " + globalUID.user.username);
-  console.log("Background Picture: " + resBackgPic);
 
     return (
       <View style={styles.container}>
-         <ImageBackground source={images.backgrounds[resBackgPic]} style={styles.hotelPicBackground}> 
-          <View style={styles.headlineTxtBackground}>
-          <Text style={styles.headlineTxt}>
-            ExploRe your residence {"\n"}{DataService.validateId(globalUID.user.username)?DataService.getHotelData(globalUID.user.username).getName():null}
+         <ImageBackground source={images.backgrounds[DataService.getHotelId(globalUID.user.username)]} style={styles.hotelPicBackground}> 
+          <View style={styles.headlineTextBackground}>
+          <Text style={styles.headlineText}>
+            ExploRe your residence {"\n"}{DataService.getHotelName(globalUID.user.username)}
           </Text>
           </View>
         </ImageBackground>
-
-        <View style={styles.scrollViewStyle}>
-        <ScrollView contentContainerStyle={styles.scrollContainer}> 
-          <TouchableOpacity
-            onPress={() => navigation.navigate('Morning Brief')}
-            View style={styles.buttons}>
-              <Text style={styles.buttonTxt}>Show me the Morning Brief</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            onPress={() => navigation.navigate('Menu')}
-            View style={styles.buttons}>
-              <Text style={styles.buttonTxt}>Show me the Menu</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            onPress={() => Linking.openURL(DataService.validateId(globalUID.user.username)?DataService.getHotelData(globalUID.user.username).getUrl():null)}
-            View style={styles.buttons}>
-              <Text style={styles.buttonTxt}>Forward me to the Hotel Website</Text>
-          </TouchableOpacity>
-
-{/*           <TouchableOpacity
-            onPress={() => navigation.navigate('Menu')}
-            View style={styles.buttons}>
-              <Text style={styles.buttonTxt}>Test my patience and Show me the Menu again</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            onPress={() => navigation.navigate('Menu')}
-            View style={styles.buttons}>
-              <Text style={styles.buttonTxt}>Test my patience and Show me the Menu again</Text>
-          </TouchableOpacity> */}
-
-        </ScrollView>
-        </View>
+        {DataService.validateBonkingDate(globalUID.user.username, { navigation })}
+        {/*DataService.validateBonkingDate("508103379", { navigation })  Quellenhof invalid date*/}
+        {/*{DataService.validateBonkingDate("16865045", { navigation })} Bergfrieden valid date*/}
     </View >
     );
   }
@@ -79,11 +38,11 @@ function ResidenceScreen({ navigation }) {
       flexDirection: "column", justifyContent: 'center', 
     },
 
-    headlineTxtBackground: {
+    headlineTextBackground: {
       backgroundColor: colors.headlineTxtBackgrColor,
     },
 
-    headlineTxt: {
+    headlineText: {
       color: colors.headlineTxtColor,
       fontSize: 26,
       lineHeight: 40,
@@ -91,36 +50,6 @@ function ResidenceScreen({ navigation }) {
       textAlign: 'center',
       textShadowRadius: 20,
     }, 
-
-    scrollViewStyle: {
-      flex: 1,
-      marginTop: -16,
-      backgroundColor: colors.scrollViewBackgrColor,
-      borderTopRightRadius: 20,
-      borderTopLeftRadius: 20,
-    },
-
-    scrollContainer: {
-      paddingTop: 10,
-      paddingBottom: 10,
-    },
-  
-    buttonTxt: {
-      fontSize: 18,
-      color: colors.buttonTxtColor,
-      textShadowRadius: 10,
-    },
-  
-  
-    buttons: {
-      flexDirection: 'row', 
-      justifyContent: 'center',
-      backgroundColor: colors.buttonBackgrColor,
-      marginVertical: 10, marginHorizontal: 16,
-      paddingVertical: 30, paddingHorizontal: 20,
-      borderRadius: 20,
-      elevation: 5,
-    },
   });
 
   export default ResidenceScreen;

@@ -1,46 +1,13 @@
-import * as React from 'react';
-import { StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity, Button, Alert, Dimensions } from 'react-native';
-
-import ImageZoom from 'react-native-image-pan-zoom';
-import DataService from '../services/DataService';
-import { useState, useEffect, useContext } from 'react';
-import { AuthContext } from '../contexts/authContext';
-import images from '../services/Images.js'
-
-function MenuScreen({ navigation }) {
-
-  const globalUID = useContext(AuthContext); 
-  const menu = DataService.validateId(globalUID.user.username)?DataService.getHotelData(globalUID.user.username).getBackgPic():null;
-
-  console.log(menu)
+  import DataService from '../services/DataService';
+  import { useContext } from 'react';
+  import { AuthContext } from '../contexts/authContext';
+  
+  function MenuScreen({ navigation }) {
+    const globalUID = useContext(AuthContext);
+  
     return (
-      <View style={styles.container}>
-
-            <ImageZoom cropWidth={Dimensions.get('window').width}
-                       cropHeight={Dimensions.get('window').height}
-                       imageWidth={Dimensions.get('screen').width}
-                       imageHeight={Dimensions.get('screen').height}>
-                <Image style={styles.image}
-                       source={images.menu[menu]} 
-                       resizeMode='contain'/>
-            </ImageZoom>
-    </View >
+      DataService.getMenu(globalUID.user.username)
+/*       DataService.getMenu('16865045') */
     );
   }
-
-  const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      backgroundColor: '#fff',
-    },
-  
-    image: {
-      width: Dimensions.get('screen').width,
-      height: Dimensions.get('screen').height,
-    },  
-  });
-
   export default MenuScreen;
