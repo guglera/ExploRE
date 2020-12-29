@@ -8,10 +8,10 @@ function HomeScreen({ navigation }) {
 
     <View style={styles.container}>
 
-      <ImageBackground source={require("../assets/jacuzzi_ori.jpg")} style={styles.image} resizeMode="stretch">
+      <ImageBackground source={require("../assets/back3.png")} style={styles.image} resizeMode="stretch">
         <View style={{ flex: 2 }}>
           <Text style={styles.loremIpsum}>
-            Willkommen, scannen Sie jetzt Ihre Buchung!
+            Welcome, please scan your QR-Code!
         </Text>
         </View>
 
