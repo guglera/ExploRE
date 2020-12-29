@@ -11,7 +11,10 @@ function HomeScreen({ navigation }) {
       <ImageBackground source={require("../assets/back4.png")} style={styles.image} resizeMode="stretch">
         <View style={{ flex: 2 }}>
           <Text style={styles.loremIpsum}>
-            Welcome, please scan your QR-Code!
+            Welcome
+        </Text>
+        <Text style={styles.loremIpsum2}>
+              Please scan your {"\n"} QR-Code!
         </Text>
         </View>
 
@@ -20,7 +23,7 @@ function HomeScreen({ navigation }) {
       </View>
 
         <View style={{ flex: 1 }}>
-          <TouchableOpacity
+          {/* <TouchableOpacity
             onPress={() =>
               navigation.reset({
                 index: 0,
@@ -33,7 +36,7 @@ function HomeScreen({ navigation }) {
             }
             View style={styles.buttons}>
               <Text style={styles.buttonTxt}>Login</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </View>
 
       </ImageBackground>
@@ -44,15 +47,24 @@ function HomeScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
+    flexDirection: 'column',
+    //backgroundColor: '#fff',
+    //alignItems: 'center',
     justifyContent: 'center',
   },
 
   loremIpsum: {
     textAlign: "center",
-    fontSize: 40,
-    marginTop: 30,
+    fontSize: 30,
+    marginTop: 100,
+    paddingBottom: 0,
+    color: 'white'
+  },
+
+  loremIpsum2: {
+    textAlign: "center",
+    fontSize: 30,
+    marginTop: 25,
     paddingBottom: 0,
     color: 'white'
   },
