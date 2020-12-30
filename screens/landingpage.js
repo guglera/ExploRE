@@ -3,7 +3,6 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 import { Header } from 'react-native-elements';
 import React from 'react';
 import {QrScanner} from '../components/QrScanner';
-import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default function Landingpage({ navigation }) {
   return (

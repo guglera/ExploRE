@@ -62,7 +62,7 @@ function WelcomeScreen({route, navigation }) {
         <View style={{ flex: 0.8, flexDirection: "column", justifyContent: 'center', }}>
 
         <Text style={styles.loremIpsum}>
-            Welcome {DataService.validateId(value)?DataService.getPersonData(value).getFirstName():null/*value}*/}!
+            Welcome {DataService.getGuestName(value)}!
             {"\n"}
             {"\n"}Are you ready to ExploRe
             {"\n"}your residence and your region?

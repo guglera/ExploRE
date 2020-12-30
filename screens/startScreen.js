@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity, Button, Alert } from 'react-native';
+import { StyleSheet, Text, View,ImageBackground } from 'react-native';
 import {QrScanner} from '../components/QrScanner';
 import colors from '../constants/colors.js'
 
@@ -48,8 +48,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    //backgroundColor: '#fff',
-    //alignItems: 'center',
     justifyContent: 'center',
   },
 

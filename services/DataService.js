@@ -152,22 +152,32 @@ DataService.getMorningMail = function (userId) {
 
 DataService.getMenu = function (userId) {
     try {
-        return (< View style={styles.container} >
-
-            <ImageZoom cropWidth={Dimensions.get('window').width}
-                cropHeight={Dimensions.get('window').height}
-                imageWidth={Dimensions.get('screen').width}
-                imageHeight={Dimensions.get('screen').height}>
-                <Image style={styles.image}
-                    source={images.menu[getHotelData(userId).getHotelId()]}
-                    resizeMode='contain'
-                />
-            </ImageZoom>
-        </View >
+        return (
+            < View style={styles.container} >
+                <ImageZoom cropWidth={Dimensions.get('window').width}
+                    cropHeight={Dimensions.get('window').height}
+                    imageWidth={Dimensions.get('screen').width}
+                    imageHeight={Dimensions.get('screen').height}>
+                    <Image style={styles.image}
+                        source={images.menu[getHotelData(userId).getHotelId()]}
+                        resizeMode='contain'
+                    />
+                </ImageZoom>
+            </View >
         );
     } catch (error) {
         return parsingException(error);
     }
+}
+
+DataService.getGuestName = function(userId){
+    let guestName = "";
+    try {
+        guestName = getPersonData(userId).getFirstName();
+    } catch (error) {
+        return "";
+    }
+    return guestName;
 }
 
 const styles = StyleSheet.create({
