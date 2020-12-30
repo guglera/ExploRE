@@ -42,15 +42,18 @@ export function QrScanner ({navigation}) {
   const handleBarCodeScanned = ({ type, data }) => {
     setScanned(true);
     // alert(`Bar code with type ${type} and data ${data} has been scanned!`);
+    // console.log(`Bar code with type ${type} and data ${data} has been scanned!`);
     writeItemToStorage(`${data}`);
-    if (`${type}` != '256') {
+    if (`${type}` == '256' || `${type}` == 'org.iso.QRCode') {
+      if (!DataService.validateId(`${data}`)) {
+        alert("No valid ID recognized, please scan again.");
+        console.log("Invalid value scanned");
+      } else {
+        naviqr.navigate("Welcome", {welcomeUID: `${data}`});
+      }
+    } else {
       alert("Invalid QR Code format, please scan again.");
       console.log("Invalid QR Code format");
-    } else if (!DataService.validateId(`${data}`)) {
-      alert("No valid ID recognized, please scan again.");
-      console.log("Invalid value scanned");
-    } else {
-      naviqr.navigate("Welcome", {welcomeUID: `${data}`});
     }
   };
 

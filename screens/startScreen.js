@@ -9,6 +9,11 @@ function HomeScreen({ navigation }) {
     <View style={styles.container}>
 
       <ImageBackground source={require("../assets/back4.png")} style={styles.image} resizeMode="stretch">
+        
+      <View style={styles.qrScanner}>
+        <QrScanner />
+      </View>
+        
         <View style={{ flex: 2 }}>
           <Text style={styles.loremIpsum}>
             Welcome
@@ -18,12 +23,10 @@ function HomeScreen({ navigation }) {
         </Text>
         </View>
 
-      <View style={styles.qrScanner}>
-        <QrScanner />
-      </View>
 
-        <View style={{ flex: 1 }}>
-          {/* <TouchableOpacity
+
+        {/* <View style={{ flex: 1 }}>
+          <TouchableOpacity
             onPress={() =>
               navigation.reset({
                 index: 0,
@@ -36,8 +39,8 @@ function HomeScreen({ navigation }) {
             }
             View style={styles.buttons}>
               <Text style={styles.buttonTxt}>Login</Text>
-          </TouchableOpacity> */}
-        </View>
+          </TouchableOpacity>
+        </View> */}
 
       </ImageBackground>
     </View >
@@ -76,9 +79,9 @@ const styles = StyleSheet.create({
   },
 
   qrScanner: {
-    width: 300,
+    flex: 2,
+    width: 250,
     height: 300,
-    backgroundColor: 'lightgrey',
     alignItems: 'center'
   },
 
