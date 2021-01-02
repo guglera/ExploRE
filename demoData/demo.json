@@ -5,7 +5,7 @@
         "firstName": "Erika",
         "lastName": "Müller",
         "guestFrom": "2020-12-20",
-        "guestTo": "2020-12-31",
+        "guestTo": "2021-12-31",
         "Interest": [
           {
             "name": "Interesse1",
@@ -41,7 +41,7 @@
         "firstName": "Max",
         "lastName": "Mustermann",
         "guestFrom": "2020-12-16",
-        "guestTo": "2020-12-31",
+        "guestTo": "2021-12-31",
         "Interest": [
           {
             "name": "Interesse1",
@@ -78,7 +78,7 @@
         "firstName": "Susi",
         "lastName": "Srilankawanka",
         "guestFrom": "2020-12-16",
-        "guestTo": "2020-12-31",
+        "guestTo": "2021-12-31",
         "Interest": [
           {
             "name": "Interesse1",
@@ -115,7 +115,7 @@
         "firstName": "Elisabeth",
         "lastName": "Tux",
         "guestFrom": "2020-12-16",
-        "guestTo": "2020-12-31",
+        "guestTo": "2021-12-31",
         "Interest": [
           {
             "name": "Interesse1",
