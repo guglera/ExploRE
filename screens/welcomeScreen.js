@@ -26,9 +26,9 @@ function WelcomeScreen({route, navigation }) {
   const removeItemFromStorage = async (item) => {
     try {
       await AsyncStorage.removeItem(item);
-      console.log("Successfully logged out");
+      console.log("#debug welcomeScreen.js - Successfully logged out");
     } catch(e) {
-      console.log(e);
+      console.log("#debug welcomeScreen.js - error: " + e);
     } finally {
       setValue(null);
     }
@@ -48,7 +48,7 @@ function WelcomeScreen({route, navigation }) {
     loginHandler();
   }, [value]);
   
-  console.log("WelcomeScreen ID: " + value);
+  console.log("#debug welcomeScreen.js - WelcomeScreen ID: " + value);
 
   //get the Location of the Hotel and give it to the Weather Component via props; default Location = Innsbruck
   const lat = DataService.validateId(value)?DataService.getHotelData(value).getLat():'47.259659'

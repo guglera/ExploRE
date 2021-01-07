@@ -47,13 +47,13 @@ export function QrScanner ({navigation}) {
     if (`${type}` == '256' || `${type}` == 'org.iso.QRCode') {
       if (!DataService.validateId(`${data}`)) {
         alert("No valid ID recognized, please scan again.");
-        console.log("Invalid value scanned");
+        console.log("#debug QrScanner.js - Invalid value scanned");
       } else {
         naviqr.navigate("Welcome", {welcomeUID: `${data}`});
       }
     } else {
       alert("Invalid QR Code format, please scan again.");
-      console.log("Invalid QR Code format");
+      console.log("#debug QrScanner.js - Invalid QR Code format");
     }
   };
 

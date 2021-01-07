@@ -17,6 +17,9 @@ function RegionActivitiesScreen({ navigation }) {
             <ActivityCard />
             <ActivityCard />
             <ActivityCard />
+            <ActivityCard />
+            <ActivityCard />
+            <ActivityCard />
           </View>
         </View>
       );
@@ -24,14 +27,13 @@ function RegionActivitiesScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    // flex: 1,
     backgroundColor: colors.containerColor,
     // flexDirection:'column',
     justifyContent: 'flex-start',
     alignItems: 'flex-start'
   },
   cardsContainer:{
-    flex:1,
     flexDirection:'row',
     flexWrap:'wrap'
   }

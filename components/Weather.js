@@ -25,13 +25,13 @@ export function Weather (props) {
     useEffect(() => {    
         (async () => {       
             try {         
-                console.log('lon: ' + props.lon)
-                console.log('lat: ' + props.lat)
+                console.log('#debug Weather.js - lon: ' + props.lon)
+                console.log('#debug Weather.js - lat: ' + props.lat)
                 const response = await fetch(weather_url)
                 const result = await response.json()    
                 setCurrentWeather({temp : result.current.temp, icon: result.current.weather[0].icon, weather_info: result.current.weather[0].description})
                 setWeatherForecast({temp: result.daily[0].temp.day, icon: result.daily[0].weather[0].icon, weather_info: result.daily[0].weather[0].main})  
-                console.log('temp: ' + result.current.temp)        
+                console.log('#debug Weather.js - temp: ' + result.current.temp)        
             } catch (error) {
                 console.error(error)
             }       

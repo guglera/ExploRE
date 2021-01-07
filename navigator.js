@@ -16,7 +16,7 @@ const Stack = createStackNavigator();
 const Navigator = (props) => {
   const navigatorUID = props.appUID
 
-  console.log("navigatorUID: " + navigatorUID);
+  console.log("#debug navigator.js - navigatorUID: " + navigatorUID);
 
   const selectStartScreen = () => {
     if (navigatorUID === null) {
