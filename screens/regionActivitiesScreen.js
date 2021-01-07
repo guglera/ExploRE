@@ -35,7 +35,8 @@ const styles = StyleSheet.create({
   },
   cardsContainer:{
     flexDirection:'row',
-    flexWrap:'wrap'
+    flexWrap:'wrap',
+    paddingBottom:20
   }
 });
 
