@@ -1,8 +1,7 @@
 import React from 'react';
 import {StyleSheet, View, Text, Image} from 'react-native';
 import colors from '../constants/colors.js';
-//            <Image source={{uri: 'https://media.tacdn.com/media/attractions-splice-spp-674x446/09/54/e6/94.jpg'}} style={styles.image}/>
-//            <Image source={require('../assets/logoimages/backg2.png')} style={styles.image}/>
+
 const ActivityCard = (props) =>{
     return (
         <View style={styles.cardContainer}>
