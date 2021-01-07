@@ -5,6 +5,7 @@ import ImageZoom from 'react-native-image-pan-zoom';
 import images from '../services/Images.js'
 import PersonData from '../models/PersonData';
 import HotelData from '../models/HotelData';
+import ActivityData from '../models/ActivityData';
 import demoData from '../demoData/demo.json';
 import colors from '../constants/colors.js';
 import Moment from 'moment';
@@ -49,6 +50,10 @@ DataService.getHotelData = function getHotelData(userId) {
  return new HotelData(demoData[userId].HotelData);
 }
 
+DataService.getActivityData = function getActivityData(userId) {
+    return new ActivityData(demoData[userId].ActivityData);
+}
+   
 function validateId(userId) {
     return 'undefined' !== typeof (demoData[userId]) ? true : false;
 }

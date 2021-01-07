@@ -33,8 +33,41 @@
           "title": "Morgenpost für Samstag, 19. Dezember",
           "filePath": "../assets/bergfriedenMorgenpost.png"
         }]
-      }
-    },
+      },
+      "ActivityData":[
+        {
+          "title":"Veranstaltungen Ferienregion Latsch-Martelltal",
+          "description": "Veranstaltungen in der Ferienregion Latsch-Martelltal",
+          "imageUrl":"https://www.vinschgau.net/media/c0e50b7f-e095-498e-abd5-2712ce3f2ab1/1428_x_900/latsch-martell.webp",
+          "websiteUrl":"https://www.vinschgau.net/de/latsch-martelltal/service-info/aktuelles/alle-veranstaltungen.html"
+        },
+        {
+          "title":"Wetter in der Ferienregion",
+          "description": "Das Wetter für ihre Ferien in Latsch-Martelltal",
+          "imageUrl":"https://www.vinschgau.net/media/705981d7-eab9-4d24-8ebd-a5a5b811ea1e/1428_x_450/20200621-201258.webp",
+          "websiteUrl":"https://www.vinschgau.net/de/latsch-martelltal/service-info/aktuelles/wetter.html"
+        },
+        {
+          "title":"Webcams in der Region",
+          "description": "Die Webcams der Ferienregion Latsch-Martelltal",
+          "imageUrl":"https://www.vinschgau.net/media/d2f7ef5c-66ac-40cc-9b13-f02f5686e114/1428_x_450/landschaft-martell-ras.webp",
+          "websiteUrl":"https://www.vinschgau.net/de/latsch-martelltal/service-info/aktuelles/webcam.html"
+        },
+        {
+          "title":"Top Events Vinschgau",
+          "description": "Welche Events Sie im Vinschgau auf keinen Fall verpassen sollten...",
+          "imageUrl":"https://d1b7rr0nby25az.cloudfront.net/cache-buster-1537529841/static/img/relaunch2018/logo-badge.svg",
+          "websiteUrl":"https://www.suedtirol.info/de/erleben/events-in-suedtirol/veranstaltungs-highlights?region[]=274"
+        },
+        {
+          "title":"Top Events Südtirol.Info",
+          "description": "Welche Events Sie in Südtirol auf keinen Fall verpassen sollten...",
+          "imageUrl":"https://d1b7rr0nby25az.cloudfront.net/cache-buster-1537529841/static/img/relaunch2018/logo-badge.svg",
+          "websiteUrl":"https://www.suedtirol.info/de/erleben/events-in-suedtirol/veranstaltungs-highlights"
+        }
+      ]
+    }
+    ,
     "508103379": {
       "PersonData": {
         "gender": "Herr",
@@ -69,7 +102,16 @@
           "title": "Morgenpost für Samstag, 19. Dezember",
           "filePath": "../assets/quellenhof-mp1.jpg"
         }]
-      }
+      },
+    "ActivityData":
+      [
+       {
+        "title":"Veranstaltungen Passeiertal",
+        "description": "Das Passeiertal bietet zu jeder Jahreszeit Unterhaltung vom Feinsten mit sportlichen, musikalischen und kulturellen Veranstaltungen. Traditionelle Gerichte und alpine Köstlichkeiten stehen im Mittelpunkt von Genussveranstaltungen. Wanderungen verbinden Natur- mit Kulturerlebnis und bieten Einblicke in das Alltagsleben und in die Traditionen des Tales. Auch den kleinen Gästen wird nicht langweilig: Ein buntes Kinderprogramm sorgt für pure Unterhaltung.",
+        "imageUrl":"https://www.merano-suedtirol.it/media/logo-suedtirol.svg",
+        "websiteUrl":"https://www.merano-suedtirol.it/de/passeiertal/info-service/veranstaltungen/veranstaltungskalender.html"
+        }
+      ]
     }
     ,
     "508103380": {
@@ -106,7 +148,23 @@
           "title": "Morning Mail",
           "filePath": "../assets/fortressMorgenpost.png"
         }]
-      }
+      },
+      "ActivityData":
+        [
+         {
+          "title":"TOURS AND EXCURSIONS",
+          "description": "There is much to experience in and around Sri Lanka’s south coast and The Fortress Resort & Spa is perfectly placed within easy reach of the region’s many highlights. Intrepid travellers staying at our resort can look forward to a range of captivating day excursions; enjoy sightseeing in Galle amidst the city’s colonial charm, hike along trails deep inside tropical rainforests, head off on exotic wildlife safaris and spend time at cultural sites that provide a unique perspective of the island.",
+          "imageUrl":"https://www.fortressresortandspa.com/wp-content/uploads/2017/09/UNAWAT3-1.jpg",
+          "websiteUrl":"https://www.fortressresortandspa.com/things-to-do-in-galle/tours-and-excursions.html"
+          }
+          ,
+          {
+            "title":"Whale&Dolphin Watching Bootstour",
+            "description": "Whale & Dolphin Watching Bootstour mit Frühstück & Abholung von Mirissa",
+            "imageUrl":"https://media.tacdn.com/media/attractions-splice-spp-674x446/09/54/e6/94.jpg",
+            "websiteUrl":"https://www.viator.com/tours/Galle/Whale-and-Dolphin-Watching-Boat-Tour-including-Breakfast/d22288-203709P1?localeSwitch=1"
+            }
+        ]
     }
     ,
     "508103381": {
@@ -143,7 +201,16 @@
           "title": "Morning Mail",
           "filePath": "../assets/tuxerhof-morgenpost.jpg"
         }]
-      }
+      },
+      "ActivityData":
+        [
+          {
+            "title":"Veranstaltungen im Zillertal",
+            "description": "Wer Unterhaltung, Spaß und Action sucht, ist im Zillertal richtig. Neben einem umfangreichen Freizeit- und Sportangebot kommt man auch bei verschiedensten Veranstaltungen, Festen und Events voll auf seine Kosten.",
+            "imageUrl":"https://www.zillertal.at/fileadmin/_processed_/6/c/csm__c_TomKlockerPhotoDSC00414_e7b3d844d5.jpg",
+            "websiteUrl":"https://www.zillertal.at/info/urlaubsinfo/veranstaltungen.html#/veranstaltungen"
+          }
+        ]
     }
     ,
     "508103382": {
@@ -180,6 +247,15 @@
           "title": "Morning Mail",
           "filePath": "../assets/central-morgepost.png"
         }]
-      }
+      },
+      "ActivityData":
+        [
+          {
+            "title":"SÖLDEN Events",
+            "description": "SÖLDEN. HEARTBEAT OF THE ALPS. WINTERLICHES EVENT-EPIZENTRUM",
+            "imageUrl":"https://www.soelden.com/.imaging/mte/jcr/soelden/666/dam/Winter/SOELDEN/Sonstiges/soel_franzi_gritsch_freisteller_20.png/jcr:content/soel_freisteller_skifahren_20-(2).png",
+            "websiteUrl":"https://www.soelden.com/de/winter/events.html"
+          }
+        ]
     }
   }

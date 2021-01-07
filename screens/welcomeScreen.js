@@ -77,7 +77,7 @@ function WelcomeScreen({route, navigation }) {
           </TouchableOpacity>
 
           <TouchableOpacity
-            onPress={() => navigation.navigate('Region')}
+            onPress={() => navigation.navigate('Region Activities')}
             View style={styles.buttons}>
               <Text style={styles.buttonTxt}>My Region</Text>
           </TouchableOpacity>

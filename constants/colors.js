@@ -11,7 +11,10 @@ const colors = {
     buttonTxtColor: '#fff',
     headlineTxtColor: 'white',
     headlineTxtBackgrColor: 'rgba(115,160,186,0.65)',
-    containerColor: '#4263ec',
+    containerColor: '#fff',
+    // cardColor: 'rgba(115,160,186,0.75)',
+    cardColor:'#fff',
+    cardBorderColor: '#999',
   }
 
   export default colors;
