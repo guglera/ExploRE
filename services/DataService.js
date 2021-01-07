@@ -72,6 +72,10 @@ function getHotelData(userId) {
  return new HotelData(demoData[userId].HotelData);
 }
 
+function getActivityData(userId) {
+    return new ActivityData(demoData[userId].ActivityData);
+}
+
 DataService.validateId = function validateId(userId) {
     return 'undefined' !== typeof (demoData[userId]) ? true : false;
 }
