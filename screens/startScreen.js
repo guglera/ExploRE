@@ -10,10 +10,6 @@ function HomeScreen({ navigation }) {
 
       <ImageBackground source={require("../assets/back4.png")} style={styles.image} resizeMode="stretch">
         
-      <View style={styles.qrScanner}>
-        <QrScanner />
-      </View>
-        
         <View style={{ flex: 2 }}>
           <Text style={styles.loremIpsum}>
             Welcome
@@ -23,6 +19,9 @@ function HomeScreen({ navigation }) {
         </Text>
         </View>
 
+        <View style={styles.qrScanner}>
+        <QrScanner />
+        </View>
 
 
         {/* <View style={{ flex: 1 }}>
