@@ -1,17 +1,42 @@
 import * as React from 'react';
-import { StyleSheet, Text, View, ImageBackground, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, Text, View, Alert, ImageBackground, TouchableOpacity, Image } from 'react-native';
 import { Overlay } from 'react-native-elements';
 import colors from '../constants/colors.js'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import * as asyncStorage from '@react-native-async-storage/async-storage';
 import { ScrollView } from 'react-native-gesture-handler';
 
 function AboutScreen({ navigation }) {
+  const [value, setValue] = useState(null);
+  const { getItem, setItem } = asyncStorage.useAsyncStorage('displaylanguage');
 
-const [visible, setVisible] = useState(false);
-
-const toggleOverlay = () => {
-    setVisible(!visible);
+  const readItemFromStorage = async () => {
+    const item = await getItem();
+    if (item !== null) {
+      setValue(item);
+    }
   };
+
+  const writeItemToStorage = async newValue => {
+    await setItem(newValue);
+    setValue(newValue);
+  };
+
+  // const handleLanguage = ({ language }) => {
+  //   writeItemToStorage(language);
+  // };
+
+  useEffect(() => {
+    readItemFromStorage();
+  }, []);
+
+  const [visible, setVisible] = useState(false);
+
+  const toggleOverlay = () => {
+      setVisible(!visible);
+    };
+
+  console.log("#debug aboutScreen.js - displaylanguage: " + value);
 
   return (
     <View style={styles.container}>
@@ -20,12 +45,28 @@ const toggleOverlay = () => {
 
       <View style={{ flex: 1, flexDirection: "column", justifyContent: 'center', }}></View>
 
-        <View style={{  flex: 1, paddingTop: 450, paddingBottom: 5, margin: 20, justifyContent: 'center'}}>
-            <TouchableOpacity
-                onPress={toggleOverlay}
-                View style={styles.buttons}>
-                    <Text style={styles.buttonTxt}>Datenschutzerklärung</Text>
-            </TouchableOpacity>
+        <View style={{  flex: 1, paddingTop: 0, paddingBottom: 5, margin: 20, justifyContent: 'center'}}>
+          <TouchableOpacity
+            onPress={() => {writeItemToStorage('en');
+                            Alert.alert("Language","English language selected");
+            }}
+            style={styles.buttons}>
+              <Text style={styles.buttonTxt}>English</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            onPress={() => {writeItemToStorage('de');
+                            Alert.alert("Sprache","Deutsche Sprache gewählt");
+            }}
+            style={styles.buttons}>
+              <Text style={styles.buttonTxt}>Deutsch</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+              onPress={toggleOverlay}
+              style={styles.buttons}>
+                  <Text style={styles.buttonTxt}>Datenschutzerklärung</Text>
+          </TouchableOpacity>
 
         </View>
 
@@ -61,7 +102,13 @@ const toggleOverlay = () => {
     </ImageBackground>
 
     <TouchableOpacity
-          onPress={() => navigation.navigate('ExploRE')}
+          onPress={() => {
+            if (value === 'en' || value === 'de') {
+              navigation.navigate('ExploRE')
+            } else {
+              alert("Please select your language first")
+            }
+          }}
           View style={styles.hotelPicBackground}>
             <View style={styles.headlineTxtBackground}>
                 <Text style={styles.headlineTxt}>

@@ -14,7 +14,6 @@ import { AuthContext } from '../contexts/authContext';
 
 
 function WelcomeScreen({route, navigation }) {
-  //dieser Part ist noch besser zu machen, globale Variable siehe residenceScreen
   const [value, setValue] = useState('value');
   const { getItem, setItem } = useAsyncStorage('hotelId');
 
@@ -107,6 +106,7 @@ function WelcomeScreen({route, navigation }) {
           <TouchableOpacity
             onPress={() => {
               removeItemFromStorage('hotelId');
+              removeItemFromStorage('displaylanguage');
               navigation.reset({
                 index: 0,
                 routes: [{

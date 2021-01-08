@@ -9,15 +9,12 @@ function HomeScreen({ navigation }) {
     <View style={styles.container}>
 
       <ImageBackground source={require("../assets/back4.png")} style={styles.image} resizeMode="stretch">
-        
-        <View style={{ flex: 2 }}>
-          <Text style={styles.loremIpsum}>
+        <Text style={styles.loremIpsum}>
             Welcome
         </Text>
-        <Text style={styles.loremIpsum2}>
-              Please scan your {"\n"} QR-Code!
+        <Text style={styles.loremIpsum}>
+              Please scan your QR-Code!
         </Text>
-        </View>
 
         <View style={styles.qrScanner}>
         <QrScanner />
@@ -54,10 +51,9 @@ const styles = StyleSheet.create({
   },
 
   loremIpsum: {
+    flex: 1,
     textAlign: "center",
     fontSize: 30,
-    marginTop: 100,
-    paddingBottom: 0,
     color: 'white'
   },
 
@@ -78,10 +74,10 @@ const styles = StyleSheet.create({
   },
 
   qrScanner: {
-    flex: 2,
-    width: 250,
-    height: 300,
-    alignItems: 'center'
+    flex: 10,
+    width: 500,
+    height: 500,
+    alignItems: 'flex-end'
   },
 
   buttonTxt: {
