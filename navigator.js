@@ -10,6 +10,7 @@ import ResidenceScreen from "./screens/residenceScreen.js"
 import MorgenpostScreen from "./screens/morgenpostScreen.js"
 import MenuScreen from "./screens/menuScreen.js"
 import QrScanner from "./components/QrScanner.js"
+import AboutScreen from "./screens/aboutScreen.js"
 
 const Stack = createStackNavigator();
 
@@ -20,7 +21,7 @@ const Navigator = (props) => {
 
   const selectStartScreen = () => {
     if (navigatorUID === null) {
-      return "Explore";
+      return "About";
     } else {
     return "Welcome";
     }
@@ -29,6 +30,7 @@ const Navigator = (props) => {
   return(
       <NavigationContainer>
         <Stack.Navigator initialRouteName={selectStartScreen()}>
+          <Stack.Screen name="About" component={AboutScreen} options={{ title: 'ExploRe' }} />
           <Stack.Screen name="ExploRE" component={HomeScreen} />
           <Stack.Screen name ="Scan" component={QrScanner} />
           <Stack.Screen name="Welcome" component={WelcomeScreen} />
