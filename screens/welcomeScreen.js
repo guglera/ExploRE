@@ -110,7 +110,7 @@ function WelcomeScreen({route, navigation }) {
               navigation.reset({
                 index: 0,
                 routes: [{
-                    name: 'ExploRE'
+                    name: 'About'
                   },],
               });
             }
