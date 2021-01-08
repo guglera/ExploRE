@@ -3,31 +3,21 @@ import * as React from 'react';
 import { StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity, Button, Alert, Linking } from 'react-native';
 import DataService from '../services/DataService';
 import {ScrollView} from 'react-native-gesture-handler';
-import { useState, useEffect } from 'react';
+import { useContext } from 'react';
 import { useAsyncStorage } from '@react-native-async-storage/async-storage';
 import colors from '../constants/colors.js';
+import { AuthContext } from '../contexts/authContext';
 
 
 function RegionScreen({ navigation }) {
-   //dieser Part ist noch besser zu machen, globale Variable siehe residenceScreen
-   const [value, setValue] = useState('value');
-   const { getItem, setItem } = useAsyncStorage('hotelId');
- 
-   const readItemFromStorage = async () => {
-     const item = await getItem();
-     setValue(item);
-   };
- 
-   useEffect(() => {
-     readItemFromStorage();
-   }, []);
+  const globalUID = useContext(AuthContext);
    
     return (
       <View style={styles.container}>
       <ImageBackground source={require("../assets/picInnsbruck.jpg")} style={styles.hotelPicBackground}>
         <View style={styles.headlineTxtBackground}>
         <Text style={styles.headlineTxt}>
-          ExploRe your region {DataService.validateId(value)?DataService.getPersonData(value).getFirstName():null/*value}*/}
+          ExploRe your region {DataService.getGuestName(globalUID.user.username)}
           {"\n"}there's a lot to see
           
         </Text>
@@ -35,29 +25,7 @@ function RegionScreen({ navigation }) {
       </ImageBackground>
 
       <View style={styles.scrollViewStyle}>
-      <ScrollView contentContainerStyle={styles.scrollContainer}>
-
-        <TouchableOpacity View style={styles.buttons}>
-            <Text style={styles.buttonTxt}>Blank Dummybutton</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity View style={styles.buttons}>
-            <Text style={styles.buttonTxt}>Blank Dummybutton</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity View style={styles.buttons}>
-            <Text style={styles.buttonTxt}>Blank Dummybutton</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity View style={styles.buttons}>
-            <Text style={styles.buttonTxt}>Blank Dummybutton</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity View style={styles.buttons}>
-            <Text style={styles.buttonTxt}>Blank Dummybutton</Text>
-        </TouchableOpacity>
-        
-      </ScrollView>
+          {DataService.getActivityCards(globalUID.user.username)}
       </View>
   </View >
   );

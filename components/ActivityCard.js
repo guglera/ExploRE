@@ -5,10 +5,10 @@ import colors from '../constants/colors.js';
 const ActivityCard = (props) =>{
     return (
         <View style={styles.cardContainer}>
-            <Image source={{uri: 'https://media.tacdn.com/media/attractions-splice-spp-674x446/09/54/e6/94.jpg'}} 
+            <Image source={{uri: props.activity.imageUrl}} 
             style={styles.image}/>
             <View style={styles.textContainer}>
-                <Text style={styles.cardText}>Activity  123456789 123456789 1234567 Text über ca.30 Zeichen wird abgeschnitten</Text>
+                <Text style={styles.cardText}>{props.activity.title}</Text>
             </View>
         </View>
     );

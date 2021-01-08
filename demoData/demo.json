@@ -36,49 +36,34 @@
       },
       "ActivityData":[
         {
-          "title-de":"Veranstaltungen Ferienregion Latsch-Martelltal",
-          "title-en":"Events in Laces-Val Martello",
-          "description-de": "Veranstaltungen in der Ferienregion Latsch-Martelltal",
-          "description-en": "All Events in the Laces-Val Martello Holiday Area. Spring concerts, cycle skill training, asparagus tours and mountain brunch. In the Laces-Val Martello holiday area, variety is essential. On this page you find all events of the Laces-Val Martello holiday area at one glance.",
+          "title":"Veranstaltungen Ferienregion Latsch-Martelltal",
+          "description": "Veranstaltungen in der Ferienregion Latsch-Martelltal",
           "imageUrl":"https://www.vinschgau.net/media/c0e50b7f-e095-498e-abd5-2712ce3f2ab1/1428_x_900/latsch-martell.webp",
-          "websiteUrl-de":"https://www.vinschgau.net/de/latsch-martelltal/service-info/aktuelles/alle-veranstaltungen.html",
-          "websiteUrl-en":"https://www.vinschgau.net/en/laces-val-martello/service-info/current-information/events-overview.html"
+          "websiteUrl":"https://www.vinschgau.net/de/latsch-martelltal/service-info/aktuelles/alle-veranstaltungen.html"
         },
         {
-          "title-de":"Wetter in der Ferienregion",
-          "title-en":"weather for your holiday area",
-          "description-de": "Das Wetter für ihre Ferien in Latsch-Martelltal",
-          "description-en": "The weather for your holiday in Laces-Val Martello",
+          "title":"Wetter in der Ferienregion",
+          "description": "Das Wetter für ihre Ferien in Latsch-Martelltal",
           "imageUrl":"https://www.vinschgau.net/media/705981d7-eab9-4d24-8ebd-a5a5b811ea1e/1428_x_450/20200621-201258.webp",
-          "websiteUrl-de":"https://www.vinschgau.net/de/latsch-martelltal/service-info/aktuelles/wetter.html",
-          "websiteUrl-en":"https://www.vinschgau.net/en/laces-val-martello/service-info/current-information/weather.html"
+          "websiteUrl":"https://www.vinschgau.net/de/latsch-martelltal/service-info/aktuelles/wetter.html"
         },
         {
-          "title-de":"Webcams in der Region",
-          "title-en":"Webcams of the Holiday Area",
-          "description-de": "Die Webcams der Ferienregion Latsch-Martelltal",
-          "description-en": "The Webcams of the Laces-Val Martello Holiday Area. Our webcams offer a fantastic panorama of the Ortler-Cevedale mountain groups and the Oetztal Alps and keep you informed about the current weather conditions of the Laces-Val Martello/Latsch-Martelltal holiday area.",
+          "title":"Webcams in der Region",
+          "description": "Die Webcams der Ferienregion Latsch-Martelltal",
           "imageUrl":"https://www.vinschgau.net/media/d2f7ef5c-66ac-40cc-9b13-f02f5686e114/1428_x_450/landschaft-martell-ras.webp",
-          "websiteUrl-de":"https://www.vinschgau.net/de/latsch-martelltal/service-info/aktuelles/webcam.html",
-          "websiteUrl-en":"https://www.vinschgau.net/en/laces-val-martello/service-info/current-information/webcam.html"
+          "websiteUrl":"https://www.vinschgau.net/de/latsch-martelltal/service-info/aktuelles/webcam.html"
         },
         {
-          "title-de":"Top Events Vinschgau",
-          "title-en":"Top Events Val Venosta",
-          "description-de": "Welche Events Sie im Vinschgau auf keinen Fall verpassen sollten...",
-          "description-en": "Highlight events in Val Venosta, South Tyrol",
+          "title":"Top Events Vinschgau",
+          "description": "Welche Events Sie im Vinschgau auf keinen Fall verpassen sollten...",
           "imageUrl":"https://d1b7rr0nby25az.cloudfront.net/cache-buster-1537529841/static/img/relaunch2018/logo-badge.svg",
-          "websiteUrl-de":"https://www.suedtirol.info/de/erleben/events-in-suedtirol/veranstaltungs-highlights?region[]=274",
-          "websiteUrl-en":"https://www.suedtirol.info/en/experience/events-in-south-tyrol/highlight-events?region[]=274"
+          "websiteUrl":"https://www.suedtirol.info/de/erleben/events-in-suedtirol/veranstaltungs-highlights?region[]=274"
         },
         {
-          "title-de":"Top Events Südtirol.Info",
-          "title-en":"Highlight events in South Tyrol",
-          "description-de": "Welche Events Sie in Südtirol auf keinen Fall verpassen sollten...",
-          "description-en": "Highlight events in South Tyrol",
+          "title":"Top Events Südtirol.Info",
+          "description": "Welche Events Sie in Südtirol auf keinen Fall verpassen sollten...",
           "imageUrl":"https://d1b7rr0nby25az.cloudfront.net/cache-buster-1537529841/static/img/relaunch2018/logo-badge.svg",
-          "websiteUrl-de":"https://www.suedtirol.info/de/erleben/events-in-suedtirol/veranstaltungs-highlights",
-          "websiteUrl-en":"https://www.suedtirol.info/en/experience/events-in-south-tyrol/highlight-events"
+          "websiteUrl":"https://www.suedtirol.info/de/erleben/events-in-suedtirol/veranstaltungs-highlights"
         }
       ]
     }
@@ -121,13 +106,10 @@
     "ActivityData":
       [
        {
-        "title-de":"Veranstaltungen Passeiertal",
-        "title-en":"EVENTS IN THE PASSEIERTAL VALLEY",
-        "description-de": "Das Passeiertal bietet zu jeder Jahreszeit Unterhaltung vom Feinsten mit sportlichen, musikalischen und kulturellen Veranstaltungen. Traditionelle Gerichte und alpine Köstlichkeiten stehen im Mittelpunkt von Genussveranstaltungen. Wanderungen verbinden Natur- mit Kulturerlebnis und bieten Einblicke in das Alltagsleben und in die Traditionen des Tales. Auch den kleinen Gästen wird nicht langweilig: Ein buntes Kinderprogramm sorgt für pure Unterhaltung.",
-        "description-en": "Val Passiria provides the very best in entertainment all year round, with sporting, musical and cultural events. Traditional dishes and Alpine delicacies take centre stage at our culinary events. Hikes combine natural and cultural spectacles and offer insights into everyday life and traditions in the valley. And our younger visitors won’t be bored either, with a colourful kids’ programme that offers loads of entertainment.",
+        "title":"Veranstaltungen Passeiertal",
+        "description": "Das Passeiertal bietet zu jeder Jahreszeit Unterhaltung vom Feinsten mit sportlichen, musikalischen und kulturellen Veranstaltungen. Traditionelle Gerichte und alpine Köstlichkeiten stehen im Mittelpunkt von Genussveranstaltungen. Wanderungen verbinden Natur- mit Kulturerlebnis und bieten Einblicke in das Alltagsleben und in die Traditionen des Tales. Auch den kleinen Gästen wird nicht langweilig: Ein buntes Kinderprogramm sorgt für pure Unterhaltung.",
         "imageUrl":"https://www.merano-suedtirol.it/media/logo-suedtirol.svg",
-        "websiteUrl-de":"https://www.merano-suedtirol.it/de/passeiertal/info-service/veranstaltungen/veranstaltungskalender.html",
-        "websiteUrl-en":"https://www.merano-suedtirol.it/en/passeiertal-valley/info-service/events/event-calendar.html"
+        "websiteUrl":"https://www.merano-suedtirol.it/de/passeiertal/info-service/veranstaltungen/veranstaltungskalender.html"
         }
       ]
     }
@@ -170,13 +152,10 @@
       "ActivityData":
         [
           {
-            "title-de":"Waal & Delfin Schau - Schiffstour",
-            "title-en":"Whale&Dolphin Watching Bootstour",
-            "description-de": "Waal & Delfin Schau - Schiffstour mit Frühstück & Abholung von Mirissa",
-            "description-en": "Whale & Dolphin Watching Bootstour mit Frühstück & Abholung von Mirissa",
+            "title":"Waal & Delfin Schau - Schiffstour",
+            "description": "Waal & Delfin Schau - Schiffstour mit Frühstück & Abholung von Mirissa",
             "imageUrl":"https://media.tacdn.com/media/attractions-splice-spp-674x446/09/54/e6/94.jpg",
-            "websiteUrl-de":"https://www.viator.com/de-DE/tours/Galle/Whale-and-Dolphin-Watching-Boat-Tour-including-Breakfast/d22288-203709P1",
-            "websiteUrl-en":"https://www.viator.com/tours/Galle/Whale-and-Dolphin-Watching-Boat-Tour-including-Breakfast/d22288-203709P1"
+            "websiteUrl":"https://www.viator.com/de-DE/tours/Galle/Whale-and-Dolphin-Watching-Boat-Tour-including-Breakfast/d22288-203709P1"
             }
         ]
     }
@@ -219,13 +198,10 @@
       "ActivityData":
         [
           {
-            "title-de":"Veranstaltungen im Zillertal",
-            "title-en":"Events in Zillertal",
-            "description-de": "Wer Unterhaltung, Spaß und Action sucht, ist im Zillertal richtig. Neben einem umfangreichen Freizeit- und Sportangebot kommt man auch bei verschiedensten Veranstaltungen, Festen und Events voll auf seine Kosten.",
-            "description-en": "If you are looking for entertainment, fun and action, Zillertal is the place to be. In addition to an extensive range of leisure and sporting activities, you can also get your money's worth at a wide variety of events and festivals.",
+            "title":"Veranstaltungen im Zillertal",
+            "description": "Wer Unterhaltung, Spaß und Action sucht, ist im Zillertal richtig. Neben einem umfangreichen Freizeit- und Sportangebot kommt man auch bei verschiedensten Veranstaltungen, Festen und Events voll auf seine Kosten.",
             "imageUrl":"https://www.zillertal.at/fileadmin/_processed_/6/c/csm__c_TomKlockerPhotoDSC00414_e7b3d844d5.jpg",
-            "websiteUrl-de":"https://www.zillertal.at/info/urlaubsinfo/veranstaltungen.html#/veranstaltungen",
-            "websiteUrl-en":"https://www.zillertal.at/en/info/holiday-info/events.html#/events"
+            "websiteUrl":"https://www.zillertal.at/info/urlaubsinfo/veranstaltungen.html#/veranstaltungen"
           }
         ]
     }
@@ -268,13 +244,10 @@
       "ActivityData":
         [
           {
-            "title-de":"SÖLDEN Winter Veranstaltungen",
-            "title-en":"SÖLDEN WINTRY EPICENTER OF EVENTS",
-            "description-de": "SÖLDEN. HEARTBEAT OF THE ALPS. WINTERLICHES EVENT-EPIZENTRUM",
-            "description-en": "The name says it all: Sölden sparks true event fireworks during the winter months. Every year, the traditional Alpine Ski World Cup Opening at Rettenbach Glacier signs the start of the season - here the world's best female and male giant slalom ski racers fight for the first points of the season. The popular Electric Mountain Parties and the eponymous 2-day Electric Mountain Festival beyond 2300 meters altitude - attracting top DJs of electronic dance music to Sölden - promise phat beats and sunshine in abundance.",
+            "title":"SÖLDEN Winter Veranstaltungen",
+            "description": "SÖLDEN. HEARTBEAT OF THE ALPS. WINTERLICHES EVENT-EPIZENTRUM",
             "imageUrl":"https://www.soelden.com/.imaging/mte/jcr/soelden/666/dam/Winter/SOELDEN/Sonstiges/soel_franzi_gritsch_freisteller_20.png/jcr:content/soel_freisteller_skifahren_20-(2).png",
-            "websiteUrl-de":"https://www.soelden.com/de/winter/events.html",
-            "websiteUrl-en":"https://www.soelden.com/winter/events.html"
+            "websiteUrl":"https://www.soelden.com/de/winter/events.html"
           }
         ]
     }

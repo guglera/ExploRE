@@ -9,8 +9,9 @@ import ActivityData from '../models/ActivityData';
 import demoData from '../demoData/demo.json';
 import colors from '../constants/colors.js';
 import Moment from 'moment';
+import ActivityCard from '../components/ActivityCard.js'
 
-export default class DataService { }
+export default class DataService {}
 
 function getUrl(userId) {
     try {
@@ -47,11 +48,12 @@ DataService.getPersonData = function getPersonData(userId) {
 }
 
 DataService.getHotelData = function getHotelData(userId) {
- return new HotelData(demoData[userId].HotelData);
+    return new HotelData(demoData[userId].HotelData);
 }
 
-DataService.getActivityData = function getActivityData(userId) {
-    return new ActivityData(demoData[userId].ActivityData);
+function getActivityData(userId) {   
+    const activities = demoData[userId].ActivityData.map((activity) => new ActivityData(activity.title, activity.description, activity.imageUrl, activity.websiteUrl));
+    return activities
 }
    
 function validateId(userId) {
@@ -69,11 +71,7 @@ function getPersonData(userId) {
 }
 
 function getHotelData(userId) {
- return new HotelData(demoData[userId].HotelData);
-}
-
-function getActivityData(userId) {
-    return new ActivityData(demoData[userId].ActivityData);
+    return new HotelData(demoData[userId].HotelData);
 }
 
 DataService.validateId = function validateId(userId) {
@@ -189,6 +187,23 @@ DataService.getGuestName = function(userId){
     return guestName;
 }
 
+DataService.getActivityCards = function (userId) {
+    const activitiesToDisplay =  getActivityData(userId).map( (activity, index) => {
+        return(
+            <ActivityCard
+                activity = {activity}
+                key = {index}
+            />
+        )
+    })
+    
+    return (
+        <ScrollView contentContainerStyle={styles.cardsContainer}>
+            {activitiesToDisplay}
+        </ScrollView>  
+    )
+}
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -234,4 +249,10 @@ const styles = StyleSheet.create({
         paddingTop: 10,
         paddingBottom: 10,
       },
+
+      cardsContainer: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        paddingBottom: 20     
+      }
 });
