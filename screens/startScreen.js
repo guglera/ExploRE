@@ -1,9 +1,37 @@
 import * as React from 'react';
 import { StyleSheet, Text, View,ImageBackground } from 'react-native';
+import { useState, useEffect, useContext } from 'react';
 import {QrScanner} from '../components/QrScanner';
 import colors from '../constants/colors.js'
+import { AuthContext } from '../contexts/authContext';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useAsyncStorage } from '@react-native-async-storage/async-storage';
 
-function HomeScreen({ navigation }) {
+function HomeScreen({ navigation }) {  
+  const [value, setValue] = useState('value');
+  const { getItem, setItem } = useAsyncStorage('displaylanguage');
+
+  const readItemFromStorage = async () => {
+    const item = await getItem();
+    setValue(item);
+  };
+
+  const authContext = useContext(AuthContext);
+
+  const loginHandler = () => {
+    readItemFromStorage()
+      .then(data => {
+        authContext.langfunc({displaylanguage: value});
+      })
+      .catch(e => console.warn(e))
+  }
+
+  useEffect(() => {
+    loginHandler();
+  }, [value]);
+  
+  console.log("#debug startScreen.js - startScreenLanguage: " + value);
+
   return (
 
     <View style={styles.container}>

@@ -11,6 +11,9 @@ import { AuthContext } from '../contexts/authContext';
 
 function RegionScreen({ navigation }) {
   const globalUID = useContext(AuthContext);
+
+  console.log("#debug regionScreen.js - globalUID: " + globalUID.user.username);
+  console.log("#debug regionScreen.js - ContextLanguage: " + globalUID.language.displaylanguage);
    
     return (
       <View style={styles.container}>

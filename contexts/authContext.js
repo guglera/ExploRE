@@ -7,16 +7,23 @@ export const AuthContext = React.createContext({
 
 const AuthContextProvider = (props) => {
     const [userData, setUserData] = useState(null);
+    const [langData, setLangData] = useState(null);
 
     const loginHandler = (user) => {
         setUserData(user);
     }
 
+    const languageHandler = (language) => {
+        setLangData(language);
+    }
+
     return (
         <AuthContext.Provider
             value={{
-                user : userData,
+                user: userData,
+                language: langData,
                 login: loginHandler,
+                langfunc: languageHandler,
             }}
         >
             { props.children }
