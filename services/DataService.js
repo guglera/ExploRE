@@ -204,6 +204,26 @@ DataService.getActivityCards = function (userId) {
     )
 }
 
+DataService.getBookingPeriodFrom = function (userId) {
+    let from = "";
+    try {
+        from = demoData[userId].PersonData.guestFrom;
+    } catch (error) {
+        return "";
+    }
+    return from;
+}
+
+DataService.getBookingPeriodTo = function (userId) {
+    let to = "";
+    try {
+        to = demoData[userId].PersonData.guestTo;
+    } catch (error) {
+        return "";
+    }
+    return to;
+}
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,

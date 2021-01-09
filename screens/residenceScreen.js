@@ -15,7 +15,8 @@ function ResidenceScreen({ navigation }) {
          <ImageBackground source={images.backgrounds[DataService.getHotelId(globalUID.user.username)]} style={styles.hotelPicBackground}> 
           <View style={styles.headlineTextBackground}>
           <Text style={styles.headlineText}>
-            ExploRe your residence {"\n"}{DataService.getHotelName(globalUID.user.username)}
+            ExploRe your residence {"\n"}{DataService.getHotelName(globalUID.user.username)}{"\n"}
+            {DataService.getBookingPeriodFrom(globalUID.user.username)} to {DataService.getBookingPeriodTo(globalUID.user.username)}
           </Text>
           </View>
         </ImageBackground>
