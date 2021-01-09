@@ -1,16 +1,19 @@
 import React from 'react';
-import {StyleSheet, View, Text, Image} from 'react-native';
+import {StyleSheet, View, Text, Image, Linking, TouchableOpacity} from 'react-native';
 import colors from '../constants/colors.js';
 
 const ActivityCard = (props) =>{
     return (
-        <View style={styles.cardContainer}>
-            <Image source={{uri: props.activity.imageUrl}} 
-            style={styles.image}/>
-            <View style={styles.textContainer}>
-                <Text style={styles.cardText}>{props.activity.title}</Text>
-            </View>
-        </View>
+        <TouchableOpacity 
+            style={styles.cardContainer}
+            onPress={() => Linking.openURL(props.activity.websiteUrl)}
+            >
+                <Image source={{uri: props.activity.imageUrl}} 
+                style={styles.image}/>
+                <View style={styles.textContainer}>
+                    <Text style={styles.cardText}>{props.activity.title}</Text>
+                </View>
+        </TouchableOpacity>
     );
 }
 
