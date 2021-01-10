@@ -48,7 +48,7 @@ function WelcomeScreen({route, navigation }) {
   }, [value]);
   
   console.log("#debug welcomeScreen.js - WelcomeScreen ID: " + value);
-  console.log("#debug welcomeScreen.js - Language: " + authContext.language.displaylanguage);
+  // console.log("#debug welcomeScreen.js - Language: " + authContext.language.displaylanguage);
 
   //get the Location of the Hotel and give it to the Weather Component via props; default Location = Innsbruck
   const lat = DataService.validateId(value)?DataService.getHotelData(value).getLat():'47.259659'
@@ -100,7 +100,7 @@ function WelcomeScreen({route, navigation }) {
           </TouchableOpacity> */}
 
           <View>
-            <Weather lat = {lat} lon = {lon} language = {authContext.language.displaylanguage}/>
+            <Weather lat = {lat} lon = {lon} language = 'en'/>
           </View>
           </View>
           

@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     cardContainer:{
         // flex: 1,
         height:200,
-        width:'45%',
+        width:'47%',
         // borderWidth: 1,
         borderColor: colors.cardBorderColor,
         backgroundColor: colors.cardColor,
@@ -30,8 +30,8 @@ const styles = StyleSheet.create({
         elevation:15,
         marginTop:'2%',
         marginBottom:'2%',
-        marginLeft:'2%',
-        marginRight:'2%',
+        marginLeft:'1%',
+        marginRight:'1%',
         paddingBottom:0,
         overflow:'hidden'
     },
