@@ -7,6 +7,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useAsyncStorage } from '@react-native-async-storage/async-storage';
 import { Weather } from '../components/Weather.js'
 import DataService from '../services/DataService';
+import LanguageService from '../services/LanguageService';
 import {ScrollView} from 'react-native-gesture-handler';
 import colors from '../constants/colors.js'
 import i18n from 'i18n-js';
