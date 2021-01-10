@@ -9,7 +9,7 @@ import { Weather } from '../components/Weather.js'
 import DataService from '../services/DataService';
 import {ScrollView} from 'react-native-gesture-handler';
 import colors from '../constants/colors.js'
-
+import i18n from 'i18n-js';
 import { AuthContext } from '../contexts/authContext';
 
 
@@ -63,12 +63,12 @@ function WelcomeScreen({route, navigation }) {
         <View style={{ flex: 0.8, flexDirection: "column", justifyContent: 'center', }}>
 
         <Text style={styles.loremIpsum}>
-            Welcome {DataService.getGuestName(value)}!
+        {i18n.t('txtWelcomeScreen1')} {DataService.getGuestName(value)}!
             {"\n"}
-            {"\n"}Are you ready to ExploRe
-            {"\n"}your residence and your region?
+            {"\n"}{i18n.t('txtWelcomeScreen2')} 
+            {"\n"}{i18n.t('txtWelcomeScreen3')}
         </Text>
-        </View>
+        </View> 
 
         <View style={{  flex: 1.5, paddingTop: 10, paddingBottom: 5, margin: 20, justifyContent: 'center'}}>
          <TouchableOpacity
