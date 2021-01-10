@@ -13,7 +13,7 @@ function RegionScreen({ navigation }) {
   const globalUID = useContext(AuthContext);
 
   console.log("#debug regionScreen.js - globalUID: " + globalUID.user.username);
-  // console.log("#debug regionScreen.js - gloabelLanguage: " + globalUID.language.displaylanguage);
+  console.log("#debug regionScreen.js - gloabelLanguage: " + globalUID.language.displaylanguage);
   // Zeile 34:           {DataService.getActivityCards(globalUID.user.username, globalUID.language.displaylanguage)}
 
   
@@ -31,7 +31,7 @@ function RegionScreen({ navigation }) {
       </ImageBackground>
 
       <View style={styles.scrollViewStyle}>
-          {DataService.getActivityCards(globalUID.user.username, 'en')}
+          {DataService.getActivityCards(globalUID.user.username, globalUID.language.displaylanguage)}
       </View>
   </View >
   );

@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
         // justifyContent: 'flex-end',
         // alignItems: 'center',
         elevation:15,
-        marginTop:'2%',
+        marginTop:'1%',
         marginBottom:'2%',
         marginLeft:'1%',
         marginRight:'1%',
