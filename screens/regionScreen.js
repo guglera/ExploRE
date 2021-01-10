@@ -29,7 +29,7 @@ function RegionScreen({ navigation }) {
       </ImageBackground>
 
       <View style={styles.scrollViewStyle}>
-          {DataService.getActivityCards(globalUID.user.username)}
+          {DataService.getActivityCards(globalUID.user.username, globalUID.language.displaylanguage)}
       </View>
   </View >
   );

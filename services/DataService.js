@@ -188,12 +188,13 @@ function getActivityData(userId) {
     return activities
 }
 
-DataService.getActivityCards = function (userId) {
+DataService.getActivityCards = function (userId, language) {
     const activitiesToDisplay =  getActivityData(userId).map( (activity, index) => {
         return(
             <ActivityCard
                 activity = {activity}
                 key = {index}
+                language = {language}
             />
         )
     })
