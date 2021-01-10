@@ -1,13 +1,15 @@
+
 export default class ActivityData{
-    constructor(title, description, imageUrl, websiteUrl){
-        this.title = title;
-        this.description = description;
+    constructor(titleDE, titleEN, imageUrl, websiteUrlDE, websiteUrlEN){
+        this.titleDE = titleDE;
+        this.titleEN = titleEN;
         this.imageUrl = imageUrl;
-        this.websiteUrl = websiteUrl;
+        this.websiteUrlDE = websiteUrlDE;
+        this.websiteUrlEN = websiteUrlEN;
     }
 
-getTitle = function () {
-    return this.title;    
+getTitle = function (language) {
+    return language === 'de' ? this.titleDE : this.titleEN
 }
 
 getDescription = function () {
@@ -18,8 +20,8 @@ getImageUrl = function () {
     return this.imageUrl;    
 }
 
-getWebsiteUrl = function () {
-    return this.websiteUrl;    
+getWebsiteUrl = function (language) {
+    return language === 'de' ? this.websiteUrlDE : this.websiteUrlEN   
 }
 
 }

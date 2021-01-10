@@ -6,12 +6,12 @@ const ActivityCard = (props) =>{
     return (
         <TouchableOpacity 
             style={styles.cardContainer}
-            onPress={() => Linking.openURL(props.activity.websiteUrl)}
+            onPress={() => Linking.openURL(props.activity.getWebsiteUrl(props.language))}
             >
-                <Image source={{uri: props.activity.imageUrl}} 
+                <Image source={{uri: props.activity.getImageUrl()}} 
                 style={styles.image}/>
                 <View style={styles.textContainer}>
-                    <Text style={styles.cardText}>{props.activity.title}</Text>
+                    <Text style={styles.cardText}>{props.activity.getTitle(props.language)}</Text>
                 </View>
         </TouchableOpacity>
     );

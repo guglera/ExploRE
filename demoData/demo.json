@@ -36,34 +36,40 @@
       },
       "ActivityData":[
         {
-          "title":"Veranstaltungen Ferienregion Latsch-Martelltal",
-          "description": "Veranstaltungen in der Ferienregion Latsch-Martelltal",
+          "titleDE":"Veranstaltungen Ferienregion Latsch-Martelltal",
+          "titleEN":"Events in Laces-Val Martello",
           "imageUrl":"https://www.vinschgau.net/media/c0e50b7f-e095-498e-abd5-2712ce3f2ab1/1428_x_900/latsch-martell.webp",
-          "websiteUrl":"https://www.vinschgau.net/de/latsch-martelltal/service-info/aktuelles/alle-veranstaltungen.html"
+          "websiteUrlDE":"https://www.vinschgau.net/de/latsch-martelltal/service-info/aktuelles/alle-veranstaltungen.html",
+          "websiteUrlEN":"https://www.vinschgau.net/en/laces-val-martello/service-info/current-information/events-overview.html"
         },
         {
-          "title":"Wetter in der Ferienregion",
-          "description": "Das Wetter für ihre Ferien in Latsch-Martelltal",
+          "titleDE":"Wetter in der Ferienregion",
+          "titleEN":"Weather in the Region",
           "imageUrl":"https://www.vinschgau.net/media/705981d7-eab9-4d24-8ebd-a5a5b811ea1e/1428_x_450/20200621-201258.webp",
-          "websiteUrl":"https://www.vinschgau.net/de/latsch-martelltal/service-info/aktuelles/wetter.html"
+          "websiteUrlDE":"https://www.vinschgau.net/de/latsch-martelltal/service-info/aktuelles/wetter.html",
+          "websiteUrlEN":"https://www.vinschgau.net/en/laces-val-martello/service-info/current-information/weather.html"
         },
         {
-          "title":"Webcams in der Region",
-          "description": "Die Webcams der Ferienregion Latsch-Martelltal",
+          "titleDE":"Webcams in der Region",
+          "titleEN":"Webcams in the Region",
           "imageUrl":"https://www.vinschgau.net/media/d2f7ef5c-66ac-40cc-9b13-f02f5686e114/1428_x_450/landschaft-martell-ras.webp",
-          "websiteUrl":"https://www.vinschgau.net/de/latsch-martelltal/service-info/aktuelles/webcam.html"
+          "websiteUrlDE":"https://www.vinschgau.net/de/latsch-martelltal/service-info/aktuelles/webcam.html",
+          "websiteUrlEN":"https://www.vinschgau.net/en/laces-val-martello/service-info/current-information/webcam.html"
         },
         {
-          "title":"Top Events Vinschgau",
-          "description": "Welche Events Sie im Vinschgau auf keinen Fall verpassen sollten...",
+          "titleDE":"Top Events Vinschgau",
+          "titleEN":"Top Events Val Venosta",
           "imageUrl":"https://d1b7rr0nby25az.cloudfront.net/cache-buster-1537529841/static/img/relaunch2018/logo-badge.svg",
-          "websiteUrl":"https://www.suedtirol.info/de/erleben/events-in-suedtirol/veranstaltungs-highlights?region[]=274"
+          "websiteUrlDE":"https://www.suedtirol.info/de/erleben/events-in-suedtirol/veranstaltungs-highlights?region[]=274",
+          "websiteUrlEN":"https://www.suedtirol.info/en/experience/events-in-south-tyrol/highlight-events?region[]=274"
+
         },
         {
-          "title":"Top Events Südtirol.Info",
-          "description": "Welche Events Sie in Südtirol auf keinen Fall verpassen sollten...",
+          "titleDE":"Top Events Südtirol.Info",
+          "titleEN":"Highlight events in South Tyrol",
           "imageUrl":"https://d1b7rr0nby25az.cloudfront.net/cache-buster-1537529841/static/img/relaunch2018/logo-badge.svg",
-          "websiteUrl":"https://www.suedtirol.info/de/erleben/events-in-suedtirol/veranstaltungs-highlights"
+          "websiteUrlDE":"https://www.suedtirol.info/de/erleben/events-in-suedtirol/veranstaltungs-highlights",
+          "websiteUrlEN":"https://www.suedtirol.info/en/experience/events-in-south-tyrol/highlight-events"
         }
       ]
     }
@@ -106,10 +112,11 @@
     "ActivityData":
       [
        {
-        "title":"Veranstaltungen Passeiertal",
-        "description": "Das Passeiertal bietet zu jeder Jahreszeit Unterhaltung vom Feinsten mit sportlichen, musikalischen und kulturellen Veranstaltungen. Traditionelle Gerichte und alpine Köstlichkeiten stehen im Mittelpunkt von Genussveranstaltungen. Wanderungen verbinden Natur- mit Kulturerlebnis und bieten Einblicke in das Alltagsleben und in die Traditionen des Tales. Auch den kleinen Gästen wird nicht langweilig: Ein buntes Kinderprogramm sorgt für pure Unterhaltung.",
+        "titleDE":"Veranstaltungen Passeiertal",
+        "titleEN":"EVENTS IN THE PASSEIERTAL VALLEY",
         "imageUrl":"https://www.merano-suedtirol.it/media/logo-suedtirol.svg",
-        "websiteUrl":"https://www.merano-suedtirol.it/de/passeiertal/info-service/veranstaltungen/veranstaltungskalender.html"
+        "websiteUrlDE":"https://www.merano-suedtirol.it/de/passeiertal/info-service/veranstaltungen/veranstaltungskalender.html",
+        "websiteUrlEN":"https://www.merano-suedtirol.it/en/passeiertal-valley/info-service/events/event-calendar.html"
         }
       ]
     }
@@ -152,10 +159,11 @@
       "ActivityData":
         [
           {
-            "title":"Waal & Delfin Schau - Schiffstour",
-            "description": "Waal & Delfin Schau - Schiffstour mit Frühstück & Abholung von Mirissa",
+            "titleDE":"Waal & Delfin Schau - Schiffstour",
+            "titleEN":"Wale & Dolphin Watching Boat Tour",
             "imageUrl":"https://media.tacdn.com/media/attractions-splice-spp-674x446/09/54/e6/94.jpg",
-            "websiteUrl":"https://www.viator.com/de-DE/tours/Galle/Whale-and-Dolphin-Watching-Boat-Tour-including-Breakfast/d22288-203709P1"
+            "websiteUrlDE":"https://www.viator.com/de-DE/tours/Galle/Whale-and-Dolphin-Watching-Boat-Tour-including-Breakfast/d22288-203709P1",
+            "websiteUrlEN":"https://www.viator.com/tours/Galle/Whale-and-Dolphin-Watching-Boat-Tour-including-Breakfast/d22288-203709P1"
             }
         ]
     }
@@ -198,10 +206,11 @@
       "ActivityData":
         [
           {
-            "title":"Veranstaltungen im Zillertal",
-            "description": "Wer Unterhaltung, Spaß und Action sucht, ist im Zillertal richtig. Neben einem umfangreichen Freizeit- und Sportangebot kommt man auch bei verschiedensten Veranstaltungen, Festen und Events voll auf seine Kosten.",
+            "titleDE":"Veranstaltungen im Zillertal",
+            "titleEN":"Events in Zillertal",
             "imageUrl":"https://www.zillertal.at/fileadmin/_processed_/6/c/csm__c_TomKlockerPhotoDSC00414_e7b3d844d5.jpg",
-            "websiteUrl":"https://www.zillertal.at/info/urlaubsinfo/veranstaltungen.html#/veranstaltungen"
+            "websiteUrlDE":"https://www.zillertal.at/info/urlaubsinfo/veranstaltungen.html#/veranstaltungen",
+            "websiteUrlEN":"https://www.zillertal.at/en/info/holiday-info/events.html#/events"
           }
         ]
     }
@@ -244,10 +253,11 @@
       "ActivityData":
         [
           {
-            "title":"SÖLDEN Winter Veranstaltungen",
-            "description": "SÖLDEN. HEARTBEAT OF THE ALPS. WINTERLICHES EVENT-EPIZENTRUM",
+            "titleDE":"SÖLDEN Winter Veranstaltungen",
+            "titleEN":"Soelden Winter Events",
             "imageUrl":"https://www.soelden.com/.imaging/mte/jcr/soelden/666/dam/Winter/SOELDEN/Sonstiges/soel_franzi_gritsch_freisteller_20.png/jcr:content/soel_freisteller_skifahren_20-(2).png",
-            "websiteUrl":"https://www.soelden.com/de/winter/events.html"
+            "websiteUrlDE":"https://www.soelden.com/de/winter/events.html",
+            "websiteUrlEN":"https://www.soelden.com/winter/events.html"
           }
         ]
     }

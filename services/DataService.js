@@ -50,11 +50,6 @@ DataService.getPersonData = function getPersonData(userId) {
 DataService.getHotelData = function getHotelData(userId) {
     return new HotelData(demoData[userId].HotelData);
 }
-
-function getActivityData(userId) {   
-    const activities = demoData[userId].ActivityData.map((activity) => new ActivityData(activity.title, activity.description, activity.imageUrl, activity.websiteUrl));
-    return activities
-}
    
 function validateId(userId) {
     return 'undefined' !== typeof (demoData[userId]) ? true : false;
@@ -185,6 +180,12 @@ DataService.getGuestName = function(userId){
         return "";
     }
     return guestName;
+}
+
+
+function getActivityData(userId) {   
+    const activities = demoData[userId].ActivityData.map((activity) => new ActivityData(activity.titleDE, activity.titleEN, activity.imageUrl, activity.websiteUrlDE, activity.websiteUrlEN ));
+    return activities
 }
 
 DataService.getActivityCards = function (userId) {
