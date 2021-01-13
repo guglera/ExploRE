@@ -6,6 +6,7 @@ import colors from '../constants/colors.js'
 import { AuthContext } from '../contexts/authContext';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useAsyncStorage } from '@react-native-async-storage/async-storage';
+import i18n from 'i18n-js';
 
 function HomeScreen({ navigation }) {  
   const [value, setValue] = useState('value');
@@ -32,16 +33,18 @@ function HomeScreen({ navigation }) {
   
   console.log("#debug startScreen.js - startScreenLanguage: " + value);
 
+  i18n.locale = value;
+
   return (
 
     <View style={styles.container}>
 
       <ImageBackground source={require("../assets/back4.png")} style={styles.image} resizeMode="stretch">
         <Text style={styles.loremIpsum}>
-            Welcome
+        {i18n.t('txtStartScreen1')} 
         </Text>
         <Text style={styles.loremIpsum}>
-              Please scan your QR-Code!
+        {i18n.t('txtStartScreen2')} 
         </Text>
 
         <View style={styles.qrScanner}>

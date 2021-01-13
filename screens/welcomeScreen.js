@@ -7,11 +7,11 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useAsyncStorage } from '@react-native-async-storage/async-storage';
 import { Weather } from '../components/Weather.js'
 import DataService from '../services/DataService';
-import LanguageService from '../services/LanguageService';
 import {ScrollView} from 'react-native-gesture-handler';
 import colors from '../constants/colors.js'
 import i18n from 'i18n-js';
 import { AuthContext } from '../contexts/authContext';
+import { translations } from '../components/Languages';
 
 
 function WelcomeScreen({route, navigation }) {
@@ -47,7 +47,13 @@ function WelcomeScreen({route, navigation }) {
   useEffect(() => {
     loginHandler();
   }, [value]);
-  
+
+
+  const globalLang = useContext(AuthContext);
+  console.log("#debug welcomeScreen.js - gloabelLanguage: " + globalLang.language.displaylanguage);
+  i18n.locale = globalLang.language.displaylanguage;
+
+
   console.log("#debug welcomeScreen.js - WelcomeScreen ID: " + value);
   console.log("#debug welcomeScreen.js - Language: " + authContext.language.displaylanguage);
   // line 103 replaced:  <Weather lat = {lat} lon = {lon} language = {authContext.language.displaylanguage}/>
