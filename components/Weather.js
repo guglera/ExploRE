@@ -1,20 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import { View, Text, Image, StyleSheet, SafeAreaView } from 'react-native'
-import { localeData } from 'moment'
-import DataService from '../services/DataService';
+import key from '../ENV/ENV.js'
 
     /*
         For more Info see: https://openweathermap.org/api/one-call-api
     */
 
-const weather_api_key = '1eefaf10ed0813c788223cdcf71986be'
 const base_weather_url = 'https://api.openweathermap.org/data/2.5/onecall?'
        
 export function Weather (props) {
     const [current_weather, setCurrentWeather] = useState({temp: 0, icon: '', weather_info: ''})
     const [weather_forecast, setWeatherForecast] = useState({temp: 0, icon: '', weather_info: ''})
 
-    const weather_url = `${base_weather_url}lat=${props.lat}&lon=${props.lon}&exclude=minutely,hourly,alerts&units=metric&appid=${weather_api_key}&lang=${props.language}`
+    const weather_url = `${base_weather_url}lat=${props.lat}&lon=${props.lon}&exclude=minutely,hourly,alerts&units=metric&appid=${key.weatherKey}&lang=${props.language}`
     
 
     //get current & daily weather forecast weather
