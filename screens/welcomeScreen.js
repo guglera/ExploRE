@@ -11,6 +11,7 @@ import {ScrollView} from 'react-native-gesture-handler';
 import colors from '../constants/colors.js'
 import i18n from 'i18n-js';
 import { AuthContext } from '../contexts/authContext';
+import { translations } from '../components/Languages';
 i18n.fallbacks = true;
 
 
