@@ -8,10 +8,13 @@ const HotelActivityCard = (props) =>{
             style={styles.cardContainer}
             onPress={() => Linking.openURL(props.hotelActivity.getActivityUrl(props.language))}
             >
-                <Image source={{uri: props.hotelActivity.getImageUrl()}} 
-                style={styles.image}/>
                 <View style={styles.textContainer}>
-                    <Text style={styles.cardText}>{props.hotelActivity.getTitle(props.language)}</Text>
+                    <Text style={styles.cardHeader}>{props.hotelActivity.getTitle(props.language)}</Text>
+                    <Text style={styles.cardText}>{props.hotelActivity.getDescription(props.language)}</Text>
+                    <Text style={styles.cardHeader}>{props.hotelActivity.getSchedule()}</Text>
+                </View>
+                <View style={styles.textLink}>
+                    <Text style={styles.cardHeader}>Reservation</Text>
                 </View>
         </TouchableOpacity>
     );
@@ -20,13 +23,13 @@ const HotelActivityCard = (props) =>{
 const styles = StyleSheet.create({
     cardContainer:{
         // flex: 1,
-        height:200,
-        width:'47%',
-        // borderWidth: 1,
+        height:180,
+        width:'97%',
+        // borderWidth: 2,
         borderColor: colors.cardBorderColor,
         backgroundColor: colors.cardColor,
         // justifyContent: 'flex-end',
-        // alignItems: 'center',
+        alignItems: 'baseline',
         elevation:15,
         marginTop:'1%',
         marginBottom:'2%',
@@ -35,20 +38,38 @@ const styles = StyleSheet.create({
         paddingBottom:0,
         overflow:'hidden'
     },
-     cardText:{
+     cardHeader:{
         textAlign:'center',
         fontSize:18,
         color:colors.buttonTxtColor,
         fontWeight:'bold'
     },
+     cardText:{
+        textAlign:'center',
+        fontSize:14,
+        color:colors.buttonTxtColor,
+        fontWeight:'normal'
+    },
     image:{
         width:'100%',
         height: '75%', 
     },
-    textContainer:{
-        height:'25%',
+    textHeader:{
+        height:'30%',
         width:'100%',
         backgroundColor:colors.headlineTxtBackgrColor
+    },
+    textContainer:{
+        height:'80%',
+        width:'100%',
+        // color:colors.textColor,
+        backgroundColor:colors.activityBackgrColor
+    },
+    textLink:{
+        alignItems:'center',
+        height:'20%',
+        width:'100%',
+        backgroundColor:colors.buttonBackgrColor
     }
  });
 

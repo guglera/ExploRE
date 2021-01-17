@@ -12,7 +12,7 @@ i18n.translations = {
     bttnWelcomeScreen1: 'My Residence', bttnWelcomeScreen2: 'My Region',
     weatherWelcomeScreen1: 'Current Weather', weatherWelcomeScreen2: 'Weather for tomorrow',
     txtResidenceScreen1: 'ExploRe your residence', txtResidenceScreen2: 'to',
-    bttnResidenceScreen1: 'Forward me to the Hotel Website', bttnResidenceScreen2: 'Show me the Morning Brief', bttnResidenceScreen3: 'Show me the Menu',
+    bttnResidenceScreen1: 'Forward me to the Hotel Website', bttnResidenceScreen2: 'Show me the Morning Brief', bttnResidenceScreen3: 'Show me the Menu', bttnResidenceScreen4: 'Show me residence activities',
     txtRegionScreen1: 'ExploRe your region', txtRegionScreen2: "there's a lot to see"
 
 
@@ -25,7 +25,7 @@ i18n.translations = {
     bttnWelcomeScreen1: 'Meine Residenz', bttnWelcomeScreen2: 'Meine Region',
     weatherWelcomeScreen1: 'Aktuelles Wetter', weatherWelcomeScreen2: 'Wetter Morgen',
     txtResidenceScreen1: 'Erkunde deine Residenz', txtResidenceScreen2: 'bis',
-    bttnResidenceScreen1: 'Zur Hotelwebsite', bttnResidenceScreen2: 'Zur Morgenpost', bttnResidenceScreen3: 'Zum Menü',
+    bttnResidenceScreen1: 'Zur Hotelwebsite', bttnResidenceScreen2: 'Morgenpost', bttnResidenceScreen3: 'Menü', bttnResidenceScreen4: 'Aktivitäten',
     txtRegionScreen1: 'Erkunde deine Region', txtRegionScreen2: "es gibt viel zu sehen"
   },
   };

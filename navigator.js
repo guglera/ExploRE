@@ -6,6 +6,7 @@ import HomeScreen from "./screens/startScreen.js"
 import WelcomeScreen from "./screens/welcomeScreen.js"
 import RegionScreen from "./screens/regionScreen.js"
 import ResidenceScreen from "./screens/residenceScreen.js"
+import ResidenceActivityScreen from "./screens/residenceActivityScreen.js"
 import MorgenpostScreen from "./screens/morgenpostScreen.js"
 import MenuScreen from "./screens/menuScreen.js"
 import QrScanner from "./components/QrScanner.js"
@@ -37,6 +38,7 @@ const Navigator = (props) => {
           <Stack.Screen name="Residence" component={ResidenceScreen} />
           <Stack.Screen name="Morning Brief" component={MorgenpostScreen} />
           <Stack.Screen name="Menu" component={MenuScreen} />
+          <Stack.Screen name="Residence Activities" component={ResidenceActivityScreen} />
         </Stack.Navigator>
       </NavigationContainer>
   );

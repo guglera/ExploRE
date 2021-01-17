@@ -18,9 +18,6 @@ function RegionScreen({ navigation }) {
 
   console.log("#debug regionScreen.js - globalUID: " + globalUID.user.username);
   console.log("#debug regionScreen.js - gloabelLanguage: " + globalUID.language.displaylanguage);
-  // Zeile 34:           {DataService.getActivityCards(globalUID.user.username, globalUID.language.displaylanguage)}
-
-  
    
     return (
       <View style={styles.container}>

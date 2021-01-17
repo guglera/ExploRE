@@ -12,8 +12,10 @@ const colors = {
     headlineTxtColor: 'white',
     headlineTxtBackgrColor: 'rgba(115,160,186,0.65)',
     containerColor: '#fff',
+    activityBackgrColor: '#777',
     cardColor:'#fff',
     cardBorderColor: '#999',
+    textColor:'#000',
   }
 
   export default colors;

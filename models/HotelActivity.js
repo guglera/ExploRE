@@ -18,11 +18,11 @@ export default class HotelActivity{
     }
 
     getDescription = function (language) {
-        return language === 'de' ? this.descriptionDE : this.descriptionEN
+        return language === 'de' ? this.descriptionDE : this.descriptionEN;
     }
 
     getActivityUrl = function (language) {
-        return language === 'de' ? this.activityUrlDE : this.activityUrlEN   
+        return language === 'de' ? this.activityUrlDE : this.activityUrlEN;   
     }
     
     getImageUrl = function () {

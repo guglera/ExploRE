@@ -100,14 +100,17 @@ DataService.validateBonkingDate = function (userId, { navigation }) {
                         View style={styles.buttons}>
                         <Text style={styles.buttonText}>{i18n.t('bttnResidenceScreen2')}</Text>
                     </TouchableOpacity>
-
                     <TouchableOpacity
                         onPress={() => navigation.navigate('Menu')}
                         View style={styles.buttons}>
                         <Text style={styles.buttonText}>{i18n.t('bttnResidenceScreen3')}</Text>
                     </TouchableOpacity>
+                    <TouchableOpacity
+                        onPress={() => navigation.navigate('Residence Activities')}
+                        View style={styles.buttons}>
+                        <Text style={styles.buttonText}>{i18n.t('bttnResidenceScreen4')}</Text>
+                    </TouchableOpacity>
                     {getUrl(userId)}
-                   {/*  {DataService.getHotelActivityCards(globalUID.user.username, globalUID.language.displaylanguage)} */}
                 </ScrollView>
             </View>
           )
@@ -230,7 +233,7 @@ DataService.getHotelActivityCards = function (userId, language) {
     })
     
     return (
-        <ScrollView contentContainerStyle={styles.cardsContainer}>
+        <ScrollView contentContainerStyle={styles.activityContainer}>
             {hotelActivitiesToDisplay}
         </ScrollView>  
     )
@@ -296,15 +299,18 @@ const styles = StyleSheet.create({
         borderTopRightRadius: 20,
         borderTopLeftRadius: 20,
       },
-  
       scrollContainer: {
         paddingTop: 10,
         paddingBottom: 10,
       },
-
       cardsContainer: {
         flexDirection: 'row',
         flexWrap: 'wrap',
+        paddingBottom: 20     
+      },
+      activityContainer: {
+        flexDirection: 'row',
+        // flexWrap: 'wrap',
         paddingBottom: 20     
       }
 });

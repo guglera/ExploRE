@@ -28,11 +28,6 @@ function ResidenceScreen({ navigation }) {
           </View>
         </ImageBackground>
         {DataService.validateBonkingDate(globalUID.user.username, { navigation })}
-        {/* #debug Central invalid date:  DataService.validateBonkingDate("508103382", { navigation })*/}
-        {/* #debug Bergfrieden valid date: DataService.validateBonkingDate("16865045", { navigation })*/}
-        {DataService.getHotelActivityCards(globalUID.user.username, globalUID.language.displaylanguage)}
-{/*         <View style={styles.scrollViewStyle}>
-        </View> */}
     </View >
     );
   }
