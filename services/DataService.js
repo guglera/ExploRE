@@ -9,7 +9,10 @@ import ActivityData from '../models/ActivityData';
 import demoData from '../demoData/demo.json';
 import colors from '../constants/colors.js';
 import Moment from 'moment';
-import ActivityCard from '../components/ActivityCard.js'
+import ActivityCard from '../components/ActivityCard.js';
+import i18n from 'i18n-js';
+//import { translations } from '../components/Languages';
+i18n.fallbacks = true;
 
 
 export default class DataService {}
@@ -22,7 +25,7 @@ function getUrl(userId) {
                 <TouchableOpacity
                     onPress={() => Linking.openURL(url)}
                     View style={styles.buttons}>
-                    <Text style={styles.buttonText}>Forward me to the Hotel Website</Text>
+                    <Text style={styles.buttonText}>{i18n.t('bttnResidenceScreen1')}</Text>
                 </TouchableOpacity>
         )
     } catch (error) {
@@ -94,13 +97,13 @@ DataService.validateBonkingDate = function (userId, { navigation }) {
                     <TouchableOpacity
                         onPress={() => navigation.navigate('Morning Brief')}
                         View style={styles.buttons}>
-                        <Text style={styles.buttonText}>Show me the Morning Brief</Text>
+                        <Text style={styles.buttonText}>{i18n.t('bttnResidenceScreen2')}</Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity
                         onPress={() => navigation.navigate('Menu')}
                         View style={styles.buttons}>
-                        <Text style={styles.buttonText}>Show me the Menu</Text>
+                        <Text style={styles.buttonText}>{i18n.t('bttnResidenceScreen3')}</Text>
                     </TouchableOpacity>
                     {getUrl(userId)}
                 </ScrollView>
