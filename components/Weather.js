@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { View, Text, Image, StyleSheet, SafeAreaView } from 'react-native'
 import key from '../ENV/ENV.js'
+import i18n from 'i18n-js';
+import { AuthContext } from '../contexts/authContext';
+import { useContext } from 'react';
+import { translations } from '../components/Languages';
+i18n.fallbacks = true;
+
 
     /*
         For more Info see: https://openweathermap.org/api/one-call-api
@@ -33,6 +39,10 @@ export function Weather (props) {
         })();
     }, [props]);
 
+    const globalLang = useContext(AuthContext);
+    console.log("#debug Weather.js - gloabelLanguage: " + globalLang.language.displaylanguage);
+    i18n.locale = globalLang.language.displaylanguage;
+
     console.log("#debug Weather.js - Weather Forecast:" + weather_forecast)
    
     const iconUrl = `https://openweathermap.org/img/wn/${current_weather.icon}@4x.png`
@@ -42,13 +52,13 @@ export function Weather (props) {
         <View>
             <View style = {styles.cardContainer}>
                 <View style={styles.weatherCard}>
-                    <Text style = {styles.header}>Current Weather</Text>
+                    <Text style = {styles.header}>{i18n.t('weatherWelcomeScreen1')}</Text>
                     <Image style={styles.weatherIcon} source={{ uri: iconUrl }} />
                     <Text style = {styles.textPrimary}>{current_weather.weather_info}</Text>
                     <Text style={styles.textPrimary}>{current_weather.temp}°C</Text>
                 </View>     
                 <View style={styles.weatherCard}>
-                    <Text style = {styles.header}>Weather for Tomorrow</Text>
+                    <Text style = {styles.header}>{i18n.t('weatherWelcomeScreen2')}</Text>
                     <Image style={styles.weatherIcon} source={{ uri: tomorrow_iconUrl }} />
                     <Text style = {styles.textPrimary}>{weather_forecast.weather_info}</Text>
                     <Text style={styles.textPrimary}>{weather_forecast.temp}°C</Text>
