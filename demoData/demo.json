@@ -71,7 +71,35 @@
           "websiteUrlDE":"https://www.suedtirol.info/de/erleben/events-in-suedtirol/veranstaltungs-highlights",
           "websiteUrlEN":"https://www.suedtirol.info/en/experience/events-in-south-tyrol/highlight-events"
         }
-      ]
+      ],
+      "HotelActivity":[
+        {
+          "titleDE":"Eventsauna Aufguss",
+          "titleEN":"Powerful sauna infusion",
+          "descriptionDE":"Im Dreamberry Wellnessbereich des Hotels Bergfrieden in Martell, können Sie fruchtig entspannen und 'beerig' genießen. Nach einer tollen Schneeschuhwanderung – der Wellness-Bereich im Beerenhotel Bergfrieden ist der ideale Platz, um abzuschalten und sich zu erholen.",
+          "descriptionEN":"Sauna restores body and spirit to their natural balance. The body's defenses are strengthened, circulation stimulated, skin is taken care of and tonified.",
+          "imageUrl":"https://www.bergfrieden.com/uploads/tx_bh/dsc_7768.jpg",
+          "hotelActivityFrom":"2020-12-20",
+          "hotelActivityTo":"2021-12-20",
+          "schedule":"16:00 - 17:00",
+          "registrationMail":"jonesadmin@gmail.com",
+          "activityUrlDE":"https://www.bergfrieden.com/de/genuss-wellness/wellness/",
+          "activityUrlEN":"https://www.bergfrieden.com/en/culinary-wellness/wellness/"
+        },
+        {
+          "titleDE":"Schneeschuhwandern",
+          "titleEN":"Snow shoe hiking",
+          "descriptionDE":"...",
+          "descriptionEN":"...",
+          "imageUrl":"https://www.bergfrieden.com/uploads/tx_bh/355w_e7t6092_8.jpg",
+          "hotelActivityFrom":"2020-12-20",
+          "hotelActivityTo":"2021-12-20",
+          "schedule":"08:00 - 15:00",
+          "registrationMail":"jonesadmin@gmail.com",          
+          "activityUrlDE":"https://www.bergfrieden.com/de/unser-martelltal/winteraktivitaeten/schneeschuhwandern/",
+          "activityUrlEN":"https://www.bergfrieden.com/en/the-martell-valley/winter-activities/snowshoeing/"
+        }
+      ]           
     }
     ,
     "508103379": {
@@ -109,7 +137,7 @@
           "filePath": "../assets/quellenhof-mp1.jpg"
         }]
       },
-    "ActivityData":
+      "ActivityData":
       [
        {
         "titleDE":"Veranstaltungen Passeiertal",
@@ -117,6 +145,34 @@
         "imageUrl":"https://www.merano-suedtirol.it/media/cbe78df8-6ac9-416d-8d69-b1eb3eaf0042/230x0/logo-passeiertal-2020-en.png",
         "websiteUrlDE":"https://www.merano-suedtirol.it/de/passeiertal/info-service/veranstaltungen/veranstaltungskalender.html",
         "websiteUrlEN":"https://www.merano-suedtirol.it/en/passeiertal-valley/info-service/events/event-calendar.html"
+        }
+      ],
+      "HotelActivity":[
+        {
+          "titleDE":"deepWork®",
+          "titleEN":"deepWork®",
+          "descriptionDE":"deepWORK® ist ein athletisches, holistisches Programm, das den Körper ganzheitlich trainiert. Es ist auf den fünf Elementen der chinesischen Medizin aufgebaut: Erde, Holz, Feuer, Metall, Wasser. deepWork® unterliegt dem Gesetz von Yin und Yang, besteht aus Phasen der Anspannung und Entspannung, Schwung- und Kraftphasen. Schwierigkeit: Schwer  Achtung: Eine Anmeldung ist erforderlich!",
+          "descriptionEN":"deepWORK® is an athletic, holistic workout. It is based on the five elements of the chinese medicine: earth, wood, fire, metal, water. deepWork® follows the rules of Yin and Yang, consists of phases of tension and relaxation, swing and power phases.  Difficulty: difficult  Participation Children: from 12  Attention: Registration required!",
+          "imageUrl":"https://s3.eu-central-1.amazonaws.com/guestnet.info/media/entry/files/images/weekprogramactivityimage/110841/5e2acec891974DeepWorklogowei-grau72dpi01.jpg",
+          "hotelActivityFrom":"2020-12-20",
+          "hotelActivityTo":"2021-12-20",
+          "schedule":"10:00 - 11:00",
+          "registrationMail":"jonesadmin@gmail.com",
+          "activityUrlDE":"https://quellenhoflazise.guestnet.info/activity-calendar/2021-01-01/2021-01-08",
+          "activityUrlEN":"https://quellenhoflazise.guestnet.info/en/activity-calendar/2021-01-01/2021-01-08"
+        },
+        {
+          "titleDE":"YOGAPILATES Fusion DETOX",
+          "titleEN":"YOGAPILATES Fusion DETOX",
+          "descriptionDE":"Aus dem Yoga werden Übungen der Atmung, Entspannung, Flexibilität und Ausrichtung durchgeführt. Haltungen aus dem Pilates stärken das Powerhouse (tiefe Muskulatur), besonderes Augenmerk wird auf die Wirbelsäule gelegt. Die Übungen werden in einem Flow ausgeführt, sind einfach anzuwenden und für jedes Level geeignet. Achtung: Eine Anmeldung ist erforderlich!  Zeit: 10:00 - 10:45 Uhr",
+          "descriptionEN":"For this course, Yoga offers exercises for breathing, relaxation, flexibility and alignment. Postures from Pilates are used to strengthen your Powerhouse (deep muscles), special attention is here paid on the spine. All exercises are done in a flow, they are easy to learn and easily adapted to each training level. Attention: Registration required!  Scedule: 10:00 - 10:45",
+          "imageUrl":"https://s3.eu-central-1.amazonaws.com/guestnet.info/media/entry/files/images/weekprogramactivityimage/110904/5fd4c217bdaf3Alexander-HaidenYoga-1.jpg",
+          "hotelActivityFrom":"2020-12-20",
+          "hotelActivityTo":"2021-12-20",
+          "schedule":"09:00 - 10:00",
+          "registrationMail":"jonesadmin@gmail.com",          
+          "activityUrlDE":"https://www.bergfrieden.com/de/unser-martelltal/winteraktivitaeten/schneeschuhwandern/",
+          "activityUrlEN":"https://www.bergfrieden.com/en/the-martell-valley/winter-activities/snowshoeing/"
         }
       ]
     }
@@ -165,7 +221,35 @@
             "websiteUrlDE":"https://www.viator.com/de-DE/tours/Galle/Whale-and-Dolphin-Watching-Boat-Tour-including-Breakfast/d22288-203709P1",
             "websiteUrlEN":"https://www.viator.com/tours/Galle/Whale-and-Dolphin-Watching-Boat-Tour-including-Breakfast/d22288-203709P1"
             }
-        ]
+        ],
+      "HotelActivity":[
+        {
+          "titleDE":"Hotel Aktivität",
+          "titleEN":"hotel activity",
+          "descriptionDE":"The south coast of Sri Lanka is not only blessed with some of the best beaches in the world, but a diverse range of attractions as well. In destinations such as Galle, things to do and places to see abound and The Fortress Resort & Spa is conveniently located near many of them. We also make an ideal base from which to enjoy some of the other well known attractions the region has to offer.",
+          "descriptionEN":"Die Südküste Sri Lankas ist nicht nur mit einigen der besten Strände der Welt gesegnet, sondern auch mit einer Vielzahl von Attraktionen. In Destinationen wie Galle, Dinge zu tun und Orte zu sehen gibt es im Überfluss und The Fortress Resort & Spa ist bequem in der Nähe von vielen von ihnen. Wir sind auch ein idealer Ausgangspunkt, um einige der anderen bekannten Attraktionen zu genießen, die die Region zu bieten hat.",
+          "imageUrl":"https://www.fortressresortandspa.com/wp-content/uploads/2017/09/wal-2848225-2.jpg",
+          "hotelActivityFrom":"2020-12-20",
+          "hotelActivityTo":"2021-12-20",
+          "schedule":"08:00 - 18:00",
+          "registrationMail":"jonesadmin@gmail.com",
+          "activityUrlDE":"https://www.fortressresortandspa.com/wp-content/uploads/2020/04/The-Fortress-Journeys.pdf",
+          "activityUrlEN":"https://www.fortressresortandspa.com/things-to-do-in-galle/resort-activities.html"
+        },
+        {
+          "titleDE":"Attraktionen und Exkurse für Familien",
+          "titleEN":"FAMILY Attractions and Excursions",
+          "descriptionDE":"Das Fortress Resort & Spa ist eine ideale Wahl unter den Familienhotels an der Südküste Sri Lankas und erfüllt die Bedürfnisse aller, von den Eltern bis zu den kleinsten Gästen. Genießen Sie ein wenig Familienspaß im Pool oder am Strand oder spielen Sie eine Partie Karten, Schach, Scrabble oder Pool. Für eine wirklich bereichernde Familienaktivität beteiligen Sie sich am The Fortress Turtle Conservation Project und haben sogar die Chance, Baby-Schildkröten ins Meer zu entlassen. Ein Babysitter-Service für Kinder von drei bis neun Jahren ist auf Anfrage ebenso verfügbar wie Hochstühle in den Restaurants und Babybetten in den Zimmern.",
+          "descriptionEN":"An ideal choice amongst Sri Lanka family hotels along the south coast, The Fortress Resort & Spa caters to the needs of all, from the parents to the littlest of guests. Enjoy some family frolic in the pool or at the beach or join in a game of cards, chess, scrabble or pool. For a truly enriching family activity get involved in The Fortress Turtle Conservation Project and even get the chance of releasing baby turtles out to sea. Babysitting services for children three to nine years are available on request as are high chairs in the restaurants and in-room baby cribs.",
+          "imageUrl":"https://s3.eu-central-1.amazonaws.com/guestnet.info/media/entry/files/images/weekprogramactivityimage/110904/5fd4c217bdaf3Alexander-HaidenYoga-1.jpg",
+          "hotelActivityFrom":"2020-12-20",
+          "hotelActivityTo":"2021-12-20",
+          "schedule":"08:00 - 18:00",
+          "registrationMail":"jonesadmin@gmail.com",          
+          "activityUrlDE":"https://www.fortressresortandspa.com/things-to-do-in-galle/experience-galle/families.html",
+          "activityUrlEN":"https://www.fortressresortandspa.com/wp-content/uploads/2020/04/The-Fortress-Journeys.pdf"
+        }
+      ]
     }
     ,
     "508103381": {
@@ -211,6 +295,34 @@
             "imageUrl":"https://www.zillertal.at/fileadmin/_processed_/6/c/csm__c_TomKlockerPhotoDSC00414_e7b3d844d5.jpg",
             "websiteUrlDE":"https://www.zillertal.at/info/urlaubsinfo/veranstaltungen.html#/veranstaltungen",
             "websiteUrlEN":"https://www.zillertal.at/en/info/holiday-info/events.html#/events"
+          }
+        ],
+        "HotelActivity":[
+          {
+            "titleDE":"Wochenprogramm im Tuxerhof",
+            "titleEN":"Weekly activities at the Tuxerhof",
+            "descriptionDE":"Der Urlaubsort soll auch inspirieren. Probieren Sie spannende Aktivitäten aus, die Sie vielleicht noch gar nicht kennen. Oder knüpfen Sie an Ihr Fitness-, Yoga- oder Faszientraining von zuhause an. So bleiben Sie „im Flow” und erhalten zusätzlich neue Inputs. Nicht nur auf sportlicher Ebene hat der Tuxerhof so einiges zu bieten. Auch kulinarische und Wellness-Highlights bereichern Woche für Woche das vielfältige Programm des Hotels.",
+            "descriptionEN":"Guests staying at the Tuxerhof can look forward to a free weekly activity programme in summer and winter. Use the opportunity to try out new sports such as yoga or fascia training. After a long day out and about in the mountains, what better way to relax than with a session in the sizzling sauna followed by a hearty meal? Please be aware that certain activities may be subject to change due to weather conditions. We look forward to sharing fun and enjoyable times with you on holiday here at the Tuxerhof.",
+            "imageUrl":"https://www.tuxerhof.at/bilder/hotel/himmelreich/yoga/image-thumb__561__content/yoga-15.webp",
+            "hotelActivityFrom":"2020-12-20",
+            "hotelActivityTo":"2021-12-20",
+            "schedule":"08:00 - 18:00",
+            "registrationMail":"jonesadmin@gmail.com",
+            "activityUrlDE":"https://www.tuxerhof.at/de/hotel/wochenprogramm#uebersicht-der-moeglichen-programmpunkte-im-winter",
+            "activityUrlEN":"https://www.tuxerhof.at/en/hotel/weekly-programme#winter-weekly-programme"
+          },
+          {
+            "titleDE":"Lust am Skifahren",
+            "titleEN":"Fascinating world of ice and snow",
+            "descriptionDE":"Im Winter gipfelt der Schneesegen des Zillertals in der Vereinigung des Hintertuxer Gletschers mit den Skibergen Eggalm, Rastkogel, Finkenberg, Penken/Mayrhofen und Ahorn. Gemeinsam werden sie zur Ski- und Gletscherwelt Zillertal 3000. Das Skigebiet bietet, kurz gesagt: 199 schneesichere Pistenkilometer mit einem einzigen Skipass!",
+            "descriptionEN":"Austria's only ski resort open 365 days a year offers 60 kilometres of slopes and a powder snow guarantee from October through until May. It is able to do so thanks its exceptional altitude up to 3250 metres above sea level. As you wind your way up to the resort on the 'Gletscherbus 3' it is as if you are climbing up into the sky itself. Visitors staying at the Tuxerhof should definitely not miss out on the chance to experience this fascinating world of snow and ice.",
+            "imageUrl":"https://www.tuxerhof.at/bilder/region/winter/skifahren/image-thumb__1277__contentPortrait/Skifahren-4.webp",
+            "hotelActivityFrom":"2020-12-20",
+            "hotelActivityTo":"2021-12-20",
+            "schedule":"08:00 - 18:00",
+            "registrationMail":"jonesadmin@gmail.com",          
+            "activityUrlDE":"https://www.tuxerhof.at/de/natur-aktiv/winter/hintertuxer-gletscher",
+            "activityUrlEN":"https://www.tuxerhof.at/en/natur-active/winter/hintertuxer-glacier"
           }
         ]
     }
@@ -259,6 +371,21 @@
             "websiteUrlDE":"https://www.soelden.com/de/winter/events.html",
             "websiteUrlEN":"https://www.soelden.com/winter/events.html"
           }
-        ]
+        ],
+        "HotelActivity":[
+          {
+            "titleDE":"ENTERTAINMENT IN SÖLDEN & IM HOTEL DAS CENTRAL",
+            "titleEN":"ENTERTAINMENT IN SÖLDEN & IN THE HOTEL DAS CENTRAL",
+            "descriptionDE":"Das FIS Skiweltcup-Opening am Rettenbach Gletscher feiert internationale Skigrößen. Die globale DJ-Szene am Giggijoch beim Electric Mountain Festival bringt die Beats zum Berg. Beim Adrenalin-Cup begibt man sich auf eine einzigartige Alpen-Challenge. Ein Hoch auf exklusiven Weingenuss auf dem Dreitausender ist unser Wein am Berg. Hier reichen sich Skistars, Top-Winzer und anspruchsvolle Genießer ihre Gläser – und blicken in James-Bond-Manier hinab auf einen der außergewöhnlichsten Wintersportorte der Alpen.",
+            "descriptionEN":"The FIS ski world cup opening event on the Rettenbach glacier celebrates the greats of international skiing. The global DJ scene on the Giggijoch at the Electric Mountain Festival brings beats to the mountain. During the Adrenalin Cup you’ll embark on a unique Alpine challenge. A highlight in exclusive wine enjoyment on the three-thousand metre mountains is our Wein am Berg event. Here ski stars, top winegrowers and fastidious connoisseurs reach for their glasses – and look down, in James Bond fashion, to the most exceptional winter sports location in the Alps.",
+            "imageUrl":"https://www.central-soelden.com/mediatypes/categoryList/2._lobby_-_007_elements_photo_credit_kristopher_grunert_neu.jpg",
+            "hotelActivityFrom":"2020-12-20",
+            "hotelActivityTo":"2021-12-20",
+            "schedule":"08:00 - 18:00",
+            "registrationMail":"jonesadmin@gmail.com",
+            "activityUrlDE":"https://www.central-soelden.com/winterurlaub/events-und-highlights.html",
+            "activityUrlEN":"https://www.central-soelden.com/en/winter-holiday/events-and-highlights.html"
+          }
+      ]
     }
-  }
+}

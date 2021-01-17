@@ -8,20 +8,20 @@ export default class ActivityData{
         this.websiteUrlEN = websiteUrlEN;
     }
 
-getTitle = function (language) {
-    return language === 'de' ? this.titleDE : this.titleEN
-}
+    getTitle = function (language) {
+        return language === 'de' ? this.titleDE : this.titleEN
+    }
 
-getDescription = function () {
-    return this.description;    
-}
+    getDescription = function () {
+        return this.description;    
+    }
 
-getImageUrl = function () {
-    return this.imageUrl;    
-}
+    getImageUrl = function () {
+        return this.imageUrl;    
+    }
 
-getWebsiteUrl = function (language) {
-    return language === 'de' ? this.websiteUrlDE : this.websiteUrlEN   
-}
+    getWebsiteUrl = function (language) {
+        return language === 'de' ? this.websiteUrlDE : this.websiteUrlEN   
+    }
 
 }

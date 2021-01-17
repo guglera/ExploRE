@@ -6,10 +6,12 @@ import images from '../services/Images.js'
 import PersonData from '../models/PersonData';
 import HotelData from '../models/HotelData';
 import ActivityData from '../models/ActivityData';
+import HotelActivity from '../models/HotelActivity.js';
 import demoData from '../demoData/demo.json';
 import colors from '../constants/colors.js';
 import Moment from 'moment';
 import ActivityCard from '../components/ActivityCard.js';
+import HotelActivityCard from '../components/HotelActivityCard.js';
 import i18n from 'i18n-js';
 i18n.fallbacks = true;
 
@@ -105,6 +107,7 @@ DataService.validateBonkingDate = function (userId, { navigation }) {
                         <Text style={styles.buttonText}>{i18n.t('bttnResidenceScreen3')}</Text>
                     </TouchableOpacity>
                     {getUrl(userId)}
+                   {/*  {DataService.getHotelActivityCards(globalUID.user.username, globalUID.language.displaylanguage)} */}
                 </ScrollView>
             </View>
           )
@@ -206,6 +209,29 @@ DataService.getActivityCards = function (userId, language) {
     return (
         <ScrollView contentContainerStyle={styles.cardsContainer}>
             {activitiesToDisplay}
+        </ScrollView>  
+    )
+}
+
+function getHotelActivity(userId) {   
+    const hotelActivities = demoData[userId].HotelActivity.map((hotelActivity) => new HotelActivity(hotelActivity.titleDE, hotelActivity.titleEN, hotelActivity.descriptionDE, hotelActivity.descriptionEN, hotelActivity.registrationMail, hotelActivity.imageUrl, hotelActivity.activityUrlDE, hotelActivity.activityUrlEN ));
+    return hotelActivities
+}
+
+DataService.getHotelActivityCards = function (userId, language) {
+    const hotelActivitiesToDisplay =  getHotelActivity(userId).map( (hotelActivity, index) => {
+        return(
+            <HotelActivityCard
+                hotelActivity = {hotelActivity}
+                key = {index}
+                language = {language}
+            />
+        )
+    })
+    
+    return (
+        <ScrollView contentContainerStyle={styles.cardsContainer}>
+            {hotelActivitiesToDisplay}
         </ScrollView>  
     )
 }
