@@ -7,6 +7,10 @@ import { useContext } from 'react';
 import { useAsyncStorage } from '@react-native-async-storage/async-storage';
 import colors from '../constants/colors.js';
 import { AuthContext } from '../contexts/authContext';
+import { translations } from '../components/Languages';
+import i18n from 'i18n-js';
+i18n.fallbacks = true;
+
 
 
 function RegionScreen({ navigation }) {
@@ -23,9 +27,8 @@ function RegionScreen({ navigation }) {
       <ImageBackground source={require("../assets/picInnsbruck.jpg")} style={styles.hotelPicBackground}>
         <View style={styles.headlineTxtBackground}>
         <Text style={styles.headlineTxt}>
-          ExploRe your region {DataService.getGuestName(globalUID.user.username)}
-          {"\n"}there's a lot to see
-          
+        {i18n.t('txtRegionScreen1')} {DataService.getGuestName(globalUID.user.username)}
+          {"\n"}{i18n.t('txtRegionScreen2')}
         </Text>
         </View>
       </ImageBackground>

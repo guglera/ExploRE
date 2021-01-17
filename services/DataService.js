@@ -11,7 +11,6 @@ import colors from '../constants/colors.js';
 import Moment from 'moment';
 import ActivityCard from '../components/ActivityCard.js';
 import i18n from 'i18n-js';
-//import { translations } from '../components/Languages';
 i18n.fallbacks = true;
 
 
