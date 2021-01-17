@@ -11,7 +11,7 @@ import {ScrollView} from 'react-native-gesture-handler';
 import colors from '../constants/colors.js'
 import i18n from 'i18n-js';
 import { AuthContext } from '../contexts/authContext';
-import { translations } from '../components/Languages';
+i18n.fallbacks = true;
 
 
 function WelcomeScreen({route, navigation }) {
@@ -81,13 +81,13 @@ function WelcomeScreen({route, navigation }) {
          <TouchableOpacity
             onPress={() => navigation.navigate('Residence')}
             View style={styles.buttons}>
-              <Text style={styles.buttonTxt}>My Residence</Text>
+              <Text style={styles.buttonTxt}>{i18n.t('bttnWelcomeScreen1')}</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
             onPress={() => navigation.navigate('Region')}
             View style={styles.buttons}>
-              <Text style={styles.buttonTxt}>My Region</Text>
+              <Text style={styles.buttonTxt}>{i18n.t('bttnWelcomeScreen2')}</Text>
           </TouchableOpacity>
 
 {/*           <TouchableOpacity
