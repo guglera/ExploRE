@@ -60,14 +60,17 @@ function HomeScreen({ navigation }) {
         <QrScanner />
         </View>
 
-        <View style={{  paddingTop: 0, paddingBottom: 20, marginBottom: 50, flexDirection: "column", justifyContent: 'center', }}>
         <TouchableOpacity
-              onPress={toggleOverlay}
-              style={styles.buttons}>
-                  <Text style={styles.buttonTxt}>{i18n.t('txtAboutScreen1')}</Text>
+            onPress={toggleOverlay}
+            View style={styles.hotelPicBackground, {width: '100%'}}>
+            <View style={styles.headlineTxtBackground}>
+              <Text style={styles.headlineTxt}>
+                  {i18n.t('txtAboutScreen1')}
+              </Text>
+            </View>
           </TouchableOpacity>
-        </View>
 
+        
       <Overlay isVisible={visible} onBackdropPress={toggleOverlay} width='80%' height='auto'
         overlayStyle={{
             borderRadius: 10,
@@ -183,6 +186,26 @@ h1text: {
     fontSize: 12,
     fontWeight: 'bold'
 },
+
+hotelPicBackground: {
+  flex: 0.2,  
+  opacity: 0.8,
+  flexDirection: "column", justifyContent: 'flex-end', 
+},
+
+headlineTxtBackground: {
+  backgroundColor: colors.headlineTxtBackgrColor,
+  //backgroundColor: 'lightgrey',
+},
+
+headlineTxt: {
+  color: colors.headlineTxtColor,
+  fontSize: 18,
+  lineHeight: 15,
+  paddingTop: 20, paddingBottom: 20, paddingLeft: 25, paddingRight: 25,
+  textAlign: 'center',
+  textShadowRadius: 20,
+}, 
 
 });
 
