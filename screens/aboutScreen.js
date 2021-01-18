@@ -44,8 +44,6 @@ function AboutScreen({ navigation }) {
 
   console.log("#debug aboutScreen.js - displaylanguage: " + value);
 
-
-
   return (
     <View style={styles.container}>
 
