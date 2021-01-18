@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { StyleSheet, Text, View,ImageBackground } from 'react-native';
+import { StyleSheet, Text, View,ImageBackground, TouchableOpacity } from 'react-native';
+import { Overlay } from 'react-native-elements';
 import { useState, useEffect, useContext } from 'react';
 import {QrScanner} from '../components/QrScanner';
 import colors from '../constants/colors.js'
@@ -7,6 +8,8 @@ import { AuthContext } from '../contexts/authContext';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useAsyncStorage } from '@react-native-async-storage/async-storage';
 import i18n from 'i18n-js';
+import { ScrollView } from 'react-native-gesture-handler';
+
 
 function HomeScreen({ navigation }) {  
   const [value, setValue] = useState('value');
@@ -26,6 +29,12 @@ function HomeScreen({ navigation }) {
       })
       .catch(e => console.warn(e))
   }
+
+  const [visible, setVisible] = useState(false);
+
+  const toggleOverlay = () => {
+      setVisible(!visible);
+    };
 
   useEffect(() => {
     loginHandler();
@@ -50,6 +59,43 @@ function HomeScreen({ navigation }) {
         <View style={styles.qrScanner}>
         <QrScanner />
         </View>
+
+        <View style={{  paddingTop: 0, paddingBottom: 20, marginBottom: 50, flexDirection: "column", justifyContent: 'center', }}>
+        <TouchableOpacity
+              onPress={toggleOverlay}
+              style={styles.buttons}>
+                  <Text style={styles.buttonTxt}>{i18n.t('txtAboutScreen1')}</Text>
+          </TouchableOpacity>
+        </View>
+
+      <Overlay isVisible={visible} onBackdropPress={toggleOverlay} width='80%' height='auto'
+        overlayStyle={{
+            borderRadius: 10,
+            marginVertical: 100,
+            marginHorizontal: 20
+        }}
+      >
+          <View>
+            <ScrollView>
+                <Text style={styles.h1text}>{i18n.t('txtAboutScreen1')}</Text>
+                <Text style={styles.h1text}>{i18n.t('txtAboutScreen2')}</Text>
+                <Text style={styles.normaltext}>{i18n.t('txtAboutScreen3')}{"\n"} </Text>
+
+                <Text style={styles.h1text}>{i18n.t('txtAboutScreen4')}</Text>
+                <Text style={styles.normaltext}>{i18n.t('txtAboutScreen5')}{"\n"} </Text>
+
+                <Text style={styles.h1text}>{i18n.t('txtAboutScreen6')}</Text>
+                <Text style={styles.normaltext}>{i18n.t('txtAboutScreen7')}{"\n"} </Text>
+
+                <Text style={styles.h1text}>{i18n.t('txtAboutScreen8')}</Text>
+                <Text style={styles.normaltext}>{i18n.t('txtAboutScreen9')}{"\n"} </Text>
+                               
+                <Text style={styles.h1text}>{i18n.t('txtAboutScreen11')}</Text>
+                <Text style={styles.normaltext}>ExploRe{"\n"}Universitätstraße 15 {"\n"}6020 Innsbruck</Text>
+            </ScrollView>
+          </View>
+      </Overlay>
+
 
 
         {/* <View style={{ flex: 1 }}>
@@ -121,11 +167,22 @@ const styles = StyleSheet.create({
     flexDirection: 'row', 
     justifyContent: 'center',
     backgroundColor: colors.buttonBackgrColor,
-    marginVertical: 10, marginHorizontal: 16,
-    paddingVertical: 30, paddingHorizontal: 20,
+    marginVertical: 0, marginHorizontal: 16,
+    paddingVertical: 30, paddingHorizontal: 40,
+    width: 300,
     borderRadius: 20,
     elevation: 5,
+    opacity: 0.8,
   },
+
+  normaltext: {
+    fontSize: 10
+},
+
+h1text: {
+    fontSize: 12,
+    fontWeight: 'bold'
+},
 
 });
 
