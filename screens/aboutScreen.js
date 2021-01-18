@@ -58,12 +58,6 @@ function AboutScreen({ navigation }) {
             onPress={() => {
               writeItemToStorage('en');
                             Alert.alert("Language","English language selected");
-                            navigation.reset({
-                              index: 0,
-                              routes: [{
-                                  name: 'About'
-                                },],
-                            });
             }}
             style={styles.buttons}>
               <Text style={styles.buttonTxt}>English</Text>
@@ -73,26 +67,20 @@ function AboutScreen({ navigation }) {
             onPress={() => {
               writeItemToStorage('de');
                             Alert.alert("Sprache","Deutsche Sprache gewählt");
-                            navigation.reset({
-                              index: 0,
-                              routes: [{
-                                  name: 'About'
-                                },],
-                            });
             }}
             style={styles.buttons}>
               <Text style={styles.buttonTxt}>Deutsch</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity
+{/*           <TouchableOpacity
               onPress={toggleOverlay}
               style={styles.buttons}>
                   <Text style={styles.buttonTxt}>{i18n.t('txtAboutScreen1')}</Text>
           </TouchableOpacity>
-
+ */}
         </View>
 
-      <Overlay isVisible={visible} onBackdropPress={toggleOverlay} width='80%' height='auto'
+      {/* <Overlay isVisible={visible} onBackdropPress={toggleOverlay} width='80%' height='auto'
         overlayStyle={{
             borderRadius: 10,
             marginVertical: 100,
@@ -118,7 +106,7 @@ function AboutScreen({ navigation }) {
                 <Text style={styles.normaltext}>ExploRe{"\n"}Universitätstraße 15 {"\n"}6020 Innsbruck</Text>
             </ScrollView>
           </View>
-      </Overlay>
+      </Overlay> */}
         
     </ImageBackground>
 
