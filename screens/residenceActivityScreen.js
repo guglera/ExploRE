@@ -25,28 +25,13 @@ function ResidenceActivityScreen({ navigation }) {
   }
 
   const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: colors.buttonBackgrColor,
-    },
     scrollViewStyle: {
-      flex: 1,
-      marginTop: 0,
+      // flex: 1,
+      marginTop: 1,
       backgroundColor: colors.scrollViewBackgrColor,
       borderTopRightRadius: 20,
       borderTopLeftRadius: 20,
     },
-    headlineTextBackground: {
-      backgroundColor: colors.headlineTxtBackgrColor,
-    },
-    headlineText: {
-      color: colors.headlineTxtColor,
-      fontSize: 26,
-      lineHeight: 40,
-      paddingTop: 20, paddingBottom: 20, paddingLeft: 25, paddingRight: 25,
-      textAlign: 'center',
-      textShadowRadius: 20,
-    }, 
   });
 
   export default ResidenceActivityScreen;

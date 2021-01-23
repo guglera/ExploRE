@@ -12,9 +12,9 @@ export default class ActivityData{
         return language === 'de' ? this.titleDE : this.titleEN
     }
 
-    getDescription = function () {
+/*     getDescription = function () {
         return this.description;    
-    }
+    } */
 
     getImageUrl = function () {
         return this.imageUrl;    

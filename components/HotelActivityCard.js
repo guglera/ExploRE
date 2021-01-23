@@ -1,6 +1,11 @@
 import React from 'react';
-import {StyleSheet, View, Text, Image, Linking, TouchableOpacity} from 'react-native';
+import {StyleSheet, View, Text, Image, Alert, Linking, TouchableOpacity} from 'react-native';
 import colors from '../constants/colors.js';
+import i18n from 'i18n-js';
+import { translations } from '../components/Languages';
+import { ImageBackground } from 'react-native';
+import { ImageBackgroundBase } from 'react-native';
+i18n.fallbacks = true;
 
 const HotelActivityCard = (props) =>{
     return (
@@ -8,36 +13,47 @@ const HotelActivityCard = (props) =>{
             style={styles.cardContainer}
             onPress={() => Linking.openURL(props.hotelActivity.getActivityUrl(props.language))}
             >
-                <View style={styles.textContainer}>
-                    <Text style={styles.cardHeader}>{props.hotelActivity.getTitle(props.language)}</Text>
-                    <Text style={styles.cardText}>{props.hotelActivity.getDescription(props.language)}</Text>
-                    <Text style={styles.cardHeader}>{props.hotelActivity.getSchedule()}</Text>
-                </View>
-                <View style={styles.textLink}>
-                    <Text style={styles.cardHeader}>Reservation</Text>
-                </View>
+            <ImageBackground  source={{uri: props.hotelActivity.getImageUrl()}} style={styles.image}>
+                <Text style={styles.linkText}>{i18n.t('txtHotelActivityScreen1')}</Text>
+            </ImageBackground>
+            <View style={styles.textContainer}>
+                <Text style={styles.cardHeader}>{props.hotelActivity.getTitle(props.language)} : {props.hotelActivity.getSchedule()}</Text>
+                <Text style={styles.cardText}>{props.hotelActivity.getDescription(props.language)}</Text>
+            </View>
+            <View style={styles.linkContainer}>
+                <Text style={styles.reservationText} onPress={() => alert(i18n.t('txtHotelActivityScreen3'))}>{i18n.t('txtHotelActivityScreen2')}</Text>
+            </View>
         </TouchableOpacity>
     );
 }
 
 const styles = StyleSheet.create({
     cardContainer:{
-        // flex: 1,
-        height:180,
+        height:300,
         width:'97%',
-        // borderWidth: 2,
         borderColor: colors.cardBorderColor,
-        backgroundColor: colors.cardColor,
-        // justifyContent: 'flex-end',
-        alignItems: 'baseline',
-        elevation:15,
+        elevation:6,
         marginTop:'1%',
         marginBottom:'2%',
         marginLeft:'1%',
         marginRight:'1%',
         paddingBottom:0,
+        backgroundColor:colors.activityBackgrColor,
         overflow:'hidden'
     },
+    image:{
+        width:'100%',
+        height: 160, 
+    },    
+    textContainer:{
+        height:'26%',
+        width:'100%',
+        marginLeft:'2%',
+        marginRight:'2%',
+        marginBottom:'2%',
+        backgroundColor:colors.activityBackgrColor
+        // backgroundColor:colors.activityBackgrColor headlineTxtBackgrColor buttonTxtColor textColor
+    },    
      cardHeader:{
         textAlign:'center',
         fontSize:18,
@@ -45,31 +61,36 @@ const styles = StyleSheet.create({
         fontWeight:'bold'
     },
      cardText:{
-        textAlign:'center',
-        fontSize:14,
+        // textAlign:'center',
+        fontSize:11,
         color:colors.buttonTxtColor,
         fontWeight:'normal'
-    },
-    image:{
-        width:'100%',
-        height: '75%', 
     },
     textHeader:{
         height:'30%',
         width:'100%',
         backgroundColor:colors.headlineTxtBackgrColor
     },
-    textContainer:{
-        height:'80%',
+    linkContainer:{
+        height:'28%',
         width:'100%',
-        // color:colors.textColor,
-        backgroundColor:colors.activityBackgrColor
+        marginTop:'3%',
+        backgroundColor:colors.headlineTxtBackgrColor
     },
-    textLink:{
-        alignItems:'center',
-        height:'20%',
-        width:'100%',
-        backgroundColor:colors.buttonBackgrColor
+    linkText:{
+        textAlign:'right',
+        fontSize:14,
+        fontStyle:'italic',
+        marginTop:'2%',
+        marginRight:'10%',
+        color:colors.buttonTxtColor
+    },
+    reservationText:{
+        textAlign:'center',
+        fontSize:22,
+        fontStyle:'italic',
+        fontWeight:'bold',
+        color:colors.textColor
     }
  });
 

@@ -14,7 +14,8 @@ i18n.translations = {
     txtResidenceScreen1: 'ExploRe your residence', txtResidenceScreen2: 'to',
     bttnResidenceScreen1: 'Forward me to the Hotel Website', bttnResidenceScreen2: 'Show me the Morning Brief', bttnResidenceScreen3: 'Show me the Menu', bttnResidenceScreen4: 'Show me residence activities',
     txtRegionScreen1: 'ExploRe your region', txtRegionScreen2: "there's a lot to see",
-    
+    txtHotelActivityScreen1: 'more informations', txtHotelActivityScreen2: 'tab here for registration...',txtHotelActivityScreen3: '... your registration has been sent!',
+
     txtAboutScreen1: 'Privacy Policy', txtAboutScreen2: 'Declaration on the information obligation', 
     txtAboutScreen3: 'At ExploRe, we take the protection of your personal data very seriously. We treat your personal data confidentially and in accordance with the statutory data protection regulations and this data protection declaration. When you use these apps, various personal data are collected. Personal data are data with which you can be personally identified. This data protection declaration explains which data we collect and what we use it for. It also explains how and for what purpose this is done. We would like to point out that data transmission over the Internet (e.g. when communicating by email) can have security gaps. A complete protection of the data against access by third parties is not possible.', 
     txtAboutScreen4: 'Processing of data (customer and contract data)',
@@ -37,7 +38,8 @@ i18n.translations = {
     txtResidenceScreen1: 'Erkunde deine Residenz', txtResidenceScreen2: 'bis',
     bttnResidenceScreen1: 'Zur Hotelwebsite', bttnResidenceScreen2: 'Morgenpost', bttnResidenceScreen3: 'Menü', bttnResidenceScreen4: 'Aktivitäten',
     txtRegionScreen1: 'Erkunde deine Region', txtRegionScreen2: "es gibt viel zu sehen",
-    
+    txtHotelActivityScreen1: 'weitere Infos', txtHotelActivityScreen2: 'jetzt anmelden...',txtHotelActivityScreen3: '... deine Anmeldung wurde an das Hotel gesendet!',
+
     txtAboutScreen1: 'Datenschutzerklärung', txtAboutScreen2: 'Erklärung zur Informationspflicht', 
     txtAboutScreen3: 'Wir von ExploRe nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung. Wenn Sie diese Apps benutzen, werden verschiedene personenbezogene Daten erhoben. Personenbezogene Daten sind Daten, mit denen Sie persönlich identifiziert werden können. Die vorliegende Datenschutzerklärung erläutert, welche Daten wir erheben und wofür wir sie nutzen. Sie erläutert auch, wie und zu welchem Zweck das geschieht. Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.', 
     txtAboutScreen4: 'Verarbeiten von Daten (Kunden- und Vertragsdaten)',

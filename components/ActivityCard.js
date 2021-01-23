@@ -19,7 +19,6 @@ const ActivityCard = (props) =>{
 
 const styles = StyleSheet.create({
     cardContainer:{
-        // flex: 1,
         height:200,
         width:'47%',
         // borderWidth: 1,

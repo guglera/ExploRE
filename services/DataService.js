@@ -217,7 +217,7 @@ DataService.getActivityCards = function (userId, language) {
 }
 
 function getHotelActivity(userId) {   
-    const hotelActivities = demoData[userId].HotelActivity.map((hotelActivity) => new HotelActivity(hotelActivity.titleDE, hotelActivity.titleEN, hotelActivity.descriptionDE, hotelActivity.descriptionEN, hotelActivity.registrationMail, hotelActivity.imageUrl, hotelActivity.activityUrlDE, hotelActivity.activityUrlEN ));
+    const hotelActivities = demoData[userId].HotelActivity.map((hotelActivity) => new HotelActivity(hotelActivity.titleDE, hotelActivity.titleEN, hotelActivity.descriptionDE, hotelActivity.descriptionEN, hotelActivity.imageUrl, hotelActivity.hotelActivityFrom, hotelActivity.hotelActivityTo, hotelActivity.schedule, hotelActivity.registrationMail, hotelActivity.activityUrlDE, hotelActivity.activityUrlEN));
     return hotelActivities
 }
 
@@ -233,7 +233,7 @@ DataService.getHotelActivityCards = function (userId, language) {
     })
     
     return (
-        <ScrollView contentContainerStyle={styles.activityContainer}>
+        <ScrollView contentContainerStyle={styles.hotelActivityContainer}>
             {hotelActivitiesToDisplay}
         </ScrollView>  
     )
@@ -308,9 +308,9 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap',
         paddingBottom: 20     
       },
-      activityContainer: {
+      hotelActivityContainer: {
         flexDirection: 'row',
-        // flexWrap: 'wrap',
+        flexWrap: 'wrap',
         paddingBottom: 20     
       }
 });

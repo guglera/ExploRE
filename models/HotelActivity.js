@@ -1,5 +1,5 @@
 export default class HotelActivity{
-        constructor(titleDE, titleEN, imageUrl, hotelActivityFrom, hotelActivityTo, schedule, registrationMail, descriptionDE, descriptionEN, activityUrlDE, activityUrlEN){
+    constructor(titleDE, titleEN, descriptionDE, descriptionEN, imageUrl, hotelActivityFrom, hotelActivityTo, schedule, registrationMail, activityUrlDE, activityUrlEN){
             this.titleDE = titleDE;
             this.titleEN = titleEN;
             this.descriptionDE = descriptionDE;
@@ -13,35 +13,13 @@ export default class HotelActivity{
             this.activityUrlEN = activityUrlEN;
         }
 
-    getTitle = function (language) {
-        return language === 'de' ? this.titleDE : this.titleEN
-    }
-
-    getDescription = function (language) {
-        return language === 'de' ? this.descriptionDE : this.descriptionEN;
-    }
-
-    getActivityUrl = function (language) {
-        return language === 'de' ? this.activityUrlDE : this.activityUrlEN;   
-    }
-    
-    getImageUrl = function () {
-        return this.imageUrl;    
-    }
-
-    getRegMail = function () {
-        return this.registrationMail;    
-    }
-
-    getSchedule = function () {
-        return this.schedule;
-    }
-
-    getFrom = function () {
-        return this.hotelActivityFrom;
-    }
-
-    getTo = function () {
-        return this.hotelActivityTo;
-    }
+    getTitle = function (language) {return language === 'de' ? this.titleDE : this.titleEN}
+    getDescription = function (language) {return language === 'de' ? this.descriptionDE : this.descriptionEN;}
+    getImageUrl = function () {return this.imageUrl;}
+    getHotelActivityImageUrl = function () {return this.imageUrl;}
+    getFrom = function () {return this.hotelActivityFrom;}
+    getTo = function () {return this.hotelActivityTo;}
+    getSchedule = function () {return this.schedule;}
+    getRegMail = function () {return this.registrationMail;}
+    getActivityUrl = function (language) {return language === 'de' ? this.activityUrlDE : this.activityUrlEN;}
 }
