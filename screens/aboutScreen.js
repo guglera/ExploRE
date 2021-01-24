@@ -55,7 +55,8 @@ function AboutScreen({ navigation }) {
           <TouchableOpacity
             onPress={() => {
               writeItemToStorage('en');
-                            Alert.alert("Language","English language selected");
+              Alert.alert("Language","English language selected");
+              navigation.navigate('ExploRE');
             }}
             style={styles.buttons}>
               <Text style={styles.buttonTxt}>English</Text>
@@ -64,7 +65,8 @@ function AboutScreen({ navigation }) {
           <TouchableOpacity
             onPress={() => {
               writeItemToStorage('de');
-                            Alert.alert("Sprache","Deutsche Sprache gewählt");
+              Alert.alert("Sprache","Deutsche Sprache gewählt");
+              navigation.navigate('ExploRE');
             }}
             style={styles.buttons}>
               <Text style={styles.buttonTxt}>Deutsch</Text>
@@ -108,7 +110,7 @@ function AboutScreen({ navigation }) {
         
     </ImageBackground>
 
-    <TouchableOpacity
+{/*     <TouchableOpacity
           onPress={() => {
             if (value === 'en' || value === 'de') {
               navigation.navigate('ExploRE')
@@ -122,7 +124,7 @@ function AboutScreen({ navigation }) {
                 Login
                 </Text>
             </View>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
 
   </View >
   );
