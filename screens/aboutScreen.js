@@ -11,13 +11,12 @@ import i18n from 'i18n-js';
 i18n.fallbacks = true;
 
 function AboutScreen({ navigation }) {
-  const [value, setValue] = useState(null);
-  const { getItem, setItem } = asyncStorage.useAsyncStorage('displaylanguage');
+  const { getData, setData } = asyncStorage.useAsyncStorage('data');
 
   const readItemFromStorage = async () => {
-    const item = await getItem();
-    if (item !== null) {
-      setValue(item);
+    const data = await getData();
+    if (data !== null) {
+      setValue(data);
     }
   };
 

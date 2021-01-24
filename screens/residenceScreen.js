@@ -19,7 +19,7 @@ function ResidenceScreen({ navigation }) {
 
     return (
       <View style={styles.container}>
-         <ImageBackground source={images.backgrounds[DataService.getHotelId(globalUID.user.username)]} style={styles.hotelPicBackground}> 
+         <ImageBackground source={DataService.getHotelImage(globalUID.user.username)} style={styles.hotelPicBackground}> 
           <View style={styles.headlineTextBackground}>
           <Text style={styles.headlineText}>
           {i18n.t('txtResidenceScreen1')} {"\n"}{DataService.getHotelName(globalUID.user.username)}{"\n"}

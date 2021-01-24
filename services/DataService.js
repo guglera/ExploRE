@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity, Dimensions, Linking } from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import ImageZoom from 'react-native-image-pan-zoom';
@@ -6,17 +6,56 @@ import images from '../services/Images.js'
 import PersonData from '../models/PersonData';
 import HotelData from '../models/HotelData';
 import ActivityData from '../models/ActivityData';
-import HotelActivity from '../models/HotelActivity.js';
-import demoData from '../demoData/demo.json';
+import HotelActivity from '../models/HotelActivity'
 import colors from '../constants/colors.js';
+import demoData from '../demoData/demo.json'
 import Moment from 'moment';
-import ActivityCard from '../components/ActivityCard.js';
+import ActivityCard from '../components/ActivityCard.js'
 import HotelActivityCard from '../components/HotelActivityCard.js';
-import i18n from 'i18n-js';
-i18n.fallbacks = true;
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useAsyncStorage } from '@react-native-async-storage/async-storage';
 
 
-export default class DataService {}
+
+
+export function dataToAsync() { 
+    const [value, setValue] = useState(null);
+    const { getItem, setItem } = asyncStorage.useAsyncStorage('data');
+  
+    const readItemFromStorage = async () => {
+      const item = await getItem();
+      if (item !== null) {
+        setValue(item);
+      }
+    };
+  
+    const writeItemToStorage = async newValue => {
+      console.log("#debug writeItemToStorage demodata: " + newValue);
+      await setItem(newValue);
+      setValue(newValue);
+    };
+  
+ 
+    useEffect(() => {
+      readItemFromStorage();
+    }, []);
+
+    DataService.init = async (value) => {
+        writeItemToStorage(JSON.stringify(demoData));
+    }
+    DataService.test = function(){
+     readItemFromStorage();
+     console.log("#debug dataService.test demodata: " + JSON.parse(value));
+    }
+    DataService.init();
+    DataService.test();
+}
+
+export default class DataService{};
+
+DataService.start = function(){
+    dataToAsync();
+}
 
 
 function getUrl(userId) {
@@ -26,7 +65,7 @@ function getUrl(userId) {
                 <TouchableOpacity
                     onPress={() => Linking.openURL(url)}
                     View style={styles.buttons}>
-                    <Text style={styles.buttonText}>{i18n.t('bttnResidenceScreen1')}</Text>
+                    <Text style={styles.buttonText}>Forward me to the Hotel Website</Text>
                 </TouchableOpacity>
         )
     } catch (error) {
@@ -48,14 +87,6 @@ function parsingException(error) {
         </View>
     );
 }
-
-DataService.getPersonData = function getPersonData(userId) {
-    return new PersonData(demoData[userId].PersonData);
-}
-
-DataService.getHotelData = function getHotelData(userId) {
-    return new HotelData(demoData[userId].HotelData);
-}
    
 function validateId(userId) {
     return 'undefined' !== typeof (demoData[userId]) ? true : false;
@@ -63,7 +94,7 @@ function validateId(userId) {
 
 function getPersonData(userId) {
     if (validateId(userId)){
-        const booking = demoData[userId].PersonData;
+        const booking = demoData[userId];
         if ('undefined' !== typeof (booking) ){
             return new PersonData(booking);
         }
@@ -72,6 +103,7 @@ function getPersonData(userId) {
 }
 
 function getHotelData(userId) {
+    console.log(demoData[userId].HotelData);
     return new HotelData(demoData[userId].HotelData);
 }
 
@@ -98,17 +130,13 @@ DataService.validateBonkingDate = function (userId, { navigation }) {
                     <TouchableOpacity
                         onPress={() => navigation.navigate('Morning Brief')}
                         View style={styles.buttons}>
-                        <Text style={styles.buttonText}>{i18n.t('bttnResidenceScreen2')}</Text>
+                        <Text style={styles.buttonText}>Show me the Morning Brief</Text>
                     </TouchableOpacity>
+
                     <TouchableOpacity
                         onPress={() => navigation.navigate('Menu')}
                         View style={styles.buttons}>
-                        <Text style={styles.buttonText}>{i18n.t('bttnResidenceScreen3')}</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        onPress={() => navigation.navigate('Residence Activities')}
-                        View style={styles.buttons}>
-                        <Text style={styles.buttonText}>{i18n.t('bttnResidenceScreen4')}</Text>
+                        <Text style={styles.buttonText}>Show me the Menu</Text>
                     </TouchableOpacity>
                     {getUrl(userId)}
                 </ScrollView>
@@ -134,7 +162,7 @@ DataService.getHotelName = function (userId) {
 
 DataService.getHotelId = function (userId) {
     try {
-        let hotelId = getHotelData(userId).getHotelId();
+        let hotelId = getHotelData(userId).getMenu().getHotelId();
         return hotelId;
     } catch (error) {
         return "default";
@@ -142,16 +170,24 @@ DataService.getHotelId = function (userId) {
 
    }
 
+DataService.getHotelImage = function (userId) {
+    try {
+        let image = getHotelData(userId).getBackgroundImage();
+        return {uri: image};
+    } catch (error) {
+        return require('../assets/back4.png');
+    } 
+}
+
 DataService.getMorningMail = function (userId) {
     try {
         return (< View style={styles.container} >
-
             <ImageZoom cropWidth={Dimensions.get('window').width}
                 cropHeight={Dimensions.get('window').height}
                 imageWidth={Dimensions.get('screen').width}
                 imageHeight={Dimensions.get('screen').height}>
                 <Image style={styles.image}
-                    source={images.morningMail[getHotelData(userId).getHotelId()]}
+                    source={{uri: getHotelData(userId).getMorningMailImage()}}
                     resizeMode='contain'
                 />
             </ImageZoom>
@@ -163,6 +199,7 @@ DataService.getMorningMail = function (userId) {
 }
 
 DataService.getMenu = function (userId) {
+    console.log(getHotelData(userId).getMenuImage());
     try {
         return (
             < View style={styles.container} >
@@ -171,7 +208,7 @@ DataService.getMenu = function (userId) {
                     imageWidth={Dimensions.get('screen').width}
                     imageHeight={Dimensions.get('screen').height}>
                     <Image style={styles.image}
-                        source={images.menu[getHotelData(userId).getHotelId()]}
+                        source={{uri: getHotelData(userId).getMenuImage()}}
                         resizeMode='contain'
                     />
                 </ImageZoom>
@@ -217,8 +254,9 @@ DataService.getActivityCards = function (userId, language) {
 }
 
 function getHotelActivity(userId) {   
-    const hotelActivities = demoData[userId].HotelActivity.map((hotelActivity) => new HotelActivity(hotelActivity.titleDE, hotelActivity.titleEN, hotelActivity.descriptionDE, hotelActivity.descriptionEN, hotelActivity.registrationMail, hotelActivity.imageUrl, hotelActivity.activityUrlDE, hotelActivity.activityUrlEN ));
-    return hotelActivities
+    let hotelActivity = demoData[userId].HotelActivity;
+    hotelActivity = hotelActivity.map((hotelActivity) => new HotelActivity(hotelActivity));
+    return hotelActivity
 }
 
 DataService.getHotelActivityCards = function (userId, language) {
@@ -227,6 +265,8 @@ DataService.getHotelActivityCards = function (userId, language) {
             <HotelActivityCard
                 hotelActivity = {hotelActivity}
                 key = {index}
+                indexNum = {index}
+                userId = {userId}
                 language = {language}
             />
         )
@@ -258,6 +298,10 @@ DataService.getBookingPeriodTo = function (userId) {
     }
     return to;
 }
+
+DataService.bookHotelActivity = async function(userId, index){
+    demoData[userId].HotelActivity[index].booked = true;
+    }
 
 const styles = StyleSheet.create({
     container: {
@@ -299,18 +343,15 @@ const styles = StyleSheet.create({
         borderTopRightRadius: 20,
         borderTopLeftRadius: 20,
       },
+  
       scrollContainer: {
         paddingTop: 10,
         paddingBottom: 10,
       },
+
       cardsContainer: {
         flexDirection: 'row',
         flexWrap: 'wrap',
-        paddingBottom: 20     
-      },
-      activityContainer: {
-        flexDirection: 'row',
-        // flexWrap: 'wrap',
         paddingBottom: 20     
       }
 });

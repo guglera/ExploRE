@@ -1,20 +1,16 @@
 import Moment from 'moment';
 
 export default class Menu{
-    constructor(title, filePath){
+    constructor(title, menuImage){
         this.title = title;
-        this.filePath = filePath;
+        this.menuImage = menuImage;
     }
 
 getTitle = function() {
     return this.title;
 }
 
-getDateFrom = function() {
-    return this.dateFrom;
-}
-
-getFilePath = function() {
-    return this.filePath;
+getMenuImage = function() {
+    return this.menuImage;
 }
 }

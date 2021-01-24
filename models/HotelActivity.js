@@ -1,47 +1,26 @@
 export default class HotelActivity{
-        constructor(titleDE, titleEN, imageUrl, hotelActivityFrom, hotelActivityTo, schedule, registrationMail, descriptionDE, descriptionEN, activityUrlDE, activityUrlEN){
-            this.titleDE = titleDE;
-            this.titleEN = titleEN;
-            this.descriptionDE = descriptionDE;
-            this.descriptionEN = descriptionEN;
-            this.imageUrl = imageUrl;
-            this.hotelActivityFrom = hotelActivityFrom;
-            this.hotelActivityTo = hotelActivityTo;
-            this.schedule = schedule;
-            this.registrationMail = registrationMail;
-            this.activityUrlDE = activityUrlDE;
-            this.activityUrlEN = activityUrlEN;
+        constructor(hotelActivity){
+            this.titleDE = hotelActivity.titleDE;
+            this.titleEN = hotelActivity.titleEN;
+            this.descriptionDE = hotelActivity.descriptionDE;
+            this.descriptionEN = hotelActivity.descriptionEN;
+            this.imageUrl = hotelActivity.imageUrl;
+            this.hotelActivityFrom = hotelActivity.hotelActivityFrom;
+            this.hotelActivityTo = hotelActivity.hotelActivityTo;
+            this.schedule = hotelActivity.schedule;
+            this.registrationMail = hotelActivity.registrationMail;
+            this.activityUrlDE = hotelActivity.activityUrlDE;
+            this.activityUrlEN = hotelActivity.activityUrlEN;
+            this.booked = hotelActivity.booked;
         }
 
-    getTitle = function (language) {
-        return language === 'de' ? this.titleDE : this.titleEN
-    }
-
-    getDescription = function (language) {
-        return language === 'de' ? this.descriptionDE : this.descriptionEN;
-    }
-
-    getActivityUrl = function (language) {
-        return language === 'de' ? this.activityUrlDE : this.activityUrlEN;   
-    }
-    
-    getImageUrl = function () {
-        return this.imageUrl;    
-    }
-
-    getRegMail = function () {
-        return this.registrationMail;    
-    }
-
-    getSchedule = function () {
-        return this.schedule;
-    }
-
-    getFrom = function () {
-        return this.hotelActivityFrom;
-    }
-
-    getTo = function () {
-        return this.hotelActivityTo;
-    }
+    getTitle = function (language) {return language === 'de' ? this.titleDE : this.titleEN}
+    getDescription = function (language) {return language === 'de' ? this.descriptionDE : this.descriptionEN;}
+    getImageUrl = function () {return this.imageUrl;}
+    getHotelActivityImageUrl = function () {return this.imageUrl;}
+    getFrom = function () {return this.hotelActivityFrom;}
+    getTo = function () {return this.hotelActivityTo;}
+    getSchedule = function () {return this.schedule;}
+    getRegMail = function () {return this.registrationMail;}
+    getActivityUrl = function (language) {return language === 'de' ? this.activityUrlDE : this.activityUrlEN;}
 }
