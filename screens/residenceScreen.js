@@ -14,7 +14,6 @@ function ResidenceScreen({ navigation }) {
   const globalUID = useContext(AuthContext); 
 
   const globalLang = useContext(AuthContext);
-  console.log("#debug residenceScreen.js - gloabelLanguage: " + globalLang.language.displaylanguage);
   i18n.locale = globalLang.language.displaylanguage;
 
     return (

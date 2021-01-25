@@ -15,10 +15,6 @@ i18n.fallbacks = true;
 
 function RegionScreen({ navigation }) {
   const globalUID = useContext(AuthContext);
-
-  console.log("#debug regionScreen.js - globalUID: " + globalUID.user.username);
-  console.log("#debug regionScreen.js - gloabelLanguage: " + globalUID.language.displaylanguage);
-   
     return (
       <View style={styles.container}>
       <ImageBackground source={require("../assets/picInnsbruck.jpg")} style={styles.hotelPicBackground}>

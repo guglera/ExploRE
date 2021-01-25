@@ -40,10 +40,6 @@ function AboutScreen({ navigation }) {
       setVisible(!visible);
     };
 
-  //i18n.locale = globalLang.language.displaylanguage;
-
-  console.log("#debug aboutScreen.js - displaylanguage: " + value);
-
   return (
     <View style={styles.container}>
 

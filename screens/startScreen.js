@@ -40,8 +40,6 @@ function HomeScreen({ navigation }) {
     loginHandler();
   }, [value]);
   
-  console.log("#debug startScreen.js - startScreenLanguage: " + value);
-
   i18n.locale = value;
 
   return (

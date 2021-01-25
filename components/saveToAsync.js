@@ -17,7 +17,6 @@
         };
       
 export async function writeItemToStorage (newValue){
-          console.log("#debug writeItemToStorage demodata: " + newValue);
           await setItem(newValue);
           setValue(newValue);
         };

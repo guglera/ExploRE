@@ -27,9 +27,7 @@ function WelcomeScreen({route, navigation }) {
   const removeItemFromStorage = async (item) => {
     try {
       await AsyncStorage.removeItem(item);
-      console.log("#debug welcomeScreen.js - Successfully logged out");
     } catch(e) {
-      console.log("#debug welcomeScreen.js - error: " + e);
     } finally {
       setValue(null);
     }
@@ -51,15 +49,7 @@ function WelcomeScreen({route, navigation }) {
 
 
   const globalLang = useContext(AuthContext);
-  console.log("#debug welcomeScreen.js - gloabelLanguage: " + globalLang.language.displaylanguage);
   i18n.locale = globalLang.language.displaylanguage;
-
-
-  console.log("#debug welcomeScreen.js - WelcomeScreen ID: " + value);
-  console.log("#debug welcomeScreen.js - Language: " + authContext.language.displaylanguage);
-  // line 103 replaced:  <Weather lat = {lat} lon = {lon} language = {authContext.language.displaylanguage}/>
-
-  //get the Location of the Hotel and give it to the Weather Component via props; default Location = Innsbruck
   const lat = DataService.validateId(value)?DataService.getHotelData(value).getLat():'47.259659';
   const lon = DataService.validateId(value)?DataService.getHotelData(value).getLon():'11.400375';
 

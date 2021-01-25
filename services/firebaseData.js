@@ -28,19 +28,4 @@ export const fetchSpecificId = async (userId) => {
 }
 
 
-const pushCinema = async (bd) => {
-    try {
-        const res = await fetch(firebaseBasePath + '/cinemas.json', {
-            method: 'POST',
-            body: JSON.stringify(bd),
-        });
-        const data = await res.json();
-        console.log(data)
-    } catch (error) {
-        console.log(error);
-    }
-}
 
-export const pushAll = () => {
-    cinemas.map(cin => pushCinema(cin));
-}

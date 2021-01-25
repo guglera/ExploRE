@@ -14,7 +14,8 @@ import ActivityCard from '../components/ActivityCard.js'
 import HotelActivityCard from '../components/HotelActivityCard.js';
 import {fetchSpecificId} from './firebaseData'
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
+import i18n from 'i18n-js';
+i18n.fallbacks = true;
 
 
 
@@ -29,7 +30,6 @@ export default class DataService{
 DataService.init = async function(userId){
     const data = await DataService.setData(userId);
     this.data = data;
-    console.log(this.data);
 }
 */
 function getUrl(userId) {
@@ -39,7 +39,7 @@ function getUrl(userId) {
                 <TouchableOpacity
                     onPress={() => Linking.openURL(url)}
                     View style={styles.buttons}>
-                    <Text style={styles.buttonText}>Forward me to the Hotel Website</Text>
+                    <Text style={styles.buttonText}>{i18n.t('bttnResidenceScreen1')}</Text>
                 </TouchableOpacity>
         )
     } catch (error) {
@@ -60,6 +60,20 @@ function parsingException(error) {
             </Text>
         </View>
     );
+}
+
+function getPersonData(userId) {
+    if (validateId(userId)){
+        const booking = demoData[userId].PersonData;
+        if ('undefined' !== typeof (booking) ){
+            return new PersonData(booking);
+        }
+    }
+    return null;
+}
+
+function getHotelData(userId) {
+    return new HotelData(demoData[userId].HotelData);
 }
    
 function validateId(userId) {
@@ -103,13 +117,17 @@ DataService.validateBonkingDate = function (userId, { navigation }) {
                     <TouchableOpacity
                         onPress={() => navigation.navigate('Morning Brief')}
                         View style={styles.buttons}>
-                        <Text style={styles.buttonText}>Show me the Morning Brief</Text>
+                        <Text style={styles.buttonText}>{i18n.t('bttnResidenceScreen2')}</Text>
                     </TouchableOpacity>
-
                     <TouchableOpacity
                         onPress={() => navigation.navigate('Menu')}
                         View style={styles.buttons}>
-                        <Text style={styles.buttonText}>Show me the Menu</Text>
+                        <Text style={styles.buttonText}>{i18n.t('bttnResidenceScreen3')}</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        onPress={() => navigation.navigate('Residence Activities')}
+                        View style={styles.buttons}>
+                        <Text style={styles.buttonText}>{i18n.t('bttnResidenceScreen4')}</Text>
                     </TouchableOpacity>
                     {getUrl(userId)}
                 </ScrollView>
@@ -172,7 +190,6 @@ DataService.getMorningMail = function (userId) {
 }
 
 DataService.getMenu = function (userId) {
-    console.log(getHotelData(userId).getMenuImage());
     try {
         return (
             < View style={styles.container} >
@@ -281,55 +298,59 @@ DataService.bookHotelActivity = async function(userId, index){
     demoData[userId].HotelActivity[index].booked = true;
     }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: '#fff',
-    },
 
-    image: {
-        width: Dimensions.get('screen').width,
-        height: Dimensions.get('screen').height,
-    },
-    errorText: {
-        color: 'red',
-        fontSize: 16,
-        textAlign: 'center',
-        textAlignVertical: 'center'
-      },
-      buttonText: {
-        fontSize: 18,
-        color: colors.buttonTxtColor,
-        textShadowRadius: 10,
-      },
-      buttons: {
-        flexDirection: 'row', 
-        justifyContent: 'center',
-        backgroundColor: colors.buttonBackgrColor,
-        marginVertical: 10, marginHorizontal: 16,
-        paddingVertical: 30, paddingHorizontal: 20,
-        borderRadius: 20,
-        elevation: 5,
-      },
-      scrollViewStyle: {
-        flex: 1,
-        marginTop: -16,
-        backgroundColor: colors.scrollViewBackgrColor,
-        borderTopRightRadius: 20,
-        borderTopLeftRadius: 20,
-      },
-  
-      scrollContainer: {
-        paddingTop: 10,
-        paddingBottom: 10,
-      },
-
-      cardsContainer: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        paddingBottom: 20     
-      }
+    const styles = StyleSheet.create({
+        container: {
+            flex: 1,
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: '#fff',
+        },
+    
+        image: {
+            width: Dimensions.get('screen').width,
+            height: Dimensions.get('screen').height,
+        },
+        errorText: {
+            color: 'red',
+            fontSize: 16,
+            textAlign: 'center',
+            textAlignVertical: 'center'
+          },
+          buttonText: {
+            fontSize: 18,
+            color: colors.buttonTxtColor,
+            textShadowRadius: 10,
+          },
+          buttons: {
+            flexDirection: 'row', 
+            justifyContent: 'center',
+            backgroundColor: colors.buttonBackgrColor,
+            marginVertical: 10, marginHorizontal: 16,
+            paddingVertical: 30, paddingHorizontal: 20,
+            borderRadius: 20,
+            elevation: 5,
+          },
+          scrollViewStyle: {
+            flex: 1,
+            marginTop: -16,
+            backgroundColor: colors.scrollViewBackgrColor,
+            borderTopRightRadius: 20,
+            borderTopLeftRadius: 20,
+          },
+          scrollContainer: {
+            paddingTop: 10,
+            paddingBottom: 10,
+          },
+          cardsContainer: {
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+            paddingBottom: 20     
+          },
+          hotelActivityContainer: {
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+            paddingBottom: 20     
+          }
 });

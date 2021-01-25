@@ -1,7 +1,6 @@
 
 export default class HotelData {
     constructor(hotelData){
-        console.log(hotelData);
         this.name = hotelData.name;
         this.url = hotelData.url;
         this.hotelId = hotelData.hotelId;

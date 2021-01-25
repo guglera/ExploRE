@@ -26,13 +26,10 @@ export function Weather (props) {
     useEffect(() => {    
         (async () => {       
             try {         
-                console.log('#debug Weather.js - lon: ' + props.lon)
-                console.log('#debug Weather.js - lat: ' + props.lat)
                 const response = await fetch(weather_url)
                 const result = await response.json()    
                 setCurrentWeather({temp : result.current.temp, icon: result.current.weather[0].icon, weather_info: result.current.weather[0].description})
-                setWeatherForecast({temp: result.daily[0].temp.day, icon: result.daily[0].weather[0].icon, weather_info: result.daily[0].weather[0].description})  
-                console.log('#debug Weather.js - temp: ' + result.current.temp)        
+                setWeatherForecast({temp: result.daily[0].temp.day, icon: result.daily[0].weather[0].icon, weather_info: result.daily[0].weather[0].description})     
             } catch (error) {
                 console.error(error)
             }       
@@ -40,10 +37,7 @@ export function Weather (props) {
     }, [props]);
 
     const globalLang = useContext(AuthContext);
-    console.log("#debug Weather.js - gloabelLanguage: " + globalLang.language.displaylanguage);
     i18n.locale = globalLang.language.displaylanguage;
-
-    console.log("#debug Weather.js - Weather Forecast:" + weather_forecast)
    
     const iconUrl = `https://openweathermap.org/img/wn/${current_weather.icon}@4x.png`
     const tomorrow_iconUrl = `https://openweathermap.org/img/wn/${weather_forecast.icon}@4x.png`
