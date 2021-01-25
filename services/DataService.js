@@ -66,7 +66,7 @@ function validateId(userId) {
     return 'undefined' !== typeof (demoData[userId]) ? true : false;
 }
 
-function getPersonData(userId) {
+DataService.getPersonData = function getPersonData(userId) {
     if (validateId(userId)){
         const booking = demoData[userId];
         if ('undefined' !== typeof (booking) ){
@@ -76,7 +76,7 @@ function getPersonData(userId) {
     return null;
 }
 
-function getHotelData(userId) {
+DataService.getHotelData = function getHotelData(userId) {
     console.log(demoData[userId].HotelData);
     return new HotelData(demoData[userId].HotelData);
 }
