@@ -34,7 +34,7 @@ DataService.init = async function(userId){
 */
 function getUrl(userId) {
     try {
-        const url = DataService.getHotelData(userId).getUrl();
+        const url = getHotelData(userId).getUrl();
         return (
                 <TouchableOpacity
                     onPress={() => Linking.openURL(url)}
@@ -44,7 +44,7 @@ function getUrl(userId) {
         )
     } catch (error) {
         try {
-            DataService.getHotelData(userId);
+            getHotelData(userId);
         } catch (error) {
             return parsingException(error);
         }
