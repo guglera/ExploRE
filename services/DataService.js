@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity, Dimensions, Linking } from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import ImageZoom from 'react-native-image-pan-zoom';
@@ -12,48 +12,26 @@ import demoData from '../demoData/demo.json'
 import Moment from 'moment';
 import ActivityCard from '../components/ActivityCard.js'
 import HotelActivityCard from '../components/HotelActivityCard.js';
-import { useAsyncStorage } from '@react-native-async-storage/async-storage';
 import {fetchSpecificId} from './firebaseData'
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 
 
-const [value, setValue] = useState(null);
-const { getItem, setItem } = useAsyncStorage('data');
-export function dataToAsync(userId) { 
-  
-    const writeItemToStorage = async (data)=> {
-      await setItem(data);
-      setValue(data);
-    };
-  
- 
-    useEffect(() => {
-      readItemFromStorage();
-    }, []);
-
-    writeItemToStorage(JSON.stringify(fetchSpecificId(userId)));
-
-
-
+export default class DataService{
+};
+/*DataService.setData = async function (userId){
+    fetchSpecificId(userId)
+    const data = await AsyncStorage.getItem('data');
+    return await JSON.parse(data);
 }
 
-export async function readItemFromStorage(){
-    const item = await getItem();
-    if (item !== null) {
-      setValue(item);
-    }
-    return item;
-  };
-
-export default class DataService{};
-
-DataService.start = function(){
-    dataToAsync();
-    console.log("#debug - data: " + readItemFromStorage());
+DataService.init = async function(userId){
+    const data = await DataService.setData(userId);
+    this.data = data;
+    console.log(this.data);
 }
-
-
+*/
 function getUrl(userId) {
     try {
         const url = DataService.getHotelData(userId).getUrl();
@@ -223,6 +201,10 @@ DataService.getGuestName = function(userId){
         return "";
     }
     return guestName;
+}
+
+DataService.readFromStorage = async function(userId){
+    fetchSpecificId(userId);
 }
 
 

@@ -28,13 +28,18 @@ function App() {
   }, []);
 
   const userId = value;
-         
-  DataService.start();
+  console.log("#debug App.js - aktuelle userId: " + userId);
+/*   DataService.validateId(userId)?console.log(DataService.getPersonData(userId).getFullName()):null;
+  DataService.validateId("16865045")?console.log(DataService.getPersonData("16865045").getFullName()):null;
+  DataService.validateId("16865045")?console.log(DataService.getHotelData("16865045").getName()):null;
+  DataService.validateId("508103379")?console.log(DataService.getPersonData("508103379").getFullName()):null;
+  DataService.validateId("508103379")?console.log(DataService.getHotelData("508103379").getName()):null; */
+
   return (
-    <View >
-      {DataService.getHotelActivityCards('508103379', 'en')}
-  </View >
-  )
+    
+      (loading === true) ? <LoadingScreen /> : <AuthContextProvider><Navigator appUID={userId}/></AuthContextProvider>
+    
+  );
 }
 
 export default App; 

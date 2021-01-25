@@ -11,12 +11,13 @@ import i18n from 'i18n-js';
 i18n.fallbacks = true;
 
 function AboutScreen({ navigation }) {
-  const { getData, setData } = asyncStorage.useAsyncStorage('data');
+  const [value, setValue] = useState(null);
+  const { getItem, setItem } = asyncStorage.useAsyncStorage('displaylanguage');
 
   const readItemFromStorage = async () => {
-    const data = await getData();
-    if (data !== null) {
-      setValue(data);
+    const item = await getItem();
+    if (item !== null) {
+      setValue(item);
     }
   };
 
@@ -54,7 +55,8 @@ function AboutScreen({ navigation }) {
           <TouchableOpacity
             onPress={() => {
               writeItemToStorage('en');
-                            Alert.alert("Language","English language selected");
+              Alert.alert("Language","English language selected");
+              navigation.navigate('ExploRE');
             }}
             style={styles.buttons}>
               <Text style={styles.buttonTxt}>English</Text>
@@ -63,7 +65,8 @@ function AboutScreen({ navigation }) {
           <TouchableOpacity
             onPress={() => {
               writeItemToStorage('de');
-                            Alert.alert("Sprache","Deutsche Sprache gewählt");
+              Alert.alert("Sprache","Deutsche Sprache gewählt");
+              navigation.navigate('ExploRE');
             }}
             style={styles.buttons}>
               <Text style={styles.buttonTxt}>Deutsch</Text>
@@ -107,7 +110,7 @@ function AboutScreen({ navigation }) {
         
     </ImageBackground>
 
-    <TouchableOpacity
+{/*     <TouchableOpacity
           onPress={() => {
             if (value === 'en' || value === 'de') {
               navigation.navigate('ExploRE')
@@ -121,7 +124,7 @@ function AboutScreen({ navigation }) {
                 Login
                 </Text>
             </View>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
 
   </View >
   );
