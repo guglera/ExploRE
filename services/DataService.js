@@ -77,7 +77,6 @@ DataService.getPersonData = function getPersonData(userId) {
 }
 
 DataService.getHotelData = function getHotelData(userId) {
-    console.log(demoData[userId].HotelData);
     return new HotelData(demoData[userId].HotelData);
 }
 
