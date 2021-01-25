@@ -26,14 +26,8 @@
           "lat": 46.56283887636126,
           "lon": 10.782008727720367
         },
-        "Menu": [{
-          "title": "Abendessen",
-          "filePath": "../assets/bergfriedenMenu.png"
-        }],
-        "MorningMail": [{
-          "title": "Morgenpost für Samstag, 19. Dezember",
-          "filePath": "../assets/bergfriedenMorgenpost.png"
-        }]
+        "morningMailImage": "",
+        "menuImage": ""
       },
       "ActivityData":[
         {

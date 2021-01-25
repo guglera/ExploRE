@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity, Dimensions, Linking } from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import ImageZoom from 'react-native-image-pan-zoom';
@@ -12,27 +12,19 @@ import demoData from '../demoData/demo.json'
 import Moment from 'moment';
 import ActivityCard from '../components/ActivityCard.js'
 import HotelActivityCard from '../components/HotelActivityCard.js';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useAsyncStorage } from '@react-native-async-storage/async-storage';
+import {fetchSpecificId} from './firebaseData'
 
 
 
 
-export function dataToAsync() { 
-    const [value, setValue] = useState(null);
-    const { getItem, setItem } = asyncStorage.useAsyncStorage('data');
+const [value, setValue] = useState(null);
+const { getItem, setItem } = useAsyncStorage('data');
+export function dataToAsync(userId) { 
   
-    const readItemFromStorage = async () => {
-      const item = await getItem();
-      if (item !== null) {
-        setValue(item);
-      }
-    };
-  
-    const writeItemToStorage = async newValue => {
-      console.log("#debug writeItemToStorage demodata: " + newValue);
-      await setItem(newValue);
-      setValue(newValue);
+    const writeItemToStorage = async (data)=> {
+      await setItem(data);
+      setValue(data);
     };
   
  
@@ -40,21 +32,25 @@ export function dataToAsync() {
       readItemFromStorage();
     }, []);
 
-    DataService.init = async (value) => {
-        writeItemToStorage(JSON.stringify(demoData));
-    }
-    DataService.test = function(){
-     readItemFromStorage();
-     console.log("#debug dataService.test demodata: " + JSON.parse(value));
-    }
-    DataService.init();
-    DataService.test();
+    writeItemToStorage(JSON.stringify(fetchSpecificId(userId)));
+
+
+
 }
+
+export async function readItemFromStorage(){
+    const item = await getItem();
+    if (item !== null) {
+      setValue(item);
+    }
+    return item;
+  };
 
 export default class DataService{};
 
 DataService.start = function(){
     dataToAsync();
+    console.log("#debug - data: " + readItemFromStorage());
 }
 
 
@@ -268,6 +264,7 @@ DataService.getHotelActivityCards = function (userId, language) {
                 indexNum = {index}
                 userId = {userId}
                 language = {language}
+                service = {DataService}
             />
         )
     })
