@@ -51,4 +51,3 @@ i18n.translations = {
     txtAboutScreen11: 'Sie erreichen uns unter folgenden Kontaktdaten:'
   },
   };
-

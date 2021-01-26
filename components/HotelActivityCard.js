@@ -1,3 +1,4 @@
+
 import React from 'react';
 import {StyleSheet, View, Text, Image, Alert, Linking, TouchableOpacity} from 'react-native';
 import colors from '../constants/colors.js';

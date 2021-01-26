@@ -4,7 +4,6 @@ import DataService from '../services/DataService';
 import {useContext } from 'react'; 
 import colors from '../constants/colors.js'
 import { AuthContext } from '../contexts/authContext';
-import images from '../services/Images.js';
 import i18n from 'i18n-js';
 import { translations } from '../components/Languages';
 i18n.fallbacks = true;
@@ -14,12 +13,11 @@ function ResidenceScreen({ navigation }) {
   const globalUID = useContext(AuthContext); 
 
   const globalLang = useContext(AuthContext);
-  console.log("#debug residenceScreen.js - gloabelLanguage: " + globalLang.language.displaylanguage);
   i18n.locale = globalLang.language.displaylanguage;
 
     return (
       <View style={styles.container}>
-         <ImageBackground source={images.backgrounds[DataService.getHotelId(globalUID.user.username)]} style={styles.hotelPicBackground}> 
+         <ImageBackground source={DataService.getHotelImage(globalUID.user.username)} style={styles.hotelPicBackground}> 
           <View style={styles.headlineTextBackground}>
           <Text style={styles.headlineText}>
           {i18n.t('txtResidenceScreen1')} {"\n"}{DataService.getHotelName(globalUID.user.username)}{"\n"}

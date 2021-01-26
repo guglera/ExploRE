@@ -4,7 +4,6 @@ import DataService from '../services/DataService';
 import {useContext } from 'react'; 
 import colors from '../constants/colors.js'
 import { AuthContext } from '../contexts/authContext';
-import images from '../services/Images.js';
 import i18n from 'i18n-js';
 import { translations } from '../components/Languages';
 i18n.fallbacks = true;
@@ -14,7 +13,6 @@ function ResidenceActivityScreen({ navigation }) {
   const globalUID = useContext(AuthContext); 
 
   const globalLang = useContext(AuthContext);
-  console.log("#debug residenceActivityScreen.js - gloabelLanguage: " + globalLang.language.displaylanguage);
   i18n.locale = globalLang.language.displaylanguage;
 
     return (

@@ -1,5 +1,3 @@
-import Menu from './Menu'
-import MorningMail from './MorningMail'
 
 export default class HotelData {
     constructor(hotelData){
@@ -7,10 +5,10 @@ export default class HotelData {
         this.url = hotelData.url;
         this.hotelId = hotelData.hotelId;
         this.location = hotelData.location;
-        const menu = hotelData.Menu;
-        this.menu = menu.map((menu) =>  new Menu(menu.title, menu.filePath));
-        const morningMail = hotelData.MorningMail;
-        this.morningMail = morningMail.map((morningMail) => new MorningMail(morningMail.title, morningMail.filePath));
+        this.hotelBackgroundImage = hotelData.hotelBackgroundImage;
+        this.menuImage = hotelData.menuImage;
+        this.morningMailImage = hotelData.morningMailImage;
+
     }
 
     getName = function() {
@@ -25,17 +23,21 @@ export default class HotelData {
         return this.location.lon;
     }
 
-    getMenu = function () {
-        return this.menu;
+    getMenuImage = function () {
+        return this.menuImage;
     }
 
-    getMorningMail = function () {
-        return this.morningMail;
+    getMorningMailImage = function () {
+        return this.morningMailImage;
     }
+
     getUrl = function () {
         return this.url;
     }
     getHotelId = function () {
         return this.hotelId;
+    }
+    getBackgroundImage = function() {
+        return this.hotelBackgroundImage
     }
 }

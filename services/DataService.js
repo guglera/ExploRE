@@ -1,24 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity, Dimensions, Linking } from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import ImageZoom from 'react-native-image-pan-zoom';
-import images from '../services/Images.js'
 import PersonData from '../models/PersonData';
 import HotelData from '../models/HotelData';
 import ActivityData from '../models/ActivityData';
-import HotelActivity from '../models/HotelActivity.js';
-import demoData from '../demoData/demo.json';
+import HotelActivity from '../models/HotelActivity'
 import colors from '../constants/colors.js';
+import demoData from '../demoData/demo.json'
 import Moment from 'moment';
-import ActivityCard from '../components/ActivityCard.js';
+import ActivityCard from '../components/ActivityCard.js'
 import HotelActivityCard from '../components/HotelActivityCard.js';
+import {fetchSpecificId} from './firebaseData'
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import i18n from 'i18n-js';
 i18n.fallbacks = true;
 
 
-export default class DataService {}
 
+export default class DataService{
+};
+/*DataService.setData = async function (userId){
+    fetchSpecificId(userId)
+    const data = await AsyncStorage.getItem('data');
+    return await JSON.parse(data);
+}
 
+DataService.init = async function(userId){
+    const data = await DataService.setData(userId);
+    this.data = data;
+}
+*/
 function getUrl(userId) {
     try {
         const url = DataService.getHotelData(userId).getUrl();
@@ -49,18 +61,6 @@ function parsingException(error) {
     );
 }
 
-DataService.getPersonData = function getPersonData(userId) {
-    return new PersonData(demoData[userId].PersonData);
-}
-
-DataService.getHotelData = function getHotelData(userId) {
-    return new HotelData(demoData[userId].HotelData);
-}
-   
-function validateId(userId) {
-    return 'undefined' !== typeof (demoData[userId]) ? true : false;
-}
-
 function getPersonData(userId) {
     if (validateId(userId)){
         const booking = demoData[userId].PersonData;
@@ -72,6 +72,24 @@ function getPersonData(userId) {
 }
 
 function getHotelData(userId) {
+    return new HotelData(demoData[userId].HotelData);
+}
+   
+function validateId(userId) {
+    return 'undefined' !== typeof (demoData[userId]) ? true : false;
+}
+
+DataService.getPersonData = function getPersonData(userId) {
+    if (validateId(userId)){
+        const booking = demoData[userId];
+        if ('undefined' !== typeof (booking) ){
+            return new PersonData(booking);
+        }
+    }
+    return null;
+}
+
+DataService.getHotelData = function getHotelData(userId) {
     return new HotelData(demoData[userId].HotelData);
 }
 
@@ -134,7 +152,7 @@ DataService.getHotelName = function (userId) {
 
 DataService.getHotelId = function (userId) {
     try {
-        let hotelId = getHotelData(userId).getHotelId();
+        let hotelId = getHotelData(userId).getMenu().getHotelId();
         return hotelId;
     } catch (error) {
         return "default";
@@ -142,16 +160,24 @@ DataService.getHotelId = function (userId) {
 
    }
 
+DataService.getHotelImage = function (userId) {
+    try {
+        let image = getHotelData(userId).getBackgroundImage();
+        return {uri: image};
+    } catch (error) {
+        return require('../assets/back4.png');
+    } 
+}
+
 DataService.getMorningMail = function (userId) {
     try {
         return (< View style={styles.container} >
-
             <ImageZoom cropWidth={Dimensions.get('window').width}
                 cropHeight={Dimensions.get('window').height}
                 imageWidth={Dimensions.get('screen').width}
                 imageHeight={Dimensions.get('screen').height}>
                 <Image style={styles.image}
-                    source={images.morningMail[getHotelData(userId).getHotelId()]}
+                    source={{uri: getHotelData(userId).getMorningMailImage()}}
                     resizeMode='contain'
                 />
             </ImageZoom>
@@ -171,7 +197,7 @@ DataService.getMenu = function (userId) {
                     imageWidth={Dimensions.get('screen').width}
                     imageHeight={Dimensions.get('screen').height}>
                     <Image style={styles.image}
-                        source={images.menu[getHotelData(userId).getHotelId()]}
+                        source={{uri: getHotelData(userId).getMenuImage()}}
                         resizeMode='contain'
                     />
                 </ImageZoom>
@@ -190,6 +216,10 @@ DataService.getGuestName = function(userId){
         return "";
     }
     return guestName;
+}
+
+DataService.readFromStorage = async function(userId){
+    fetchSpecificId(userId);
 }
 
 
@@ -217,8 +247,9 @@ DataService.getActivityCards = function (userId, language) {
 }
 
 function getHotelActivity(userId) {   
-    const hotelActivities = demoData[userId].HotelActivity.map((hotelActivity) => new HotelActivity(hotelActivity.titleDE, hotelActivity.titleEN, hotelActivity.descriptionDE, hotelActivity.descriptionEN, hotelActivity.imageUrl, hotelActivity.hotelActivityFrom, hotelActivity.hotelActivityTo, hotelActivity.schedule, hotelActivity.registrationMail, hotelActivity.activityUrlDE, hotelActivity.activityUrlEN));
-    return hotelActivities
+    let hotelActivity = demoData[userId].HotelActivity;
+    hotelActivity = hotelActivity.map((hotelActivity) => new HotelActivity(hotelActivity));
+    return hotelActivity
 }
 
 DataService.getHotelActivityCards = function (userId, language) {
@@ -227,13 +258,16 @@ DataService.getHotelActivityCards = function (userId, language) {
             <HotelActivityCard
                 hotelActivity = {hotelActivity}
                 key = {index}
+                indexNum = {index}
+                userId = {userId}
                 language = {language}
+                service = {DataService}
             />
         )
     })
     
     return (
-        <ScrollView contentContainerStyle={styles.hotelActivityContainer}>
+        <ScrollView contentContainerStyle={styles.activityContainer}>
             {hotelActivitiesToDisplay}
         </ScrollView>  
     )
@@ -259,58 +293,63 @@ DataService.getBookingPeriodTo = function (userId) {
     return to;
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: '#fff',
-    },
+DataService.bookHotelActivity = async function(userId, index){
+    demoData[userId].HotelActivity[index].booked = true;
+    }
 
-    image: {
-        width: Dimensions.get('screen').width,
-        height: Dimensions.get('screen').height,
-    },
-    errorText: {
-        color: 'red',
-        fontSize: 16,
-        textAlign: 'center',
-        textAlignVertical: 'center'
-      },
-      buttonText: {
-        fontSize: 18,
-        color: colors.buttonTxtColor,
-        textShadowRadius: 10,
-      },
-      buttons: {
-        flexDirection: 'row', 
-        justifyContent: 'center',
-        backgroundColor: colors.buttonBackgrColor,
-        marginVertical: 10, marginHorizontal: 16,
-        paddingVertical: 30, paddingHorizontal: 20,
-        borderRadius: 20,
-        elevation: 5,
-      },
-      scrollViewStyle: {
-        flex: 1,
-        marginTop: -16,
-        backgroundColor: colors.scrollViewBackgrColor,
-        borderTopRightRadius: 20,
-        borderTopLeftRadius: 20,
-      },
-      scrollContainer: {
-        paddingTop: 10,
-        paddingBottom: 10,
-      },
-      cardsContainer: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        paddingBottom: 20     
-      },
-      hotelActivityContainer: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        paddingBottom: 20     
-      }
+
+    const styles = StyleSheet.create({
+        container: {
+            flex: 1,
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: '#fff',
+        },
+    
+        image: {
+            width: Dimensions.get('screen').width,
+            height: Dimensions.get('screen').height,
+        },
+        errorText: {
+            color: 'red',
+            fontSize: 16,
+            textAlign: 'center',
+            textAlignVertical: 'center'
+          },
+          buttonText: {
+            fontSize: 18,
+            color: colors.buttonTxtColor,
+            textShadowRadius: 10,
+          },
+          buttons: {
+            flexDirection: 'row', 
+            justifyContent: 'center',
+            backgroundColor: colors.buttonBackgrColor,
+            marginVertical: 10, marginHorizontal: 16,
+            paddingVertical: 30, paddingHorizontal: 20,
+            borderRadius: 20,
+            elevation: 5,
+          },
+          scrollViewStyle: {
+            flex: 1,
+            marginTop: -16,
+            backgroundColor: colors.scrollViewBackgrColor,
+            borderTopRightRadius: 20,
+            borderTopLeftRadius: 20,
+          },
+          scrollContainer: {
+            paddingTop: 10,
+            paddingBottom: 10,
+          },
+          cardsContainer: {
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+            paddingBottom: 20     
+          },
+          hotelActivityContainer: {
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+            paddingBottom: 20     
+          }
 });

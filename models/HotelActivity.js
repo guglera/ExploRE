@@ -1,16 +1,17 @@
 export default class HotelActivity{
-    constructor(titleDE, titleEN, descriptionDE, descriptionEN, imageUrl, hotelActivityFrom, hotelActivityTo, schedule, registrationMail, activityUrlDE, activityUrlEN){
-            this.titleDE = titleDE;
-            this.titleEN = titleEN;
-            this.descriptionDE = descriptionDE;
-            this.descriptionEN = descriptionEN;
-            this.imageUrl = imageUrl;
-            this.hotelActivityFrom = hotelActivityFrom;
-            this.hotelActivityTo = hotelActivityTo;
-            this.schedule = schedule;
-            this.registrationMail = registrationMail;
-            this.activityUrlDE = activityUrlDE;
-            this.activityUrlEN = activityUrlEN;
+        constructor(hotelActivity){
+            this.titleDE = hotelActivity.titleDE;
+            this.titleEN = hotelActivity.titleEN;
+            this.descriptionDE = hotelActivity.descriptionDE;
+            this.descriptionEN = hotelActivity.descriptionEN;
+            this.imageUrl = hotelActivity.imageUrl;
+            this.hotelActivityFrom = hotelActivity.hotelActivityFrom;
+            this.hotelActivityTo = hotelActivity.hotelActivityTo;
+            this.schedule = hotelActivity.schedule;
+            this.registrationMail = hotelActivity.registrationMail;
+            this.activityUrlDE = hotelActivity.activityUrlDE;
+            this.activityUrlEN = hotelActivity.activityUrlEN;
+            this.booked = hotelActivity.booked;
         }
 
     getTitle = function (language) {return language === 'de' ? this.titleDE : this.titleEN}
