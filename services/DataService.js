@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity, Dimensions, Linking } from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import ImageZoom from 'react-native-image-pan-zoom';
-import images from '../services/Images.js'
 import PersonData from '../models/PersonData';
 import HotelData from '../models/HotelData';
 import ActivityData from '../models/ActivityData';
