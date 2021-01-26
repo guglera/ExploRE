@@ -23,4 +23,5 @@ export default class HotelActivity{
     getSchedule = function () {return this.schedule;}
     getRegMail = function () {return this.registrationMail;}
     getActivityUrl = function (language) {return language === 'de' ? this.activityUrlDE : this.activityUrlEN;}
+    getBooked = function() { return this.booked};
 }

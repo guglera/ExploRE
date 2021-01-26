@@ -16,6 +16,7 @@ const colors = {
     cardColor:'#fff',
     cardBorderColor: '#999',
     textColor:'#000',
+    textColorBooked:'green',
   }
 
   export default colors;

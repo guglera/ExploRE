@@ -22,7 +22,7 @@ const HotelActivityCard = (props) =>{
                 <Text style={styles.cardText}>{props.hotelActivity.getDescription(props.language)}</Text>
             </View>
             <View style={styles.linkContainer}>
-                <Text style={styles.reservationText} onPress={() => alert(i18n.t('txtHotelActivityScreen3'))}>{i18n.t('txtHotelActivityScreen2')}</Text>
+                {props.hotelActivity.getBooked()?<Text style={styles.reservationBooked} >{i18n.t('txtHotelActivityScreen4')}</Text>:<Text style={styles.reservationText} onPress={() => props.service.bookHotelActivity(props.userId,props.indexNum)}>{i18n.t('txtHotelActivityScreen2')}</Text>}
             </View>
         </TouchableOpacity>
     );
@@ -92,6 +92,13 @@ const styles = StyleSheet.create({
         fontStyle:'italic',
         fontWeight:'bold',
         color:colors.textColor
+    },
+    reservationBooked:{
+        textAlign:'center',
+        fontSize:22,
+        fontStyle:'italic',
+        fontWeight:'bold',
+        color:colors.textColorBooked
     }
  });
 

@@ -20,17 +20,17 @@ i18n.fallbacks = true;
 
 export default class DataService{
 };
-/*DataService.setData = async function (userId){
+/* ####### Vorbereitung für Firebase Backend - auslesen und zurückschreiben, Sprint 03: #######
+DataService.setData = async function (userId){
     fetchSpecificId(userId)
     const data = await AsyncStorage.getItem('data');
     return await JSON.parse(data);
 }
-
 DataService.init = async function(userId){
     const data = await DataService.setData(userId);
     this.data = data;
 }
-*/
+####### aus Zeitgründen haben wir diese Funktion im Sprint02 nicht fertig implementiert #######*/
 function getUrl(userId) {
     try {
         const url = DataService.getHotelData(userId).getUrl();
@@ -218,9 +218,6 @@ DataService.getGuestName = function(userId){
     return guestName;
 }
 
-DataService.readFromStorage = async function(userId){
-    fetchSpecificId(userId);
-}
 
 
 function getActivityData(userId) {   
@@ -295,6 +292,7 @@ DataService.getBookingPeriodTo = function (userId) {
 
 DataService.bookHotelActivity = async function(userId, index){
     demoData[userId].HotelActivity[index].booked = true;
+    alert(i18n.t('txtHotelActivityScreen3'));
     }
 
 

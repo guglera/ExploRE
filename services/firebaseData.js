@@ -2,6 +2,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const firebaseBasePath = 'https://explore-689ed-default-rtdb.europe-west1.firebasedatabase.app/';
 
+// https://explore-689ed-default-rtdb.europe-west1.firebasedatabase.app/508103379.json liefert z.B die Daten vom Hotel Quellenhof im json Format
+
 export const fetchSpecificId = async (userId) => {
     try {
         const res = await fetch(`${firebaseBasePath}${userId}.json`, {
