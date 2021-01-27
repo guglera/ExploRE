@@ -21,9 +21,15 @@ const HotelActivityCard = (props) =>{
                 <Text style={styles.cardHeader}>{props.hotelActivity.getTitle(props.language)} : {props.hotelActivity.getSchedule()}</Text>
                 <Text style={styles.cardText}>{props.hotelActivity.getDescription(props.language)}</Text>
             </View>
-            <View style={styles.linkContainer}>
-                {props.hotelActivity.getBooked()?<Text style={styles.reservationBooked} >{i18n.t('txtHotelActivityScreen4')}</Text>:<Text style={styles.reservationText} onPress={() => props.service.bookHotelActivity(props.userId,props.indexNum)}>{i18n.t('txtHotelActivityScreen2')}</Text>}
-            </View>
+            
+                {props.hotelActivity.getBooked()?
+                <View style={styles.linkContainerBooked}>
+                    <Text style={styles.reservationText} >{i18n.t('txtHotelActivityScreen4')}</Text>
+                </View>
+                :
+                <View style={styles.linkContainer}>
+                    <Text style={styles.reservationText} onPress={() => props.service.bookHotelActivity(props.userId,props.indexNum)}>{i18n.t('txtHotelActivityScreen2')}</Text>
+                </View>}
         </TouchableOpacity>
     );
 }
@@ -93,13 +99,12 @@ const styles = StyleSheet.create({
         fontWeight:'bold',
         color:colors.textColor
     },
-    reservationBooked:{
-        textAlign:'center',
-        fontSize:22,
-        fontStyle:'italic',
-        fontWeight:'bold',
-        color:colors.textColorBooked
-    }
+    linkContainerBooked:{
+        height:'28%',
+        width:'100%',
+        marginTop:'3%',
+        backgroundColor:colors.containerColorBooked
+    },
  });
 
 export default HotelActivityCard;
