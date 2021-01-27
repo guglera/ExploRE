@@ -18,11 +18,19 @@ i18n.fallbacks = true;
 function WelcomeScreen({route, navigation }) {
   const [value, setValue] = useState('value');
   const { getItem, setItem } = useAsyncStorage('hotelId');
+  const [lang, setLang] = useState('en');
 
   const readItemFromStorage = async () => {
     const item = await getItem();
     setValue(item);
   };
+
+  const readLangFromStorage = async () => {
+    const dislanguage = await AsyncStorage.getItem('displaylanguage');
+    if (dislanguage !== null) {
+      setLang(dislanguage);
+    }
+  }
 
   const removeItemFromStorage = async (item) => {
     try {
@@ -41,15 +49,23 @@ function WelcomeScreen({route, navigation }) {
         authContext.login({username: value});
       })
       .catch(e => console.warn(e))
+    }
+
+  const langHandler = () => {  
+    readLangFromStorage()
+      .then(data => {
+      authContext.langfunc({displaylanguage: lang});
+    })
+    .catch(e => console.warn(e));
   }
 
   useEffect(() => {
     loginHandler();
-  }, [value]);
+    langHandler();
+  }, [value, lang]);
 
 
-  const globalLang = useContext(AuthContext);
-  i18n.locale = globalLang.language.displaylanguage;
+  i18n.locale = lang;
   const lat = DataService.validateId(value)?DataService.getHotelData(value).getLat():'47.259659';
   const lon = DataService.validateId(value)?DataService.getHotelData(value).getLon():'11.400375';
 
@@ -99,7 +115,7 @@ function WelcomeScreen({route, navigation }) {
           </TouchableOpacity> */}
 
           <View>
-            <Weather lat = {lat} lon = {lon} language = {authContext.language.displaylanguage}/>
+            <Weather lat = {lat} lon = {lon} language = {lang}/>
           </View>
           </View>
           

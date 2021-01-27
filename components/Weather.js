@@ -36,8 +36,10 @@ export function Weather (props) {
         })();
     }, [props]);
 
-    const globalLang = useContext(AuthContext);
-    i18n.locale = globalLang.language.displaylanguage;
+    // Müsste in Sprint 3 noch angepasst werden - schnelleres Laden der Sprache in WeatherCard -->
+    /* const globalLang = useContext(AuthContext);
+    i18n.locale = globalLang.language.displaylanguage; */
+    i18n.locale = props.language;
    
     const iconUrl = `https://openweathermap.org/img/wn/${current_weather.icon}@4x.png`
     const tomorrow_iconUrl = `https://openweathermap.org/img/wn/${weather_forecast.icon}@4x.png`
