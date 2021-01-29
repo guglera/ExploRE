@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
 
   headlineTxt: {
     color: colors.headlineTxtColor,
-    fontSize: 26,
+    fontSize: 20,
     lineHeight: 40,
     paddingTop: 20, paddingBottom: 20, paddingLeft: 25, paddingRight: 25,
     textAlign: 'center',
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
   },
 
   buttonTxt: {
-    fontSize: 18,
+    fontSize: 14,
     color: colors.buttonTxtColor,
     textShadowRadius: 10,
   },

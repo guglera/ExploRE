@@ -311,12 +311,12 @@ DataService.bookHotelActivity = async function(userId, index){
         },
         errorText: {
             color: 'red',
-            fontSize: 16,
+            fontSize: 14,
             textAlign: 'center',
             textAlignVertical: 'center'
           },
           buttonText: {
-            fontSize: 18,
+            fontSize: 14,
             color: colors.buttonTxtColor,
             textShadowRadius: 10,
           },

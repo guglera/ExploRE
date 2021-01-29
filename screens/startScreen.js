@@ -47,12 +47,13 @@ function HomeScreen({ navigation }) {
     <View style={styles.container}>
 
       <ImageBackground source={require("../assets/back4.png")} style={styles.image} resizeMode="stretch">
+      <View style={{ flex: 2, flexDirection: "column", justifyContent: 'center', }}>
         <Text style={styles.loremIpsum}>
         {i18n.t('txtStartScreen1')} 
-        </Text>
-        <Text style={styles.loremIpsum}>
+        {"\n"}
         {i18n.t('txtStartScreen2')} 
         </Text>
+        </View> 
 
         <View style={styles.qrScanner}>
         <QrScanner />
@@ -131,13 +132,14 @@ const styles = StyleSheet.create({
   loremIpsum: {
     flex: 1,
     textAlign: "center",
-    fontSize: 30,
+    marginTop: 20,
+    fontSize: 20,
     color: 'white'
   },
 
   loremIpsum2: {
     textAlign: "center",
-    fontSize: 30,
+    fontSize: 20,
     marginTop: 25,
     paddingBottom: 0,
     color: 'white'
@@ -153,13 +155,13 @@ const styles = StyleSheet.create({
 
   qrScanner: {
     flex: 10,
-    width: 500,
-    height: 500,
-    alignItems: 'flex-end'
+    width: 200,
+    height: 200,
+    alignItems: 'center'
   },
 
   buttonTxt: {
-    fontSize: 18,
+    fontSize: 14,
     color: colors.buttonTxtColor,
     textShadowRadius: 10,
   },
@@ -198,7 +200,7 @@ headlineTxtBackground: {
 
 headlineTxt: {
   color: colors.headlineTxtColor,
-  fontSize: 18,
+  fontSize: 14,
   lineHeight: 15,
   paddingTop: 20, paddingBottom: 20, paddingLeft: 25, paddingRight: 25,
   textAlign: 'center',

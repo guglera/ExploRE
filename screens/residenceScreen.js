@@ -48,7 +48,7 @@ function ResidenceScreen({ navigation }) {
 
     headlineText: {
       color: colors.headlineTxtColor,
-      fontSize: 26,
+      fontSize: 20,
       lineHeight: 40,
       paddingTop: 20, paddingBottom: 20, paddingLeft: 25, paddingRight: 25,
       textAlign: 'center',

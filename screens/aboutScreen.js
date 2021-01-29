@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
   
     loremIpsum: {
       textAlign: "center",
-      fontSize: 30,
+      fontSize: 20,
     marginTop: 30,
     paddingBottom: 0,
     color: 'white'
@@ -162,7 +162,7 @@ const styles = StyleSheet.create({
     },
   
     buttonTxt: {
-      fontSize: 18,
+      fontSize: 14,
       color: colors.buttonTxtColor,
       textShadowRadius: 10,
     },
@@ -191,7 +191,7 @@ const styles = StyleSheet.create({
 
     headlineTxt: {
       color: colors.headlineTxtColor,
-      fontSize: 25,
+      fontSize: 20,
       lineHeight: 15,
       paddingTop: 30, paddingBottom: 20, paddingLeft: 25, paddingRight: 25,
       textAlign: 'center',

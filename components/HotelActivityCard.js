@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
     },
     reservationText:{
         textAlign:'center',
-        fontSize:22,
+        fontSize:20,
         fontStyle:'italic',
         fontWeight:'bold',
         color:colors.textColor
