@@ -249,7 +249,7 @@
           "hotelActivityFrom":"2020-12-20",
           "hotelActivityTo":"2021-12-20",
           "schedule":"08:00-18:00",
-          "booked":true,
+          "booked":false,
           "registrationMail":"jonesadmin@gmail.com",
           "activityUrlDE":"https://www.fortressresortandspa.com/wp-content/uploads/2020/04/The-Fortress-Journeys.pdf",
           "activityUrlEN":"https://www.fortressresortandspa.com/things-to-do-in-galle/resort-activities.html"
@@ -400,26 +400,11 @@
           ],
         "HotelActivity":[
           {
-            "titleDE":"Fahrradverleih",
-            "titleEN":"Bike Rental",
-            "descriptionDE":"Fahrradverleih im Hotel Engel: Direkt vor der Haustür finden Sie in unserem breiten Talkessel eine Vielzahl von Fahrradwegen oder entdecken Sie unsere schöne Bergwelt mit dem Mountainbike!  Nutzen Sie unseren hoteleigenen Fahrradverleih: – Fahrräder mit Gebäckablage – Mountainbikes – E-Bikes",
-            "descriptionEN":"Hotel in Alto Adige with bike hire Alto Adige isn’t interested in tourists, but rather explorers bursting with energy. Unfortunately it is often the case that, after driving for hundreds of kilometres to reach your destination, you then can’t find a parking space when you arrive. Or you hire an expensive bicycle only to find that it’s faulty. Here at Hotel Engel, we want you to have a relaxing holiday which is why we’ve decided to offer you an incredibly interesting service. In our Alto Adige bike hire hotel, you can borrow our bicycles without having to face the long queues at the local rental places.For hire (for a fee): City bikes - Mountain bikes -  E-Bikes",
-            "imageUrl":"https://www.hotelengel.com/wp-content/uploads/2017/02/Reschensee-3.jpg",
-            "hotelActivityFrom":"2020-12-20",
-            "hotelActivityTo":"2021-12-20",
-            "schedule":"...",
-            "booked":false,
-            "registrationMail":"jonesadmin@gmail.com",
-            "activityUrlDE":"https://www.hotelengel.com/de/service/fahrradverleih/",
-            "activityUrlEN":"https://www.hotelengel.com/en/services/bike-rental-hotel-engel/"
-          }
-          ,
-          {
             "titleDE":"3 Länder-Skisafari",
             "titleEN":"3 Country-Skisafari",
             "descriptionDE":"Lernen Sie mit uns täglich ein neues Skigebiet kennen: Schnalstal (I) – Sulden (I) – Scuol (CH) – Samnaun/Ischgl (CH/A) – Serfaus/Fiss/Ladis (A) – Livigno (I), Anfahrtszeit 30 bis ca. 60 Minuten - Durch die zentrale Lage unseres Dorfes im Drei-Länder-Eck können wir unseren Gästen ein optimales Ski-Erlebnis anbieten: Wir bringen Sie jeden Tag in ein neues Skigebiet und Sie können die tollsten Skigebiete im Alpenraum erkunden. Entdecken Sie täglich neue Täler mit ihren Schönheiten und genießen Sie die atemberaubende Berglandschaft. Sie fahren täglich in unserem hoteleigenen Groß Bus! Um Ihnen das anstehen an der Kasse zu ersparen, erhalten Sie die Tagesskipässe von uns: So kann der Skitag beginnen …",
             "descriptionEN":"Get to know a new skiing area with us every day: Val Senales (I) - Solda (I) - Scuol (CH) - Samnaun/Ischgl (CH/A) - Serfaus/Fiss/Ladis (A) - Livigno (I), journey time 30 to approx. 60 minutes. Due to the central location of our village in the three-country corner, we can offer our guests an optimal skiing experience: We take you to a new ski area every day and you can explore the most amazing ski resorts in the alpine region. Discover new valleys with their beauties every day and enjoy the breathtaking mountain scenery. You will travel daily in our hotel's own big bus! To save you queuing at the ticket office, you will receive the day ski passes from us: so the ski day can begin ...",
-            "imageUrl":"http://www.3laender-skisafari.com/wp-content/uploads/2019/09/Skiing-13.mp4",
+            "imageUrl":"https://www.3laender-skisafari.com/wp-content/uploads/2019/09/Risorsa-23laender-1.png",
             "hotelActivityFrom":"2020-12-20",
             "hotelActivityTo":"2021-05-01",
             "schedule":"...",
@@ -442,6 +427,21 @@
             "registrationMail":"jonesadmin@gmail.com",
             "activityUrlDE":"https://www.hotelengel.com/de/service/hoteleigener-skiverleih/",
             "activityUrlEN":"https://www.hotelengel.com/en/services/hotel-ski-rental/"
+          }
+          ,
+          {
+            "titleDE":"Fahrradverleih",
+            "titleEN":"Bike Rental",
+            "descriptionDE":"Fahrradverleih im Hotel Engel: Direkt vor der Haustür finden Sie in unserem breiten Talkessel eine Vielzahl von Fahrradwegen oder entdecken Sie unsere schöne Bergwelt mit dem Mountainbike!  Nutzen Sie unseren hoteleigenen Fahrradverleih: – Fahrräder mit Gebäckablage – Mountainbikes – E-Bikes",
+            "descriptionEN":"Hotel in Alto Adige with bike hire Alto Adige isn’t interested in tourists, but rather explorers bursting with energy. Unfortunately it is often the case that, after driving for hundreds of kilometres to reach your destination, you then can’t find a parking space when you arrive. Or you hire an expensive bicycle only to find that it’s faulty. Here at Hotel Engel, we want you to have a relaxing holiday which is why we’ve decided to offer you an incredibly interesting service. In our Alto Adige bike hire hotel, you can borrow our bicycles without having to face the long queues at the local rental places.For hire (for a fee): City bikes - Mountain bikes -  E-Bikes",
+            "imageUrl":"https://www.hotelengel.com/wp-content/uploads/2017/02/Reschensee-3.jpg",
+            "hotelActivityFrom":"2020-12-20",
+            "hotelActivityTo":"2021-12-20",
+            "schedule":"...",
+            "booked":false,
+            "registrationMail":"jonesadmin@gmail.com",
+            "activityUrlDE":"https://www.hotelengel.com/de/service/fahrradverleih/",
+            "activityUrlEN":"https://www.hotelengel.com/en/services/bike-rental-hotel-engel/"
           }
       ]
     }
@@ -517,26 +517,11 @@
           ],
         "HotelActivity":[
           {
-            "titleDE":"Fahrradverleih",
-            "titleEN":"Bike Rental",
-            "descriptionDE":"Fahrradverleih im Hotel Engel: Direkt vor der Haustür finden Sie in unserem breiten Talkessel eine Vielzahl von Fahrradwegen oder entdecken Sie unsere schöne Bergwelt mit dem Mountainbike!  Nutzen Sie unseren hoteleigenen Fahrradverleih: – Fahrräder mit Gebäckablage – Mountainbikes – E-Bikes",
-            "descriptionEN":"Hotel in Alto Adige with bike hire Alto Adige isn’t interested in tourists, but rather explorers bursting with energy. Unfortunately it is often the case that, after driving for hundreds of kilometres to reach your destination, you then can’t find a parking space when you arrive. Or you hire an expensive bicycle only to find that it’s faulty. Here at Hotel Engel, we want you to have a relaxing holiday which is why we’ve decided to offer you an incredibly interesting service. In our Alto Adige bike hire hotel, you can borrow our bicycles without having to face the long queues at the local rental places.For hire (for a fee): City bikes - Mountain bikes -  E-Bikes",
-            "imageUrl":"https://www.hotelengel.com/wp-content/uploads/2017/02/Reschensee-3.jpg",
-            "hotelActivityFrom":"2020-12-20",
-            "hotelActivityTo":"2021-12-20",
-            "schedule":"...",
-            "booked":false,
-            "registrationMail":"jonesadmin@gmail.com",
-            "activityUrlDE":"https://www.hotelengel.com/de/service/fahrradverleih/",
-            "activityUrlEN":"https://www.hotelengel.com/en/services/bike-rental-hotel-engel/"
-          }
-          ,
-          {
             "titleDE":"3 Länder-Skisafari",
             "titleEN":"3 Country-Skisafari",
             "descriptionDE":"Lernen Sie mit uns täglich ein neues Skigebiet kennen: Schnalstal (I) – Sulden (I) – Scuol (CH) – Samnaun/Ischgl (CH/A) – Serfaus/Fiss/Ladis (A) – Livigno (I), Anfahrtszeit 30 bis ca. 60 Minuten - Durch die zentrale Lage unseres Dorfes im Drei-Länder-Eck können wir unseren Gästen ein optimales Ski-Erlebnis anbieten: Wir bringen Sie jeden Tag in ein neues Skigebiet und Sie können die tollsten Skigebiete im Alpenraum erkunden. Entdecken Sie täglich neue Täler mit ihren Schönheiten und genießen Sie die atemberaubende Berglandschaft. Sie fahren täglich in unserem hoteleigenen Groß Bus! Um Ihnen das anstehen an der Kasse zu ersparen, erhalten Sie die Tagesskipässe von uns: So kann der Skitag beginnen …",
             "descriptionEN":"Get to know a new skiing area with us every day: Val Senales (I) - Solda (I) - Scuol (CH) - Samnaun/Ischgl (CH/A) - Serfaus/Fiss/Ladis (A) - Livigno (I), journey time 30 to approx. 60 minutes. Due to the central location of our village in the three-country corner, we can offer our guests an optimal skiing experience: We take you to a new ski area every day and you can explore the most amazing ski resorts in the alpine region. Discover new valleys with their beauties every day and enjoy the breathtaking mountain scenery. You will travel daily in our hotel's own big bus! To save you queuing at the ticket office, you will receive the day ski passes from us: so the ski day can begin ...",
-            "imageUrl":"http://www.3laender-skisafari.com/wp-content/uploads/2019/09/Skiing-13.mp4",
+            "imageUrl":"https://www.3laender-skisafari.com/wp-content/uploads/2019/09/Risorsa-23laender-1.png",
             "hotelActivityFrom":"2020-12-20",
             "hotelActivityTo":"2021-05-01",
             "schedule":"...",
@@ -560,6 +545,22 @@
             "activityUrlDE":"https://www.hotelengel.com/de/service/hoteleigener-skiverleih/",
             "activityUrlEN":"https://www.hotelengel.com/en/services/hotel-ski-rental/"
           }
+          ,
+          {
+            "titleDE":"Fahrradverleih",
+            "titleEN":"Bike Rental",
+            "descriptionDE":"Fahrradverleih im Hotel Engel: Direkt vor der Haustür finden Sie in unserem breiten Talkessel eine Vielzahl von Fahrradwegen oder entdecken Sie unsere schöne Bergwelt mit dem Mountainbike!  Nutzen Sie unseren hoteleigenen Fahrradverleih: – Fahrräder mit Gebäckablage – Mountainbikes – E-Bikes",
+            "descriptionEN":"Hotel in Alto Adige with bike hire Alto Adige isn’t interested in tourists, but rather explorers bursting with energy. Unfortunately it is often the case that, after driving for hundreds of kilometres to reach your destination, you then can’t find a parking space when you arrive. Or you hire an expensive bicycle only to find that it’s faulty. Here at Hotel Engel, we want you to have a relaxing holiday which is why we’ve decided to offer you an incredibly interesting service. In our Alto Adige bike hire hotel, you can borrow our bicycles without having to face the long queues at the local rental places.For hire (for a fee): City bikes - Mountain bikes -  E-Bikes",
+            "imageUrl":"https://www.hotelengel.com/wp-content/uploads/2017/02/Reschensee-3.jpg",
+            "hotelActivityFrom":"2020-12-20",
+            "hotelActivityTo":"2021-12-20",
+            "schedule":"...",
+            "booked":false,
+            "registrationMail":"jonesadmin@gmail.com",
+            "activityUrlDE":"https://www.hotelengel.com/de/service/fahrradverleih/",
+            "activityUrlEN":"https://www.hotelengel.com/en/services/bike-rental-hotel-engel/"
+          }
+
       ]
     }
 }
